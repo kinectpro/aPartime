@@ -12,6 +12,11 @@
 		C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE21FD6C811007BE2D3 /* Main.storyboard */; };
 		C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE51FD6C811007BE2D3 /* Assets.xcassets */; };
 		C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */; };
+		C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDF91FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard */; };
+		C591FDFC1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDFB1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard */; };
+		C591FDFE1FD6CBB6007BE2D3 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDFD1FD6CBB6007BE2D3 /* LoginScreenViewController.swift */; };
+		C591FE001FD6CC3B007BE2D3 /* LoginScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDFF1FD6CC3B007BE2D3 /* LoginScreenPresenter.swift */; };
+		C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		C591FDE51FD6C811007BE2D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C591FDE81FD6C811007BE2D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C591FDEA1FD6C811007BE2D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C591FDF91FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreenIPhone.storyboard; sourceTree = "<group>"; };
+		C591FDFB1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreenIPad.storyboard; sourceTree = "<group>"; };
+		C591FDFD1FD6CBB6007BE2D3 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		C591FDFF1FD6CC3B007BE2D3 /* LoginScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenPresenter.swift; sourceTree = "<group>"; };
+		C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +64,9 @@
 		C591FDDD1FD6C811007BE2D3 /* aPartime */ = {
 			isa = PBXGroup;
 			children = (
+				C591FDF01FD6CA5C007BE2D3 /* Modules */,
 				C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */,
+				C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */,
 				C591FDE01FD6C811007BE2D3 /* ViewController.swift */,
 				C591FDE21FD6C811007BE2D3 /* Main.storyboard */,
 				C591FDE51FD6C811007BE2D3 /* Assets.xcassets */,
@@ -62,6 +74,81 @@
 				C591FDEA1FD6C811007BE2D3 /* Info.plist */,
 			);
 			path = aPartime;
+			sourceTree = "<group>";
+		};
+		C591FDF01FD6CA5C007BE2D3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C591FDF41FD6CA9E007BE2D3 /* TasksScreen */,
+				C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */,
+				C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */,
+				C591FDF11FD6CA6F007BE2D3 /* LoginScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C591FDF11FD6CA6F007BE2D3 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C591FDF81FD6CACC007BE2D3 /* Router */,
+				C591FDF71FD6CAC1007BE2D3 /* Interactor */,
+				C591FDF61FD6CAB8007BE2D3 /* Presenter */,
+				C591FDF51FD6CAAF007BE2D3 /* View */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectsScreen;
+			sourceTree = "<group>";
+		};
+		C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeaturesScreen;
+			sourceTree = "<group>";
+		};
+		C591FDF41FD6CA9E007BE2D3 /* TasksScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TasksScreen;
+			sourceTree = "<group>";
+		};
+		C591FDF51FD6CAAF007BE2D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C591FDF91FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard */,
+				C591FDFB1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard */,
+				C591FDFD1FD6CBB6007BE2D3 /* LoginScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C591FDF61FD6CAB8007BE2D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C591FDFF1FD6CC3B007BE2D3 /* LoginScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C591FDF71FD6CAC1007BE2D3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C591FDF81FD6CACC007BE2D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
+				C591FDFC1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
+				C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +227,9 @@
 			files = (
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
+				C591FE001FD6CC3B007BE2D3 /* LoginScreenPresenter.swift in Sources */,
+				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
+				C591FDFE1FD6CBB6007BE2D3 /* LoginScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
