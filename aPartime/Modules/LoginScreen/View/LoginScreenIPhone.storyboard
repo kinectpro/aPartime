@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7pq-Jg-ecL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,11 +13,24 @@
         <!--Login Screen View Controller-->
         <scene sceneID="8s8-ff-Fwm">
             <objects>
-                <viewController id="7pq-Jg-ecL" customClass="LoginScreenViewController" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7pq-Jg-ecL" customClass="LoginScreenViewController" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hp2-AV-gcJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K14-bN-HAp">
+                                <rect key="frame" x="147" y="318" width="81" height="30"/>
+                                <state key="normal" title="Gmail Login"/>
+                                <connections>
+                                    <action selector="gmailLoginButtonDidTap:" destination="7pq-Jg-ecL" eventType="touchUpInside" id="MW3-xm-J00"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K14-bN-HAp" firstAttribute="centerY" secondItem="hp2-AV-gcJ" secondAttribute="centerY" id="FSt-1p-VIM"/>
+                            <constraint firstItem="K14-bN-HAp" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="bHm-NA-SXy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WGD-uD-fcT"/>
                     </view>
                 </viewController>
