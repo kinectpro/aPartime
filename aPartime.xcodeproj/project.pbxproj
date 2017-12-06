@@ -24,7 +24,7 @@
 		D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */; };
 		D95BE3761FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3751FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift */; };
 		D95BE3791FD7E46B005BA9A0 /* ProjectsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3781FD7E46B005BA9A0 /* ProjectsScreenRouter.swift */; };
-		D95BE37B1FD7E9E8005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37A1FD7E9E8005BA9A0 /* GoogleService-Info.plist */; };
+		D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenConfigurator.swift; sourceTree = "<group>"; };
 		D95BE3751FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenConfigurator.swift; sourceTree = "<group>"; };
 		D95BE3781FD7E46B005BA9A0 /* ProjectsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenRouter.swift; sourceTree = "<group>"; };
-		D95BE37A1FD7E9E8005BA9A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +104,7 @@
 				C591FDE51FD6C811007BE2D3 /* Assets.xcassets */,
 				C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */,
 				C591FDEA1FD6C811007BE2D3 /* Info.plist */,
-				D95BE37A1FD7E9E8005BA9A0 /* GoogleService-Info.plist */,
+				D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */,
 			);
 			path = aPartime;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
-				D95BE37B1FD7E9E8005BA9A0 /* GoogleService-Info.plist in Resources */,
+				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +526,7 @@
 				DEVELOPMENT_TEAM = 7XSVATSQ6N;
 				INFOPLIST_FILE = aPartime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team.kinectpro.aPartime;
+				PRODUCT_BUNDLE_IDENTIFIER = team.kinect.pro.aPartime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -542,7 +542,7 @@
 				DEVELOPMENT_TEAM = 7XSVATSQ6N;
 				INFOPLIST_FILE = aPartime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team.kinectpro.aPartime;
+				PRODUCT_BUNDLE_IDENTIFIER = team.kinect.pro.aPartime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

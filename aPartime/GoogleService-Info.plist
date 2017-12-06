@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>143417067014-ll896fhhtrt68ctlrbu9rvts2gk5pp6a.apps.googleusercontent.com</string>
+	<string>88076207461-vrs2cankhg7s6j623ljra1e4aqs03av4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.143417067014-ll896fhhtrt68ctlrbu9rvts2gk5pp6a</string>
+	<string>com.googleusercontent.apps.88076207461-vrs2cankhg7s6j623ljra1e4aqs03av4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCodXt5l0yCeibVle73wXs0pYDdEBOM7Ww</string>
+	<string>AIzaSyCU_xrarzb_zDFDc-rT0FeY-XhwRiXKZVI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>143417067014</string>
+	<string>88076207461</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>team.kinectpro.aPartime</string>
+	<string>team.kinect.pro.aPartime</string>
 	<key>PROJECT_ID</key>
-	<string>team-kinectpro-apartime</string>
+	<string>team-kinect-pro-apartime</string>
 	<key>STORAGE_BUCKET</key>
-	<string>team-kinectpro-apartime.appspot.com</string>
+	<string>team-kinect-pro-apartime.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:143417067014:ios:75c3f838edd54f94</string>
+	<string>1:88076207461:ios:ddf7eb542f8d37d3</string>
 	<key>DATABASE_URL</key>
-	<string>https://team-kinectpro-apartime.firebaseio.com</string>
+	<string>https://team-kinect-pro-apartime.firebaseio.com</string>
 </dict>
 </plist>
