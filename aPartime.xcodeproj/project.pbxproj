@@ -15,6 +15,10 @@
 		C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDF91FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard */; };
 		C591FDFC1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDFB1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard */; };
 		C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */; };
+		C5F184E91FD829F5002AA55E /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F184E81FD829F5002AA55E /* ProjectCell.swift */; };
+		C5F184EC1FD8319B002AA55E /* ProjectsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F184EB1FD8319B002AA55E /* ProjectsScreenInteractor.swift */; };
+		C5F184F51FD838D0002AA55E /* CreateProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F184F41FD838D0002AA55E /* CreateProject.storyboard */; };
+		C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F184F61FD838F9002AA55E /* CreateProjectViewController.swift */; };
 		D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303BD1FD6E74800F6F9E7 /* LoginScreenViewController.swift */; };
 		D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303BF1FD6E7F200F6F9E7 /* LoginScreenPresenter.swift */; };
 		D91303C41FD6ED5200F6F9E7 /* ProjectsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91303C31FD6ED5200F6F9E7 /* ProjectsScreen.storyboard */; };
@@ -40,6 +44,10 @@
 		C591FDF91FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreenIPhone.storyboard; sourceTree = "<group>"; };
 		C591FDFB1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreenIPad.storyboard; sourceTree = "<group>"; };
 		C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		C5F184E81FD829F5002AA55E /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		C5F184EB1FD8319B002AA55E /* ProjectsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenInteractor.swift; sourceTree = "<group>"; };
+		C5F184F41FD838D0002AA55E /* CreateProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProject.storyboard; sourceTree = "<group>"; };
+		C5F184F61FD838F9002AA55E /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		D91303BD1FD6E74800F6F9E7 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		D91303BF1FD6E7F200F6F9E7 /* LoginScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenPresenter.swift; sourceTree = "<group>"; };
 		D91303C31FD6ED5200F6F9E7 /* ProjectsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectsScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 		C591FDF01FD6CA5C007BE2D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C5F184ED1FD83821002AA55E /* CreateProject */,
 				C591FDF41FD6CA9E007BE2D3 /* TasksScreen */,
 				C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */,
 				C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */,
@@ -135,6 +144,7 @@
 		C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C5F184EA1FD83173002AA55E /* Interactor */,
 				D91303C11FD6ED1500F6F9E7 /* View */,
 				D91303C21FD6ED2200F6F9E7 /* Presenter */,
 				D95BE3771FD7E455005BA9A0 /* Router */,
@@ -190,11 +200,70 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		C5F184EA1FD83173002AA55E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C5F184EB1FD8319B002AA55E /* ProjectsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C5F184ED1FD83821002AA55E /* CreateProject */ = {
+			isa = PBXGroup;
+			children = (
+				C5F184F31FD838A2002AA55E /* Configurator */,
+				C5F184F21FD8388B002AA55E /* Router */,
+				C5F184F11FD83876002AA55E /* Presenter */,
+				C5F184EF1FD8385F002AA55E /* Interactor */,
+				C5F184EE1FD83855002AA55E /* View */,
+			);
+			path = CreateProject;
+			sourceTree = "<group>";
+		};
+		C5F184EE1FD83855002AA55E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5F184F41FD838D0002AA55E /* CreateProject.storyboard */,
+				C5F184F61FD838F9002AA55E /* CreateProjectViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5F184EF1FD8385F002AA55E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C5F184F11FD83876002AA55E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5F184F21FD8388B002AA55E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Router;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C5F184F31FD838A2002AA55E /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		D91303C11FD6ED1500F6F9E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D91303C31FD6ED5200F6F9E7 /* ProjectsScreen.storyboard */,
 				D91303C51FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift */,
+				C5F184E81FD829F5002AA55E /* ProjectCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +372,7 @@
 			files = (
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
 				C591FDFC1FD6CB7F007BE2D3 /* LoginScreenIPad.storyboard in Resources */,
+				C5F184F51FD838D0002AA55E /* CreateProject.storyboard in Resources */,
 				D91303C41FD6ED5200F6F9E7 /* ProjectsScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */,
@@ -376,13 +446,16 @@
 			files = (
 				D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
+				C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				D91303C81FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift in Sources */,
+				C5F184E91FD829F5002AA55E /* ProjectCell.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
 				D95BE3761FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift in Sources */,
+				C5F184EC1FD8319B002AA55E /* ProjectsScreenInteractor.swift in Sources */,
 				D95BE3791FD7E46B005BA9A0 /* ProjectsScreenRouter.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,
 			);

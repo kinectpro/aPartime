@@ -8,9 +8,26 @@
 
 import Foundation
 
-class ProjectsScreenPresenter {
+protocol ProjectsScreenPresenterProtocol {
+    func getAllProjects() -> [String]
+    func createNewProject()
+    func editProject(name: String)
+}
+
+class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
     
     var projectsScreenViewController: ProjectsScreenViewController!
     var projectsScreenRouter: ProjectsScreenRouter!
+    var projectsScreenInteractor: ProjectsScreenInteractorProtocol!
     
+    func getAllProjects() -> [String]{
+        return projectsScreenInteractor.getAllProjects()
+    }
+    
+    func createNewProject(){
+        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController)
+    }
+    func editProject(name: String){
+        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController)
+    }
 }
