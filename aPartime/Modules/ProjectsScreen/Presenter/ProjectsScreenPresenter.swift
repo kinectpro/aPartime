@@ -12,6 +12,7 @@ protocol ProjectsScreenPresenterProtocol {
     func getAllProjects() -> [String]
     func createNewProject()
     func editProject(name: String)
+    func openFeaturesFor(project: String)
 }
 
 class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
@@ -31,4 +32,7 @@ class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
             
         projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
     }
+    
+    func openFeaturesFor(project: String) {
+        projectsScreenRouter.presentFeaturesScreen(projectsScreenViewController: projectsScreenViewController, project: project)    }
 }

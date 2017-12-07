@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 protocol ProjectsScreenRouterProtocol {
-    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController)
+    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String)
+    func presentFeaturesScreen(projectsScreenViewController: ProjectsScreenViewController, project: String)
 }
 
 class ProjectsScreenRouter {
@@ -21,5 +22,12 @@ class ProjectsScreenRouter {
             projectsScreenViewController.present(createProjectViewController, animated: true)
         }
     }
+    
+    func presentFeaturesScreen(projectsScreenViewController: ProjectsScreenViewController, project: String) {
+        if let featuresViewController = UIStoryboard(name: "Features", bundle: nil).instantiateViewController(withIdentifier: "FeaturesScreenViewController") as? FeaturesScreenViewController{
+            
+            featuresViewController.project = project
+            projectsScreenViewController.present(featuresViewController, animated: true)
+        }    }
 }
 

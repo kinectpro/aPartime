@@ -22,7 +22,7 @@ class CreateProjectViewController: UIViewController {
         super.viewDidLoad()
         
         if nameProject != "" {
-            navBarTitle.text = "Edit Project"
+            navBarTitle.text = "Edit"
             nameTextField.text = nameProject
         }
         self.okButton.roundedAndShadowButton()

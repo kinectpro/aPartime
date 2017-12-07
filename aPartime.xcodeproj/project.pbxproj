@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2DEE4F1FD9D75D00739406 /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2DEE4E1FD9D75D00739406 /* Features.storyboard */; };
+		1F2DEE511FD9D80100739406 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE501FD9D80100739406 /* FeatureCell.swift */; };
+		1F2DEE531FD9D93C00739406 /* FeaturesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE521FD9D93C00739406 /* FeaturesScreenViewController.swift */; };
+		1F2DEE561FD9D97E00739406 /* FeaturesScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE551FD9D97E00739406 /* FeaturesScreenConfigurator.swift */; };
+		1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */; };
+		1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */; };
+		1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDE01FD6C811007BE2D3 /* ViewController.swift */; };
 		C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE21FD6C811007BE2D3 /* Main.storyboard */; };
@@ -33,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2DEE4E1FD9D75D00739406 /* Features.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Features.storyboard; sourceTree = "<group>"; };
+		1F2DEE501FD9D80100739406 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
+		1F2DEE521FD9D93C00739406 /* FeaturesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenViewController.swift; sourceTree = "<group>"; };
+		1F2DEE551FD9D97E00739406 /* FeaturesScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenConfigurator.swift; sourceTree = "<group>"; };
+		1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenPresenter.swift; sourceTree = "<group>"; };
+		1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
+		1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +88,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2DEE4D1FD9D73900739406 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F2DEE4E1FD9D75D00739406 /* Features.storyboard */,
+				1F2DEE501FD9D80100739406 /* FeatureCell.swift */,
+				1F2DEE521FD9D93C00739406 /* FeaturesScreenViewController.swift */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1F2DEE541FD9D94A00739406 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				1F2DEE551FD9D97E00739406 /* FeaturesScreenConfigurator.swift */,
+			);
+			name = Configurator;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		1F2DEE571FD9D9A200739406 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */,
+			);
+			name = Presenter;
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		1F2DEE5A1FD9DAE000739406 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1F2DEE5D1FD9DBE400739406 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		9498883B2E75E3793943E603 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +215,11 @@
 		C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1F2DEE5D1FD9DBE400739406 /* Interactor */,
+				1F2DEE5A1FD9DAE000739406 /* Router */,
+				1F2DEE571FD9D9A200739406 /* Presenter */,
+				1F2DEE541FD9D94A00739406 /* Configurator */,
+				1F2DEE4D1FD9D73900739406 /* View */,
 			);
 			path = FeaturesScreen;
 			sourceTree = "<group>";
@@ -375,6 +439,7 @@
 				C5F184F51FD838D0002AA55E /* CreateProject.storyboard in Resources */,
 				D91303C41FD6ED5200F6F9E7 /* ProjectsScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
+				1F2DEE4F1FD9D75D00739406 /* Features.storyboard in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
 				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
@@ -445,15 +510,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */,
+				1F2DEE561FD9D97E00739406 /* FeaturesScreenConfigurator.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
+				1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
+				1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
+				1F2DEE531FD9D93C00739406 /* FeaturesScreenViewController.swift in Sources */,
 				D91303C81FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift in Sources */,
+				1F2DEE511FD9D80100739406 /* FeatureCell.swift in Sources */,
 				C5F184E91FD829F5002AA55E /* ProjectCell.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
+				1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */,
 				D95BE3761FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift in Sources */,
 				C5F184EC1FD8319B002AA55E /* ProjectsScreenInteractor.swift in Sources */,
 				D95BE3791FD7E46B005BA9A0 /* ProjectsScreenRouter.swift in Sources */,

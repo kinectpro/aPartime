@@ -36,7 +36,12 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProjectCell
         
-        cell.projectNameLabel.text = data[indexPath.row]
+        let nameProject = data[indexPath.row]
+        cell.projectNameLabel.text = nameProject
+        cell.editTappedHandler = {
+            self.projectsScreenPresenter.editProject(name: nameProject)
+        }
+        
         
         return cell
     }
@@ -46,7 +51,7 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         let cell = tableView.cellForRow(at: indexPath) as! ProjectCell
         if let nameProject = cell.projectNameLabel.text {
-            projectsScreenPresenter.editProject(name: nameProject)
+            projectsScreenPresenter.openFeaturesFor(project: nameProject)
         }
         
     }
