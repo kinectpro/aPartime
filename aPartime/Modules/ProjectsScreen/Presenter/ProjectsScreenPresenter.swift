@@ -25,9 +25,10 @@ class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
     }
     
     func createNewProject(){
-        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController)
+        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name:"")
     }
     func editProject(name: String){
-        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController)
+            
+        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
     }
 }

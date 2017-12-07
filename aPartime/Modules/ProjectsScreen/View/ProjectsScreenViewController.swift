@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var addButton: UIButton!
     var data = [String]()
     var projectsScreenPresenter: ProjectsScreenPresenterProtocol!
 
@@ -19,7 +20,12 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         data = projectsScreenPresenter.getAllProjects()
     }
-
+    
+    //MARK: IBActions
+    @IBAction func addNewTapped(_ sender: UIButton) {
+        projectsScreenPresenter.createNewProject()
+    }
+    
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count

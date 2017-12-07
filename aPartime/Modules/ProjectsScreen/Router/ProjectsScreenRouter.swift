@@ -14,8 +14,10 @@ protocol ProjectsScreenRouterProtocol {
 }
 
 class ProjectsScreenRouter {
-    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController) {
+    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String) {
         if let createProjectViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+            
+            createProjectViewController.nameProject = name
             projectsScreenViewController.present(createProjectViewController, animated: true)
         }
     }
