@@ -34,6 +34,8 @@
 		D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */; };
 		D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */; };
 		D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */; };
+		D9E5C5311FDAED8100E28C06 /* CreateProjectScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E5C52F1FDAED8100E28C06 /* CreateProjectScreen.storyboard */; };
+		D9E5C5321FDAED8100E28C06 /* CreateProjectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5301FDAED8100E28C06 /* CreateProjectScreenViewController.swift */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenConfigurator.swift; sourceTree = "<group>"; };
 		D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
 		D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
+		D9E5C52F1FDAED8100E28C06 /* CreateProjectScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProjectScreen.storyboard; sourceTree = "<group>"; };
+		D9E5C5301FDAED8100E28C06 /* CreateProjectScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProjectScreenViewController.swift; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,7 @@
 				C591FDF11FD6CA6F007BE2D3 /* LoginScreen */,
 				D9E5C4D31FDAE24500E28C06 /* ProjectsScreen */,
 				D9E5C5191FDAE70400E28C06 /* FeaturesScreen */,
+				D9E5C52D1FDAED8100E28C06 /* CreateProjectScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -195,11 +200,11 @@
 		D9E5C4D31FDAE24500E28C06 /* ProjectsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5C4D41FDAE24500E28C06 /* Presenter */,
 				D9E5C4D71FDAE24500E28C06 /* View */,
-				D9E5C4DB1FDAE24500E28C06 /* Configurator */,
+				D9E5C4D41FDAE24500E28C06 /* Presenter */,
 				D9E5C4DD1FDAE24500E28C06 /* Interactor */,
 				D9E5C4DF1FDAE24500E28C06 /* Router */,
+				D9E5C4DB1FDAE24500E28C06 /* Configurator */,
 			);
 			path = ProjectsScreen;
 			sourceTree = "<group>";
@@ -300,6 +305,23 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D9E5C52D1FDAED8100E28C06 /* CreateProjectScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C52E1FDAED8100E28C06 /* View */,
+			);
+			path = CreateProjectScreen;
+			sourceTree = "<group>";
+		};
+		D9E5C52E1FDAED8100E28C06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C52F1FDAED8100E28C06 /* CreateProjectScreen.storyboard */,
+				D9E5C5301FDAED8100E28C06 /* CreateProjectScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E42521EF777570630E9306EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +399,7 @@
 			files = (
 				D9E5C5271FDAE70400E28C06 /* Features.storyboard in Resources */,
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
+				D9E5C5311FDAED8100E28C06 /* CreateProjectScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreen.storyboard in Resources */,
 				D9E5C4E31FDAE24500E28C06 /* ProjectsScreen.storyboard in Resources */,
@@ -480,6 +503,7 @@
 				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
 				D9E5C5291FDAE70400E28C06 /* FeaturesScreenViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
+				D9E5C5321FDAED8100E28C06 /* CreateProjectScreenViewController.swift in Sources */,
 				D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsScreenViewController.swift in Sources */,
 				D9E5C5281FDAE70400E28C06 /* FeatureCell.swift in Sources */,

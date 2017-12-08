@@ -15,10 +15,10 @@ protocol FeaturesScreenRouterProtocol {
 
 class FeaturesScreenRouter {
     func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String) {
-        if let createFeatureViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
-            
+        if let createFeatureViewController = UIStoryboard(name: "CreateProjectScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectScreenViewController") as? CreateProjectScreenViewController {
             createFeatureViewController.nameProject = name
             featuresScreenViewController.present(createFeatureViewController, animated: true)
         }
     }
+    
 }
