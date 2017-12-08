@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     var data = [String]()
     var projectsScreenPresenter: ProjectsScreenPresenterProtocol!
@@ -18,7 +19,11 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         super.viewDidLoad()
         ProjectsScreenConfigurator.setupDependencies(projectsScreenViewController: self)
         
-        data = projectsScreenPresenter.getAllProjects()
+        //data = projectsScreenPresenter.getAllProjects()
+        projectsScreenPresenter.getAllProjects(success: { (projects) in
+            self.data = projects
+            self.tableView.reloadData()
+        }, fail: {})
     }
     
     //MARK: IBActions

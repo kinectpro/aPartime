@@ -7,5 +7,5 @@ target 'aPartime' do
 
   # Pods for aPartime
   pod 'Firebase/Core'
-
+  pod 'Firebase/Firestore'
 end

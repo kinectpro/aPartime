@@ -14,6 +14,7 @@
 		1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */; };
 		1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */; };
 		1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */; };
+		C58C90211FDAD89C007D0E6C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C90201FDAD89C007D0E6C /* DbManager.swift */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDE01FD6C811007BE2D3 /* ViewController.swift */; };
 		C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE21FD6C811007BE2D3 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
 		1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58C90201FDAD89C007D0E6C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C591FDE01FD6C811007BE2D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */,
 				C591FDEA1FD6C811007BE2D3 /* Info.plist */,
 				D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */,
+				C58C90201FDAD89C007D0E6C /* DbManager.swift */,
 			);
 			path = aPartime;
 			sourceTree = "<group>";
@@ -474,12 +477,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-aPartime/Pods-aPartime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58C90211FDAD89C007D0E6C /* DbManager.swift in Sources */,
 				D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */,
 				1F2DEE561FD9D97E00739406 /* FeaturesScreenConfigurator.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
