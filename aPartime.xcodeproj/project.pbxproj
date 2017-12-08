@@ -249,21 +249,21 @@
 		D9E5C5191FDAE70400E28C06 /* FeaturesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5C51A1FDAE70400E28C06 /* FeaturesScreenPresenter */,
 				D9E5C51C1FDAE70400E28C06 /* View */,
-				D9E5C5201FDAE70400E28C06 /* Configurator */,
+				D9E5C51A1FDAE70400E28C06 /* Presenter */,
 				D9E5C5221FDAE70400E28C06 /* Interactor */,
+				D9E5C5201FDAE70400E28C06 /* Configurator */,
 				D9E5C5241FDAE70400E28C06 /* Router */,
 			);
 			path = FeaturesScreen;
 			sourceTree = "<group>";
 		};
-		D9E5C51A1FDAE70400E28C06 /* FeaturesScreenPresenter */ = {
+		D9E5C51A1FDAE70400E28C06 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				D9E5C51B1FDAE70400E28C06 /* FeaturesScreenPresenter.swift */,
 			);
-			path = FeaturesScreenPresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D9E5C51C1FDAE70400E28C06 /* View */ = {
