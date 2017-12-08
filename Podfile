@@ -6,6 +6,12 @@ target 'aPartime' do
   use_frameworks!
 
   # Pods for aPartime
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'GoogleSignIn'
 
 end

@@ -20,11 +20,12 @@
 		D91303C41FD6ED5200F6F9E7 /* ProjectsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91303C31FD6ED5200F6F9E7 /* ProjectsScreen.storyboard */; };
 		D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303C51FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift */; };
 		D91303C81FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303C71FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift */; };
-		D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303C91FD6EDF100F6F9E7 /* LoginScreenRouter.swift */; };
 		D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */; };
 		D95BE3761FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3751FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift */; };
 		D95BE3791FD7E46B005BA9A0 /* ProjectsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3781FD7E46B005BA9A0 /* ProjectsScreenRouter.swift */; };
 		D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */; };
+		D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */; };
+		D95BE3841FD838FC005BA9A0 /* LoginScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +46,13 @@
 		D91303C31FD6ED5200F6F9E7 /* ProjectsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectsScreen.storyboard; sourceTree = "<group>"; };
 		D91303C51FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenViewController.swift; sourceTree = "<group>"; };
 		D91303C71FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenPresenter.swift; sourceTree = "<group>"; };
-		D91303C91FD6EDF100F6F9E7 /* LoginScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginScreenRouter.swift; path = aPartime/Modules/ProjectsScreen/Presenter/LoginScreenRouter.swift; sourceTree = SOURCE_ROOT; };
 		D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenConfigurator.swift; sourceTree = "<group>"; };
 		D95BE3751FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenConfigurator.swift; sourceTree = "<group>"; };
 		D95BE3781FD7E46B005BA9A0 /* ProjectsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsScreenRouter.swift; sourceTree = "<group>"; };
 		D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D95BE37E1FD81B02005BA9A0 /* aPartime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPartime.entitlements; sourceTree = "<group>"; };
+		D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenInteractor.swift; sourceTree = "<group>"; };
+		D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenRouter.swift; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +99,7 @@
 		C591FDDD1FD6C811007BE2D3 /* aPartime */ = {
 			isa = PBXGroup;
 			children = (
+				D95BE37E1FD81B02005BA9A0 /* aPartime.entitlements */,
 				C591FDF01FD6CA5C007BE2D3 /* Modules */,
 				C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */,
 				C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */,
@@ -178,6 +182,7 @@
 		C591FDF71FD6CAC1007BE2D3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -185,7 +190,7 @@
 		C591FDF81FD6CACC007BE2D3 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				D91303C91FD6EDF100F6F9E7 /* LoginScreenRouter.swift */,
+				D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -275,6 +280,11 @@
 					C591FDDA1FD6C811007BE2D3 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -339,12 +349,32 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-aPartime/Pods-aPartime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,9 +388,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-aPartime/Pods-aPartime-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -374,11 +407,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95BE3841FD838FC005BA9A0 /* LoginScreenRouter.swift in Sources */,
 				D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
+				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
-				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				D91303C81FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
@@ -522,6 +556,7 @@
 			baseConfigurationReference = F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = aPartime/aPartime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XSVATSQ6N;
 				INFOPLIST_FILE = aPartime/Info.plist;
@@ -538,6 +573,7 @@
 			baseConfigurationReference = DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = aPartime/aPartime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XSVATSQ6N;
 				INFOPLIST_FILE = aPartime/Info.plist;
