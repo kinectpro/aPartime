@@ -20,7 +20,7 @@
 		D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */; };
 		D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */; };
 		D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */; };
-		D95BE3841FD838FC005BA9A0 /* LoginScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */; };
+		D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4D11FDAE02D00E28C06 /* LoginScreenRouter.swift */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D95BE37E1FD81B02005BA9A0 /* aPartime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPartime.entitlements; sourceTree = "<group>"; };
 		D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenInteractor.swift; sourceTree = "<group>"; };
-		D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenRouter.swift; sourceTree = "<group>"; };
+		D9E5C4D11FDAE02D00E28C06 /* LoginScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenRouter.swift; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +117,7 @@
 				C591FDF51FD6CAAF007BE2D3 /* View */,
 				C591FDF61FD6CAB8007BE2D3 /* Presenter */,
 				C591FDF71FD6CAC1007BE2D3 /* Interactor */,
-				C591FDF81FD6CACC007BE2D3 /* Router */,
+				D9E5C4D01FDAE02D00E28C06 /* Router */,
 				D91303CB1FD6FA6100F6F9E7 /* Configurator */,
 			);
 			path = LoginScreen;
@@ -149,20 +149,20 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		C591FDF81FD6CACC007BE2D3 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				D95BE3831FD838FC005BA9A0 /* LoginScreenRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		D91303CB1FD6FA6100F6F9E7 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
 				D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D9E5C4D01FDAE02D00E28C06 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C4D11FDAE02D00E28C06 /* LoginScreenRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E42521EF777570630E9306EE /* Frameworks */ = {
@@ -335,11 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95BE3841FD838FC005BA9A0 /* LoginScreenRouter.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
+				D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,
