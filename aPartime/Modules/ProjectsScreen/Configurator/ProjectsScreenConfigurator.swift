@@ -13,8 +13,13 @@ class ProjectsScreenConfigurator {
     static func setupDependencies(projectsScreenViewController: ProjectsScreenViewController) {
         let projectsScreenPresenter = ProjectsScreenPresenter()
         let projectsScreenRouter = ProjectsScreenRouter()
+        let projectsScreenInteractor = ProjectsScreenInteractor()
+        
+        projectsScreenViewController.projectsScreenPresenter = projectsScreenPresenter
         projectsScreenPresenter.projectsScreenViewController = projectsScreenViewController
         projectsScreenPresenter.projectsScreenRouter = projectsScreenRouter
+        projectsScreenPresenter.projectsScreenInteractor = projectsScreenInteractor
+        
     }
     
 }
