@@ -27,13 +27,13 @@
 		D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4DC1FDAE24500E28C06 /* ProjectsScreenConfigurator.swift */; };
 		D9E5C4E71FDAE24500E28C06 /* ProjectsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4DE1FDAE24500E28C06 /* ProjectsScreenInteractor.swift */; };
 		D9E5C4E81FDAE24500E28C06 /* ProjectsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4E01FDAE24500E28C06 /* ProjectsScreenRouter.swift */; };
-		D9E5C5051FDAE35100E28C06 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4FB1FDAE35100E28C06 /* FeaturesScreenRouter.swift */; };
-		D9E5C50D1FDAE51500E28C06 /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E5C50A1FDAE51500E28C06 /* Features.storyboard */; };
-		D9E5C50E1FDAE51500E28C06 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C50B1FDAE51500E28C06 /* FeatureCell.swift */; };
-		D9E5C50F1FDAE51500E28C06 /* FeaturesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C50C1FDAE51500E28C06 /* FeaturesScreenViewController.swift */; };
-		D9E5C5121FDAE53400E28C06 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5111FDAE53300E28C06 /* FeaturesScreenInteractor.swift */; };
-		D9E5C5151FDAE57200E28C06 /* FeaturesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5141FDAE57200E28C06 /* FeaturesScreenPresenter.swift */; };
-		D9E5C5181FDAE64000E28C06 /* FeaturesScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5171FDAE64000E28C06 /* FeaturesScreenConfigurator.swift */; };
+		D9E5C5261FDAE70400E28C06 /* FeaturesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C51B1FDAE70400E28C06 /* FeaturesScreenPresenter.swift */; };
+		D9E5C5271FDAE70400E28C06 /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E5C51D1FDAE70400E28C06 /* Features.storyboard */; };
+		D9E5C5281FDAE70400E28C06 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C51E1FDAE70400E28C06 /* FeatureCell.swift */; };
+		D9E5C5291FDAE70400E28C06 /* FeaturesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C51F1FDAE70400E28C06 /* FeaturesScreenViewController.swift */; };
+		D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */; };
+		D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */; };
+		D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,13 +62,13 @@
 		D9E5C4DC1FDAE24500E28C06 /* ProjectsScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsScreenConfigurator.swift; sourceTree = "<group>"; };
 		D9E5C4DE1FDAE24500E28C06 /* ProjectsScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsScreenInteractor.swift; sourceTree = "<group>"; };
 		D9E5C4E01FDAE24500E28C06 /* ProjectsScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsScreenRouter.swift; sourceTree = "<group>"; };
-		D9E5C4FB1FDAE35100E28C06 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
-		D9E5C50A1FDAE51500E28C06 /* Features.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Features.storyboard; sourceTree = "<group>"; };
-		D9E5C50B1FDAE51500E28C06 /* FeatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
-		D9E5C50C1FDAE51500E28C06 /* FeaturesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenViewController.swift; sourceTree = "<group>"; };
-		D9E5C5111FDAE53300E28C06 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
-		D9E5C5141FDAE57200E28C06 /* FeaturesScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenPresenter.swift; sourceTree = "<group>"; };
-		D9E5C5171FDAE64000E28C06 /* FeaturesScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenConfigurator.swift; sourceTree = "<group>"; };
+		D9E5C51B1FDAE70400E28C06 /* FeaturesScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenPresenter.swift; sourceTree = "<group>"; };
+		D9E5C51D1FDAE70400E28C06 /* Features.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Features.storyboard; sourceTree = "<group>"; };
+		D9E5C51E1FDAE70400E28C06 /* FeatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
+		D9E5C51F1FDAE70400E28C06 /* FeaturesScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenViewController.swift; sourceTree = "<group>"; };
+		D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenConfigurator.swift; sourceTree = "<group>"; };
+		D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
+		D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +134,7 @@
 			children = (
 				C591FDF11FD6CA6F007BE2D3 /* LoginScreen */,
 				D9E5C4D31FDAE24500E28C06 /* ProjectsScreen */,
-				D9E5C4E91FDAE35100E28C06 /* FeaturesScreen */,
+				D9E5C5191FDAE70400E28C06 /* FeaturesScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -246,58 +246,58 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		D9E5C4E91FDAE35100E28C06 /* FeaturesScreen */ = {
+		D9E5C5191FDAE70400E28C06 /* FeaturesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5C5091FDAE51500E28C06 /* View */,
-				D9E5C5131FDAE57200E28C06 /* FeaturesScreenPresenter */,
-				D9E5C5101FDAE53300E28C06 /* Interactor */,
-				D9E5C4FA1FDAE35100E28C06 /* Router */,
-				D9E5C5161FDAE64000E28C06 /* Configurator */,
+				D9E5C51A1FDAE70400E28C06 /* FeaturesScreenPresenter */,
+				D9E5C51C1FDAE70400E28C06 /* View */,
+				D9E5C5201FDAE70400E28C06 /* Configurator */,
+				D9E5C5221FDAE70400E28C06 /* Interactor */,
+				D9E5C5241FDAE70400E28C06 /* Router */,
 			);
 			path = FeaturesScreen;
 			sourceTree = "<group>";
 		};
-		D9E5C4FA1FDAE35100E28C06 /* Router */ = {
+		D9E5C51A1FDAE70400E28C06 /* FeaturesScreenPresenter */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5C4FB1FDAE35100E28C06 /* FeaturesScreenRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		D9E5C5091FDAE51500E28C06 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D9E5C50A1FDAE51500E28C06 /* Features.storyboard */,
-				D9E5C50B1FDAE51500E28C06 /* FeatureCell.swift */,
-				D9E5C50C1FDAE51500E28C06 /* FeaturesScreenViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D9E5C5101FDAE53300E28C06 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				D9E5C5111FDAE53300E28C06 /* FeaturesScreenInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		D9E5C5131FDAE57200E28C06 /* FeaturesScreenPresenter */ = {
-			isa = PBXGroup;
-			children = (
-				D9E5C5141FDAE57200E28C06 /* FeaturesScreenPresenter.swift */,
+				D9E5C51B1FDAE70400E28C06 /* FeaturesScreenPresenter.swift */,
 			);
 			path = FeaturesScreenPresenter;
 			sourceTree = "<group>";
 		};
-		D9E5C5161FDAE64000E28C06 /* Configurator */ = {
+		D9E5C51C1FDAE70400E28C06 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D9E5C5171FDAE64000E28C06 /* FeaturesScreenConfigurator.swift */,
+				D9E5C51D1FDAE70400E28C06 /* Features.storyboard */,
+				D9E5C51E1FDAE70400E28C06 /* FeatureCell.swift */,
+				D9E5C51F1FDAE70400E28C06 /* FeaturesScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9E5C5201FDAE70400E28C06 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D9E5C5221FDAE70400E28C06 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D9E5C5241FDAE70400E28C06 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E42521EF777570630E9306EE /* Frameworks */ = {
@@ -375,7 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9E5C50D1FDAE51500E28C06 /* Features.storyboard in Resources */,
+				D9E5C5271FDAE70400E28C06 /* Features.storyboard in Resources */,
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreen.storyboard in Resources */,
@@ -474,21 +474,21 @@
 				D9E5C4E21FDAE24500E28C06 /* ProjectsScreenPresenter.swift in Sources */,
 				D9E5C4E41FDAE24500E28C06 /* ProjectCell.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
-				D9E5C50F1FDAE51500E28C06 /* FeaturesScreenViewController.swift in Sources */,
 				D9E5C4E71FDAE24500E28C06 /* ProjectsScreenInteractor.swift in Sources */,
+				D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */,
+				D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
+				D9E5C5291FDAE70400E28C06 /* FeaturesScreenViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsScreenViewController.swift in Sources */,
-				D9E5C50E1FDAE51500E28C06 /* FeatureCell.swift in Sources */,
+				D9E5C5281FDAE70400E28C06 /* FeatureCell.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
 				D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */,
+				D9E5C5261FDAE70400E28C06 /* FeaturesScreenPresenter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				D9E5C4E81FDAE24500E28C06 /* ProjectsScreenRouter.swift in Sources */,
-				D9E5C5181FDAE64000E28C06 /* FeaturesScreenConfigurator.swift in Sources */,
-				D9E5C5151FDAE57200E28C06 /* FeaturesScreenPresenter.swift in Sources */,
-				D9E5C5051FDAE35100E28C06 /* FeaturesScreenRouter.swift in Sources */,
-				D9E5C5121FDAE53400E28C06 /* FeaturesScreenInteractor.swift in Sources */,
+				D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,
 			);
