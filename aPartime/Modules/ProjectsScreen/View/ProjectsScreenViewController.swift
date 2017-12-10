@@ -12,7 +12,7 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
-    var data = [String]()
+    var data = [Project]()
     var projectsScreenPresenter: ProjectsScreenPresenterProtocol!
 
     override func viewDidLoad() {
@@ -20,6 +20,12 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         ProjectsScreenConfigurator.setupDependencies(projectsScreenViewController: self)
         
         //data = projectsScreenPresenter.getAllProjects()
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         projectsScreenPresenter.getAllProjects(success: { (projects) in
             self.data = projects
             self.tableView.reloadData()
@@ -41,10 +47,11 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProjectCell
         
-        let nameProject = data[indexPath.row]
+        guard let nameProject = data[indexPath.row].name, !nameProject.isEmpty else {return cell}
+        guard let descriptionProject = data[indexPath.row].descriptionProject, !nameProject.isEmpty else {return cell}
         cell.projectNameLabel.text = nameProject
         cell.editTappedHandler = {
-            self.projectsScreenPresenter.editProject(name: nameProject)
+            self.projectsScreenPresenter.editProject(name: nameProject, description: descriptionProject)
         }
         
         

@@ -14,6 +14,7 @@
 		1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */; };
 		1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */; };
 		1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */; };
+		1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC686091FDDDD0A00F42E3D /* Project.swift */; };
 		C58C90211FDAD89C007D0E6C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C90201FDAD89C007D0E6C /* DbManager.swift */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDE01FD6C811007BE2D3 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		1F2DEE581FD9D9C200739406 /* FeaturesScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenPresenter.swift; sourceTree = "<group>"; };
 		1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
 		1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
+		1FC686091FDDDD0A00F42E3D /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58C90201FDAD89C007D0E6C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		1FC686081FDDDCED00F42E3D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1FC686091FDDDD0A00F42E3D /* Project.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		9498883B2E75E3793943E603 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1FC686081FDDDCED00F42E3D /* Entity */,
 				C5F184EA1FD83173002AA55E /* Interactor */,
 				D91303C11FD6ED1500F6F9E7 /* View */,
 				D91303C21FD6ED2200F6F9E7 /* Presenter */,
@@ -535,6 +546,7 @@
 				C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
+				1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */,
 				1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */,

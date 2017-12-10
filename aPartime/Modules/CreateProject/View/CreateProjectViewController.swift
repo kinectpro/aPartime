@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class CreateProjectViewController: UIViewController {
+class CreateProjectViewController: UIViewController{
     
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -35,7 +36,20 @@ class CreateProjectViewController: UIViewController {
     }
     
     @IBAction func okDidTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        
+        guard let name = nameTextField.text, !name.isEmpty else {return}
+        
+        DbManager.shared.defaultStore.collection("projects").document(name).setData([
+            "description": descriptionTextField.text ?? ""])
+        { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
 }
 

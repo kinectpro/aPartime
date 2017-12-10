@@ -10,9 +10,9 @@ import Foundation
 
 protocol ProjectsScreenPresenterProtocol {
     //func getAllProjects() -> [String]
-    func getAllProjects(  success:@escaping (_ projects:[String]) -> Void, fail:@escaping() -> Void)
+    func getAllProjects(  success:@escaping (_ projects:[Project]) -> Void, fail:@escaping() -> Void)
     func createNewProject()
-    func editProject(name: String)
+    func editProject(name: String, description: String)
     func openFeaturesFor(project: String)
 }
 
@@ -26,9 +26,9 @@ class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
 //        return projectsScreenInteractor.getAllProjects()
 //    }
     
-    func getAllProjects(  success:@escaping (_ projects:[String]) -> Void, fail:@escaping() -> Void){
-        self.projectsScreenInteractor.getAllProjects(success: { (projectsNameList) in
-            success(projectsNameList)
+    func getAllProjects(  success:@escaping (_ projects:[Project]) -> Void, fail:@escaping() -> Void){
+        self.projectsScreenInteractor.getAllProjects(success: { (projectsList) in
+            success(projectsList)
         }) {
             fail()
         }
@@ -37,7 +37,7 @@ class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
     func createNewProject(){
         projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name:"")
     }
-    func editProject(name: String){
+    func editProject(name: String, description: String){
             
         projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
     }

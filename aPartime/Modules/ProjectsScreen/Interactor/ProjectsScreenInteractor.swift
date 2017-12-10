@@ -9,8 +9,9 @@
 import Foundation
 
 protocol ProjectsScreenInteractorProtocol {
-    func getAllProjects(  success:@escaping (_ projects:[String]) -> Void, fail:@escaping() -> Void)
+    func getAllProjects(  success:@escaping (_ projects:[Project]) -> Void, fail:@escaping() -> Void)
     func getAllProjects() -> [String]
+    func addNewProject(name: String)
 }
 
 class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
@@ -21,10 +22,10 @@ class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
         return ["1"]
     }
     
-    func getAllProjects(  success:@escaping (_ projects:[String]) -> Void, fail:@escaping() -> Void){
+    func getAllProjects(  success:@escaping (_ projects:[Project]) -> Void, fail:@escaping() -> Void){
         DbManager.shared.defaultStore.collection("projects").getDocuments() { (querySnapshot, err) in
             
-            var projectsNameList = [String]()
+            var projectsList = [Project]()
             
             if let err = err {
                 print("Error getting list of PROJECTS: \(err)")
@@ -32,11 +33,18 @@ class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
             } else {
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
-                    projectsNameList.append(document.data()["name"] as! String)
+                    var project = Project()
+                    project.name = document.documentID
+                    project.descriptionProject = document.data()["description"] as? String
+                    projectsList.append(project)
                 }
-                success(projectsNameList)
+                success(projectsList)
             }
         }
+    }
+    
+    func addNewProject(name: String) {
+        DbManager.shared.defaultStore.collection("projects").addDocument(data: ["name":name])
     }
     
     
