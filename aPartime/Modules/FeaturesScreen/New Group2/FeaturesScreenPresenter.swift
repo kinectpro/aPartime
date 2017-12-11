@@ -34,10 +34,10 @@ class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
     }
     
     func createNewFeature(){
-        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name:"", description: "")
+        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController)
     }
     func editFeature(name: String, description: String){
         
-        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name: name, description: description)
+        featuresScreenRouter.presentEditFeatureScreen(featuresScreenViewController: featuresScreenViewController, name: name, description: description)
     }
 }

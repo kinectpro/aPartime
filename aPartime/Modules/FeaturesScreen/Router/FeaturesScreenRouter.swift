@@ -10,16 +10,26 @@ import Foundation
 import UIKit
 
 protocol FeaturesScreenRouterProtocol {
-    func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String)
+    func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController)
+    func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) 
 }
 
 class FeaturesScreenRouter {
-    func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) {
+    func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) {
         if let createFeatureViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
             
             createFeatureViewController.category = "features"
             createFeatureViewController.nameProject = name
             createFeatureViewController.descriptionProject = description
+            featuresScreenViewController.present(createFeatureViewController, animated: true)
+        }
+    }
+    
+    func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController) {
+        if let createFeatureViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+            
+            createFeatureViewController.category = "features"
+            createFeatureViewController.categoryName = featuresScreenViewController.project
             featuresScreenViewController.present(createFeatureViewController, animated: true)
         }
     }

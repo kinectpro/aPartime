@@ -17,20 +17,24 @@ class CreateProjectViewController: UIViewController{
     @IBOutlet weak var navBarTitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var category = ""
+    var category = "projects"
+    var categoryName = ""
     var nameProject = ""
     var descriptionProject = ""
+    var isEdit = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        if nameProject != "" {
-            navBarTitle.text = "Edit"
-            nameTextField.text = nameProject
-            descriptionTextField.text = descriptionProject
-        }
+        navBarTitle.text = nameProject != "" ? "Edit Item" : "New Item"
+        nameTextField.text = nameProject
+        descriptionTextField.text = descriptionProject
+        
         self.okButton.roundedAndShadowButton()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     //MARK: IBActions
@@ -42,13 +46,26 @@ class CreateProjectViewController: UIViewController{
         
         guard category != "" else {return}
         guard let name = nameTextField.text, !name.isEmpty else {return}
+        
+        var data = [String:Any]()
+        
+        //save data for feature
         if category == "features" {
             
+            if categoryName != "" {
+                data["project"] = categoryName
+            }
+            
+            data["description"] = descriptionTextField.text ?? ""
+          
+        //save data for project
+        } else if category == "projects" {
+            
+            data = ["description": descriptionTextField.text ?? ""]
         }
         
-        DbManager.shared.defaultStore.collection(category).document(name).setData([
-            "description": descriptionTextField.text ?? ""])
-        { err in
+        //TODO: move this code to different class
+        DbManager.shared.defaultStore.collection(category).document(name).setData(data, options: SetOptions.merge()) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
