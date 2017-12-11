@@ -11,6 +11,7 @@ import UIKit
 
 protocol ProjectsScreenRouterProtocol {
     func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String)
+    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String, description: String)
     func presentFeaturesScreen(projectsScreenViewController: ProjectsScreenViewController, project: String)
 }
 
@@ -19,6 +20,16 @@ class ProjectsScreenRouter {
         if let createProjectViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
             
             createProjectViewController.nameProject = name
+            projectsScreenViewController.present(createProjectViewController, animated: true)
+        }
+    }
+    
+    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String, description: String){
+        if let createProjectViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+            
+            createProjectViewController.category = "projects"
+            createProjectViewController.nameProject = name
+            createProjectViewController.descriptionProject = description
             projectsScreenViewController.present(createProjectViewController, animated: true)
         }
     }

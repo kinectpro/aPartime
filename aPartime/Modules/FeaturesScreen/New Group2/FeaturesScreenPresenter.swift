@@ -9,9 +9,10 @@
 import Foundation
 
 protocol FeaturesScreenPresenterProtocol {
-    func getAllFeatures() -> [String]
+    //func getAllFeatures() -> [String]
+    func getAllFeatures(projectName: String, success:@escaping (_ features:[Feature]) -> Void, fail:@escaping() -> Void)
     func createNewFeature()
-    func editFeature(name: String)
+    func editFeature(name: String, description: String)
 }
 
 class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
@@ -20,15 +21,23 @@ class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
     var featuresScreenRouter: FeaturesScreenRouter!
     var featuresScreenInteractor: FeaturesScreenInteractorProtocol!
     
-    func getAllFeatures() -> [String]{
-        return featuresScreenInteractor.getAllFeatures()
+//    func getAllFeatures() -> [String]{
+//        return featuresScreenInteractor.getAllFeatures()
+//    }
+    
+    func getAllFeatures(projectName: String, success:@escaping (_ features:[Feature]) -> Void, fail:@escaping() -> Void){
+        featuresScreenInteractor.getAllFeatures(projectName: projectName, success: { (featuresList) in
+            success(featuresList)
+        }){
+            fail()
+        }
     }
     
     func createNewFeature(){
-        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name:"")
+        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name:"", description: "")
     }
-    func editFeature(name: String){
+    func editFeature(name: String, description: String){
         
-        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name: name)
+        featuresScreenRouter.presentNewFeatureScreen(featuresScreenViewController: featuresScreenViewController, name: name, description: description)
     }
 }

@@ -39,7 +39,8 @@ class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
     }
     func editProject(name: String, description: String){
             
-        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
+        //projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
+        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name, description: description)
     }
     
     func openFeaturesFor(project: String) {

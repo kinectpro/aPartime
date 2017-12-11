@@ -17,7 +17,7 @@ protocol ProjectsScreenInteractorProtocol {
 class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
     
     
-    
+    //deprecated will remove later))
     func getAllProjects() -> [String] {
         return ["1"]
     }

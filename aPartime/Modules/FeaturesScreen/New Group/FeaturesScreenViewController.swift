@@ -11,15 +11,24 @@ import UIKit
 class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addButton: UIButton!
-    var data = [String]()
+    @IBOutlet weak var tableView: UITableView!
+    var data = [Feature]()
     var featuresScreenPresenter: FeaturesScreenPresenterProtocol!
     var project = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         FeaturesScreenConfigurator.setupDependencies(featuresScreenViewController: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        data = featuresScreenPresenter.getAllFeatures()
+        featuresScreenPresenter.getAllFeatures(projectName: project, success: { (features) in
+            self.data = features
+            self.tableView.reloadData()
+        }, fail: {
+        })
     }
     
     //MARK: IBActions
@@ -41,9 +50,12 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
         let cellIdentifier = "FeatureCell"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FeatureCell
-        
-        cell.nameLabel.text = data[indexPath.row]
-        
+        guard let name = data[indexPath.row].name, !name.isEmpty else {return cell}
+        guard let descriptionFeature = data[indexPath.row].descriptionFeature, !descriptionFeature.isEmpty else {return cell}
+        cell.nameLabel.text = name
+        cell.editTappedHandler = {
+            self.featuresScreenPresenter.editFeature(name: name, description: descriptionFeature)
+        }
         return cell
     }
     
@@ -51,9 +63,9 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! FeatureCell
-        if let name = cell.nameLabel.text {
-            featuresScreenPresenter.editFeature(name: name)
-        }
+        guard let name = cell.nameLabel.text, !name.isEmpty else {return}
+        //featuresScreenPresenter.editFeature(name: name, description: "Some feature description")
+        
         
     }
 

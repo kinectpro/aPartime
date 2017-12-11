@@ -17,14 +17,17 @@ class CreateProjectViewController: UIViewController{
     @IBOutlet weak var navBarTitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
+    var category = ""
     var nameProject = ""
+    var descriptionProject = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         if nameProject != "" {
             navBarTitle.text = "Edit"
             nameTextField.text = nameProject
+            descriptionTextField.text = descriptionProject
         }
         self.okButton.roundedAndShadowButton()
 
@@ -37,9 +40,13 @@ class CreateProjectViewController: UIViewController{
     
     @IBAction func okDidTapped(_ sender: UIButton) {
         
+        guard category != "" else {return}
         guard let name = nameTextField.text, !name.isEmpty else {return}
+        if category == "features" {
+            
+        }
         
-        DbManager.shared.defaultStore.collection("projects").document(name).setData([
+        DbManager.shared.defaultStore.collection(category).document(name).setData([
             "description": descriptionTextField.text ?? ""])
         { err in
             if let err = err {

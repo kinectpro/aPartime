@@ -15,6 +15,7 @@
 		1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5B1FD9DAF700739406 /* FeaturesScreenRouter.swift */; };
 		1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */; };
 		1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC686091FDDDD0A00F42E3D /* Project.swift */; };
+		C57ED6281FDECD2D00588171 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6271FDECD2D00588171 /* Feature.swift */; };
 		C58C90211FDAD89C007D0E6C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C90201FDAD89C007D0E6C /* DbManager.swift */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDE01FD6C811007BE2D3 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
 		1FC686091FDDDD0A00F42E3D /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C57ED6271FDECD2D00588171 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		C58C90201FDAD89C007D0E6C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C57ED6261FDECD1200588171 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C57ED6271FDECD2D00588171 /* Feature.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C591FDD21FD6C811007BE2D3 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +202,7 @@
 		C591FDF01FD6CA5C007BE2D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C5F184ED1FD83821002AA55E /* CreateProject */,
+				C5F184ED1FD83821002AA55E /* CreateModule */,
 				C591FDF41FD6CA9E007BE2D3 /* TasksScreen */,
 				C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */,
 				C591FDF21FD6CA81007BE2D3 /* ProjectsScreen */,
@@ -229,6 +239,7 @@
 		C591FDF31FD6CA8B007BE2D3 /* FeaturesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED6261FDECD1200588171 /* Entity */,
 				1F2DEE5D1FD9DBE400739406 /* Interactor */,
 				1F2DEE5A1FD9DAE000739406 /* Router */,
 				1F2DEE571FD9D9A200739406 /* Presenter */,
@@ -286,7 +297,7 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		C5F184ED1FD83821002AA55E /* CreateProject */ = {
+		C5F184ED1FD83821002AA55E /* CreateModule */ = {
 			isa = PBXGroup;
 			children = (
 				C5F184F31FD838A2002AA55E /* Configurator */,
@@ -295,7 +306,7 @@
 				C5F184EF1FD8385F002AA55E /* Interactor */,
 				C5F184EE1FD83855002AA55E /* View */,
 			);
-			path = CreateProject;
+			path = CreateModule;
 			sourceTree = "<group>";
 		};
 		C5F184EE1FD83855002AA55E /* View */ = {
@@ -547,6 +558,7 @@
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
 				1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */,
+				C57ED6281FDECD2D00588171 /* Feature.swift in Sources */,
 				1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */,
