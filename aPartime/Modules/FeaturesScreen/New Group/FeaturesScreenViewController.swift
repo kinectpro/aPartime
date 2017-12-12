@@ -65,8 +65,10 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.cellForRow(at: indexPath) as! FeatureCell
         guard let name = cell.nameLabel.text, !name.isEmpty else {return}
         //featuresScreenPresenter.editFeature(name: name, description: "Some feature description")
-        
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45.0
     }
 
 }

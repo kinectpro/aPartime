@@ -17,14 +17,18 @@ class CreateProjectViewController: UIViewController{
     @IBOutlet weak var navBarTitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
+    var createItemPresenter: CreateItemPresenterProtocol!
+    
     var category = "projects"
     var categoryName = ""
     var nameProject = ""
     var descriptionProject = ""
-    var isEdit = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CreateItemConfigurator.setupDependencies(createProjectViewController: self)
+        
         navBarTitle.text = nameProject != "" ? "Edit Item" : "New Item"
         nameTextField.text = nameProject
         descriptionTextField.text = descriptionProject
@@ -49,7 +53,7 @@ class CreateProjectViewController: UIViewController{
         
         var data = [String:Any]()
         
-        //save data for feature
+        //data for feature
         if category == "features" {
             
             if categoryName != "" {
@@ -58,21 +62,15 @@ class CreateProjectViewController: UIViewController{
             
             data["description"] = descriptionTextField.text ?? ""
           
-        //save data for project
+        //data for project
         } else if category == "projects" {
             
             data = ["description": descriptionTextField.text ?? ""]
         }
         
-        //TODO: move this code to different class
-        DbManager.shared.defaultStore.collection(category).document(name).setData(data, options: SetOptions.merge()) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        createItemPresenter.saveData(category: category, documentName: name, data: data, success: {
+            self.dismiss(animated: true, completion: nil)
+        }) {}
         
     }
 }

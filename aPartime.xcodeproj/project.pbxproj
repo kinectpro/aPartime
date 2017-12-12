@@ -16,6 +16,13 @@
 		1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2DEE5E1FD9DC0400739406 /* FeaturesScreenInteractor.swift */; };
 		1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC686091FDDDD0A00F42E3D /* Project.swift */; };
 		C57ED6281FDECD2D00588171 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6271FDECD2D00588171 /* Feature.swift */; };
+		C57ED62A1FDFFA0500588171 /* CreateItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */; };
+		C57ED62C1FDFFA2700588171 /* CreateItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */; };
+		C57ED62E1FDFFA4400588171 /* CreateItemConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED62D1FDFFA4400588171 /* CreateItemConfigurator.swift */; };
+		C57ED6301FDFFEBA00588171 /* CreateItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED62F1FDFFEBA00588171 /* CreateItemInteractor.swift */; };
+		C57ED6331FE0236700588171 /* TasksStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57ED6321FE0236700588171 /* TasksStoryboard.storyboard */; };
+		C57ED6351FE0237E00588171 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6341FE0237E00588171 /* TasksViewController.swift */; };
+		C57ED6371FE0313A00588171 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6361FE0313A00588171 /* TaskCell.swift */; };
 		C58C90211FDAD89C007D0E6C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C90201FDAD89C007D0E6C /* DbManager.swift */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDE01FD6C811007BE2D3 /* ViewController.swift */; };
@@ -53,6 +60,13 @@
 		1FC686091FDDDD0A00F42E3D /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57ED6271FDECD2D00588171 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemPresenter.swift; sourceTree = "<group>"; };
+		C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemRouter.swift; sourceTree = "<group>"; };
+		C57ED62D1FDFFA4400588171 /* CreateItemConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemConfigurator.swift; sourceTree = "<group>"; };
+		C57ED62F1FDFFEBA00588171 /* CreateItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemInteractor.swift; sourceTree = "<group>"; };
+		C57ED6321FE0236700588171 /* TasksStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TasksStoryboard.storyboard; sourceTree = "<group>"; };
+		C57ED6341FE0237E00588171 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		C57ED6361FE0313A00588171 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		C58C90201FDAD89C007D0E6C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +178,16 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		C57ED6311FE0234A00588171 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C57ED6321FE0236700588171 /* TasksStoryboard.storyboard */,
+				C57ED6341FE0237E00588171 /* TasksViewController.swift */,
+				C57ED6361FE0313A00588171 /* TaskCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C591FDD21FD6C811007BE2D3 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +276,7 @@
 		C591FDF41FD6CA9E007BE2D3 /* TasksScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED6311FE0234A00588171 /* View */,
 			);
 			path = TasksScreen;
 			sourceTree = "<group>";
@@ -321,6 +346,7 @@
 		C5F184EF1FD8385F002AA55E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED62F1FDFFEBA00588171 /* CreateItemInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -328,6 +354,7 @@
 		C5F184F11FD83876002AA55E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -335,6 +362,7 @@
 		C5F184F21FD8388B002AA55E /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */,
 			);
 			name = Router;
 			path = "New Group";
@@ -343,6 +371,7 @@
 		C5F184F31FD838A2002AA55E /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				C57ED62D1FDFFA4400588171 /* CreateItemConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -465,6 +494,7 @@
 				D91303C41FD6ED5200F6F9E7 /* ProjectsScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				1F2DEE4F1FD9D75D00739406 /* Features.storyboard in Resources */,
+				C57ED6331FE0236700588171 /* TasksStoryboard.storyboard in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreenIPhone.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
 				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
@@ -555,21 +585,27 @@
 				1F2DEE561FD9D97E00739406 /* FeaturesScreenConfigurator.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */,
+				C57ED6371FE0313A00588171 /* TaskCell.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
+				C57ED6301FDFFEBA00588171 /* CreateItemInteractor.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
 				1FC6860A1FDDDD0A00F42E3D /* Project.swift in Sources */,
 				C57ED6281FDECD2D00588171 /* Feature.swift in Sources */,
+				C57ED62E1FDFFA4400588171 /* CreateItemConfigurator.swift in Sources */,
 				1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				1F2DEE531FD9D93C00739406 /* FeaturesScreenViewController.swift in Sources */,
 				D91303C81FD6EDBB00F6F9E7 /* ProjectsScreenPresenter.swift in Sources */,
+				C57ED6351FE0237E00588171 /* TasksViewController.swift in Sources */,
 				1F2DEE511FD9D80100739406 /* FeatureCell.swift in Sources */,
 				C5F184E91FD829F5002AA55E /* ProjectCell.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
+				C57ED62A1FDFFA0500588171 /* CreateItemPresenter.swift in Sources */,
 				1F2DEE5F1FD9DC0400739406 /* FeaturesScreenInteractor.swift in Sources */,
 				D95BE3761FD7E2FC005BA9A0 /* ProjectsScreenConfigurator.swift in Sources */,
+				C57ED62C1FDFFA2700588171 /* CreateItemRouter.swift in Sources */,
 				C5F184EC1FD8319B002AA55E /* ProjectsScreenInteractor.swift in Sources */,
 				D95BE3791FD7E46B005BA9A0 /* ProjectsScreenRouter.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,

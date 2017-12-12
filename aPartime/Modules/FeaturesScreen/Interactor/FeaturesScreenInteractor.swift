@@ -16,7 +16,7 @@ protocol FeaturesScreenInteractorProtocol {
 class FeaturesScreenInteractor: FeaturesScreenInteractorProtocol {
     
     func getAllFeatures() -> [String] {
-        //TODO: call get data method from Firebase
+        //TODO: delete this method
         return ["Profile Screen", "Users Screen", "Movies Screen", "Other Screen"]
     }
     
