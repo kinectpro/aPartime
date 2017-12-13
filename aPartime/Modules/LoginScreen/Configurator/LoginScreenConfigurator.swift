@@ -10,15 +10,15 @@ import Foundation
 
 class LoginScreenConfigurator {
     
-    static func setupDependencies(loginScreenViewController: LoginScreenViewController) {
-        let loginScreenPresenter = LoginScreenPresenter()
-        let loginScreenRouter = LoginScreenRouter()
-        let loginScreenInteractor = LoginScreenInteractor()
-        loginScreenViewController.loginScreenPresenter = loginScreenPresenter
-        loginScreenPresenter.loginScreenViewController = loginScreenViewController
-        loginScreenPresenter.loginScreenRouter = loginScreenRouter
-        loginScreenPresenter.loginScreenInteractor = loginScreenInteractor
-        loginScreenInteractor.loginScreenPresenter = loginScreenPresenter
+    static func setupDependencies(viewController: LoginScreenViewController) {
+        let presenter = LoginScreenPresenter()
+        let router = LoginScreenRouter()
+        let interactor = LoginScreenInteractor()
+        viewController.presenter = presenter
+        presenter.viewController = viewController
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
     }
     
 }

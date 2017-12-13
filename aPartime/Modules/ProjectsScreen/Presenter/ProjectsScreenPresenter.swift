@@ -9,30 +9,44 @@
 import Foundation
 
 protocol ProjectsScreenPresenterProtocol {
-    func getAllProjects() -> [String]
+    func getAllProjects()
     func createNewProject()
     func editProject(name: String)
     func openFeaturesFor(project: String)
+    func projectsDidGetWithSuccess(projects: [Project])
+    func projectsDidGetWithError(error: String)
 }
 
-class ProjectsScreenPresenter: ProjectsScreenPresenterProtocol {
+class ProjectsScreenPresenter: NSObject, ProjectsScreenPresenterProtocol {
     
-    var projectsScreenViewController: ProjectsScreenViewController!
-    var projectsScreenRouter: ProjectsScreenRouter!
-    var projectsScreenInteractor: ProjectsScreenInteractorProtocol!
+    var viewController: ProjectsScreenViewController!
+    var router: ProjectsScreenRouter!
+    var interactor: ProjectsScreenInteractor!
     
-    func getAllProjects() -> [String]{
-        return projectsScreenInteractor.getAllProjects()
+    var projects = [Project]()
+    
+    func getAllProjects() {
+        interactor.getAllProjects()
     }
     
     func createNewProject(){
-        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name:"")
+        router.presentNewProjectsScreen(viewController: viewController, name: "")
     }
+    
     func editProject(name: String){
-            
-        projectsScreenRouter.presentNewProjectsScreen(projectsScreenViewController: projectsScreenViewController, name: name)
+        router.presentNewProjectsScreen(viewController: viewController, name: name)
     }
     
     func openFeaturesFor(project: String) {
-        projectsScreenRouter.presentFeaturesScreen(projectsScreenViewController: projectsScreenViewController, project: project)    }
+        router.presentFeaturesScreen(viewController: viewController, project: project)
+    }
+    
+    func projectsDidGetWithSuccess(projects: [Project]) {
+        let projectsNames = projects.flatMap({ $0.name })
+        viewController.showProjects(projects: projectsNames)
+    }
+    
+    func projectsDidGetWithError(error: String) {
+        
+    }
 }

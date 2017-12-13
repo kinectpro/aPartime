@@ -8,27 +8,33 @@
 
 import UIKit
 
-class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+protocol ProjectsScreenViewControllerProtocol {
+    func showProjects(projects: [String])
+}
+
+class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectsScreenViewControllerProtocol {
     
     @IBOutlet weak var addButton: UIButton!
-    var data = [String]()
-    var projectsScreenPresenter: ProjectsScreenPresenterProtocol!
-
+    @IBOutlet weak var projectsTableView: UITableView!
+    
+    var presenter: ProjectsScreenPresenter!
+    
+    var projects = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProjectsScreenConfigurator.setupDependencies(projectsScreenViewController: self)
-        
-        data = projectsScreenPresenter.getAllProjects()
+        ProjectsScreenConfigurator.setupDependencies(viewController: self)
+        presenter.getAllProjects()
     }
     
     //MARK: IBActions
     @IBAction func addNewTapped(_ sender: UIButton) {
-        projectsScreenPresenter.createNewProject()
+        presenter.createNewProject()
     }
     
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return projects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,10 +42,10 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProjectCell
         
-        let nameProject = data[indexPath.row]
-        cell.projectNameLabel.text = nameProject
+        let project = projects[indexPath.row]
+        cell.projectNameLabel.text = project
         cell.editTappedHandler = {
-            self.projectsScreenPresenter.editProject(name: nameProject)
+            self.presenter.editProject(name: project)
         }
         
         
@@ -51,8 +57,13 @@ class ProjectsScreenViewController: UIViewController,UITableViewDelegate, UITabl
         
         let cell = tableView.cellForRow(at: indexPath) as! ProjectCell
         if let nameProject = cell.projectNameLabel.text {
-            projectsScreenPresenter.openFeaturesFor(project: nameProject)
+            presenter.openFeaturesFor(project: nameProject)
         }
         
+    }
+    
+    func showProjects(projects: [String]) {
+        self.projects = projects
+        projectsTableView.reloadData()
     }
 }

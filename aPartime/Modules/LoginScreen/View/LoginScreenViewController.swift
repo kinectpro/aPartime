@@ -14,20 +14,20 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var googleLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
     
-    var loginScreenPresenter: LoginScreenPresenter!
+    var presenter: LoginScreenPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginScreenConfigurator.setupDependencies(loginScreenViewController: self)
+        LoginScreenConfigurator.setupDependencies(viewController: self)
         setupViews()
     }
 
     @IBAction func googleLoginButtonDidTap(_ sender: UIButton) {
-        loginScreenPresenter.executeGoogleLogin()
+        presenter.executeGoogleLogin()
     }
     
     @IBAction func facebookLoginButtonDidTap(_ sender: UIButton) {
-        loginScreenPresenter.executeFacebookLogin()
+        presenter.executeFacebookLogin()
     }
     
     func setupViews() {

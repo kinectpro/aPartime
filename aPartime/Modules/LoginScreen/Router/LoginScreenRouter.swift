@@ -10,23 +10,20 @@ import Foundation
 import UIKit
 
 protocol LoginScreenRouterProtocol {
-    func presentProjectsScreen(loginScreenViewController: LoginScreenViewController)
-    func presentLoginErrorPopup(error: String, loginScreenViewController: LoginScreenViewController)
+    func presentProjectsScreen(viewController: LoginScreenViewController)
+    func presentLoginErrorPopup(error: String, viewController: LoginScreenViewController)
 }
 
 class LoginScreenRouter: NSObject, LoginScreenRouterProtocol {
     
-    func presentProjectsScreen(loginScreenViewController: LoginScreenViewController) {
+    func presentProjectsScreen(viewController: LoginScreenViewController) {
         if let projectsScreenViewController = UIStoryboard(name: "ProjectsScreen", bundle: nil).instantiateViewController(withIdentifier: "ProjectsScreenViewController") as? ProjectsScreenViewController {
-            loginScreenViewController.present(projectsScreenViewController, animated: true)
+            viewController.present(projectsScreenViewController, animated: true)
         }
     }
     
-    func presentLoginErrorPopup(error: String, loginScreenViewController: LoginScreenViewController) {
-        let alertController = UIAlertController(title: "Login Error", message: error, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(okAction)
-        loginScreenViewController.present(alertController, animated: true)
+    func presentLoginErrorPopup(error: String, viewController: LoginScreenViewController) {
+        AlertManager.shared.showAlert(title: "Login error", message: error, viewController: viewController)
     }
     
 }

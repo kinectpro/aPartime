@@ -10,16 +10,15 @@ import Foundation
 
 class ProjectsScreenConfigurator {
     
-    static func setupDependencies(projectsScreenViewController: ProjectsScreenViewController) {
-        let projectsScreenPresenter = ProjectsScreenPresenter()
-        let projectsScreenRouter = ProjectsScreenRouter()
-        let projectsScreenInteractor = ProjectsScreenInteractor()
-        
-        projectsScreenViewController.projectsScreenPresenter = projectsScreenPresenter
-        projectsScreenPresenter.projectsScreenViewController = projectsScreenViewController
-        projectsScreenPresenter.projectsScreenRouter = projectsScreenRouter
-        projectsScreenPresenter.projectsScreenInteractor = projectsScreenInteractor
-        
+    static func setupDependencies(viewController: ProjectsScreenViewController) {
+        let presenter = ProjectsScreenPresenter()
+        let router = ProjectsScreenRouter()
+        let interactor = ProjectsScreenInteractor()
+        viewController.presenter = presenter
+        presenter.viewController = viewController
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
     }
     
 }

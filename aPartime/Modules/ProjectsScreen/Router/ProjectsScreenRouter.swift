@@ -10,23 +10,28 @@ import Foundation
 import UIKit
 
 protocol ProjectsScreenRouterProtocol {
-    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String)
-    func presentFeaturesScreen(projectsScreenViewController: ProjectsScreenViewController, project: String)
+    func presentNewProjectsScreen(viewController: ProjectsScreenViewController, name: String)
+    func presentFeaturesScreen(viewController: ProjectsScreenViewController, project: String)
+    func presentGetProjectsErrorPopup(error: String, viewController: ProjectsScreenViewController)
 }
 
 class ProjectsScreenRouter {
-    func presentNewProjectsScreen(projectsScreenViewController: ProjectsScreenViewController, name: String) {
-        if let createProjectViewController = UIStoryboard(name: "CreateProjectScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectScreenViewController") as? CreateProjectScreenViewController {
+    func presentNewProjectsScreen(viewController: ProjectsScreenViewController, name: String) {
+        if let createProjectViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
             createProjectViewController.nameProject = name
-            projectsScreenViewController.present(createProjectViewController, animated: true)
+            viewController.present(createProjectViewController, animated: true)
         }
     }
     
-    func presentFeaturesScreen(projectsScreenViewController: ProjectsScreenViewController, project: String) {
-        if let featuresViewController = UIStoryboard(name: "Features", bundle: nil).instantiateViewController(withIdentifier: "FeaturesScreenViewController") as? FeaturesScreenViewController {
+    func presentFeaturesScreen(viewController: ProjectsScreenViewController, project: String) {
+        if let featuresViewController = UIStoryboard(name: "FeaturesScreen", bundle: nil).instantiateViewController(withIdentifier: "FeaturesScreenViewController") as? FeaturesScreenViewController {
             featuresViewController.project = project
-            projectsScreenViewController.present(featuresViewController, animated: true)
+            viewController.present(featuresViewController, animated: true)
         }
+    }
+    
+    func presentGetProjectsErrorPopup(error: String, viewController: ProjectsScreenViewController) {
+        AlertManager.shared.showAlert(title: "Get projects error", message: error, viewController: viewController)
     }
     
 }

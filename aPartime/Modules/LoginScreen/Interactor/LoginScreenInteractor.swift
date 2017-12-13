@@ -13,29 +13,29 @@ import Firebase
 import Foundation
 
 protocol LoginScreenInteractorProtocol {
-    func executeGoogleLogin(loginScreenViewController: LoginScreenViewController)
-    func executeFacebookLogin(loginScreenViewController: LoginScreenViewController)
+    func executeGoogleLogin(viewController: LoginScreenViewController)
+    func executeFacebookLogin(viewController: LoginScreenViewController)
 }
 
 class LoginScreenInteractor: NSObject, LoginScreenInteractorProtocol {
     
-    var loginScreenPresenter: LoginScreenPresenter!
+    var presenter: LoginScreenPresenter!
     
-    func executeGoogleLogin(loginScreenViewController: LoginScreenViewController) {
+    func executeGoogleLogin(viewController: LoginScreenViewController) {
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = loginScreenViewController
+        GIDSignIn.sharedInstance().uiDelegate = viewController
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func executeFacebookLogin(loginScreenViewController: LoginScreenViewController) {
-        LoginManager().logIn(readPermissions: [.publicProfile], viewController: loginScreenViewController, completion: { loginResult in
+    func executeFacebookLogin(viewController: LoginScreenViewController) {
+        LoginManager().logIn(readPermissions: [.publicProfile], viewController: viewController, completion: { loginResult in
             switch loginResult {
             case .failed(let error):
-                self.loginScreenPresenter.loginDidExecutedWithError(error: error.localizedDescription)
+                self.presenter.loginDidExecuteWithError(error: error.localizedDescription)
             case .cancelled:
-                self.loginScreenPresenter.loginDidExecutedWithError(error: "User cancelled login")
+                self.presenter.loginDidExecuteWithError(error: "User cancelled login")
             case .success(_, _, let accessToken):
-                self.loginScreenPresenter.loginDidExecutedWithSuccess(token: accessToken.authenticationToken)
+                self.presenter.loginDidExecuteWithSuccess(token: accessToken.authenticationToken)
             }
         })
     }
@@ -46,14 +46,14 @@ extension LoginScreenInteractor: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
-            loginScreenPresenter.loginDidExecutedWithError(error: error.localizedDescription)
+            presenter.loginDidExecuteWithError(error: error.localizedDescription)
             return
         }
         guard let authentication = user.authentication else {
-            loginScreenPresenter.loginDidExecutedWithError(error: "Response parsing error")
+            presenter.loginDidExecuteWithError(error: "Response parsing error")
             return
         }
-        loginScreenPresenter.loginDidExecutedWithSuccess(token: authentication.accessToken)
+        presenter.loginDidExecuteWithSuccess(token: authentication.accessToken)
     }
     
 }

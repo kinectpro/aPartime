@@ -15,7 +15,7 @@ protocol FeaturesScreenRouterProtocol {
 
 class FeaturesScreenRouter {
     func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String) {
-        if let createFeatureViewController = UIStoryboard(name: "CreateProjectScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectScreenViewController") as? CreateProjectScreenViewController {
+        if let createFeatureViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
             createFeatureViewController.nameProject = name
             featuresScreenViewController.present(createFeatureViewController, animated: true)
         }

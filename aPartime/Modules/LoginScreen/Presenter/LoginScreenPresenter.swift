@@ -12,33 +12,33 @@ import UIKit
 protocol LoginScreenPresenterProtocol {
     func executeGoogleLogin()
     func executeFacebookLogin()
-    func loginDidExecutedWithSuccess(token: String)
-    func loginDidExecutedWithError(error: String)
+    func loginDidExecuteWithSuccess(token: String)
+    func loginDidExecuteWithError(error: String)
 }
 
 class LoginScreenPresenter: NSObject, LoginScreenPresenterProtocol {
     
-    var loginScreenViewController: LoginScreenViewController!
-    var loginScreenInteractor: LoginScreenInteractor!
-    var loginScreenRouter: LoginScreenRouter!
+    var viewController: LoginScreenViewController!
+    var interactor: LoginScreenInteractor!
+    var router: LoginScreenRouter!
     
     var token: String?
     
     func executeGoogleLogin() {
-        loginScreenInteractor.executeGoogleLogin(loginScreenViewController: loginScreenViewController)
+        interactor.executeGoogleLogin(viewController: viewController)
     }
     
     func executeFacebookLogin() {
-        loginScreenInteractor.executeFacebookLogin(loginScreenViewController: loginScreenViewController)
+        interactor.executeFacebookLogin(viewController: viewController)
     }
     
-    func loginDidExecutedWithSuccess(token: String) {
+    func loginDidExecuteWithSuccess(token: String) {
         self.token = token
-        loginScreenRouter.presentProjectsScreen(loginScreenViewController: loginScreenViewController)
+        router.presentProjectsScreen(viewController: viewController)
     }
     
-    func loginDidExecutedWithError(error: String) {
-        loginScreenRouter.presentLoginErrorPopup(error: error, loginScreenViewController: loginScreenViewController)
+    func loginDidExecuteWithError(error: String) {
+        router.presentLoginErrorPopup(error: error, viewController: viewController)
     }
     
 }

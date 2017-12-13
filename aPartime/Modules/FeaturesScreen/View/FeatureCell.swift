@@ -10,6 +10,7 @@ import UIKit
 
 class FeatureCell: UITableViewCell {
 
+    @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
@@ -17,7 +18,9 @@ class FeatureCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cellBackgroundView.layer.cornerRadius = 5.0
+        cellBackgroundView.layer.borderWidth = 1.0
+        cellBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
