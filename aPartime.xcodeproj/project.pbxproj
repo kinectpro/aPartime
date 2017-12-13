@@ -20,14 +20,14 @@
 		D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */; };
 		D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */; };
 		D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC5A1FE14A4200FA3353 /* DbManager.swift */; };
-		D969FC691FE14E2D00FA3353 /* CreateEditScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC5F1FE14E2D00FA3353 /* CreateEditScreenInteractor.swift */; };
-		D969FC6A1FE14E2D00FA3353 /* CreateEditScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC611FE14E2D00FA3353 /* CreateEditScreenPresenter.swift */; };
-		D969FC6B1FE14E2D00FA3353 /* CreateEditScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969FC631FE14E2D00FA3353 /* CreateEditScreen.storyboard */; };
-		D969FC6C1FE14E2D00FA3353 /* CreateEditScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC641FE14E2D00FA3353 /* CreateEditScreenViewController.swift */; };
-		D969FC6D1FE14E2D00FA3353 /* CreateEditScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC661FE14E2D00FA3353 /* CreateEditScreenConfigurator.swift */; };
-		D969FC6E1FE14E2D00FA3353 /* CreateEditScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC681FE14E2D00FA3353 /* CreateEditScreenRouter.swift */; };
 		D969FC741FE1512600FA3353 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC731FE1512600FA3353 /* Project.swift */; };
 		D969FC761FE17EEA00FA3353 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC751FE17EEA00FA3353 /* AlertManager.swift */; };
+		D969FC831FE1857200FA3353 /* CreateEditScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC791FE1857200FA3353 /* CreateEditScreenPresenter.swift */; };
+		D969FC841FE1857200FA3353 /* CreateEditScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC7B1FE1857200FA3353 /* CreateEditScreenViewController.swift */; };
+		D969FC851FE1857200FA3353 /* CreateEditScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969FC7C1FE1857200FA3353 /* CreateEditScreen.storyboard */; };
+		D969FC861FE1857200FA3353 /* CreateEditScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC7E1FE1857200FA3353 /* CreateEditScreenConfigurator.swift */; };
+		D969FC871FE1857200FA3353 /* CreateEditScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC801FE1857200FA3353 /* CreateEditScreenInteractor.swift */; };
+		D969FC881FE1857200FA3353 /* CreateEditScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC821FE1857200FA3353 /* CreateEditScreenRouter.swift */; };
 		D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4D11FDAE02D00E28C06 /* LoginScreenRouter.swift */; };
 		D9E5C4E21FDAE24500E28C06 /* ProjectsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C4D61FDAE24500E28C06 /* ProjectsScreenPresenter.swift */; };
 		D9E5C4E31FDAE24500E28C06 /* ProjectsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E5C4D81FDAE24500E28C06 /* ProjectsScreen.storyboard */; };
@@ -64,14 +64,14 @@
 		D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenInteractor.swift; sourceTree = "<group>"; };
 		D969FC5A1FE14A4200FA3353 /* DbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		D969FC5D1FE14D4C00FA3353 /* aPartime.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = aPartime.entitlements; sourceTree = "<group>"; };
-		D969FC5F1FE14E2D00FA3353 /* CreateEditScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenInteractor.swift; sourceTree = "<group>"; };
-		D969FC611FE14E2D00FA3353 /* CreateEditScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenPresenter.swift; sourceTree = "<group>"; };
-		D969FC631FE14E2D00FA3353 /* CreateEditScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateEditScreen.storyboard; sourceTree = "<group>"; };
-		D969FC641FE14E2D00FA3353 /* CreateEditScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenViewController.swift; sourceTree = "<group>"; };
-		D969FC661FE14E2D00FA3353 /* CreateEditScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenConfigurator.swift; sourceTree = "<group>"; };
-		D969FC681FE14E2D00FA3353 /* CreateEditScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenRouter.swift; sourceTree = "<group>"; };
 		D969FC731FE1512600FA3353 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D969FC751FE17EEA00FA3353 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		D969FC791FE1857200FA3353 /* CreateEditScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenPresenter.swift; sourceTree = "<group>"; };
+		D969FC7B1FE1857200FA3353 /* CreateEditScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenViewController.swift; sourceTree = "<group>"; };
+		D969FC7C1FE1857200FA3353 /* CreateEditScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateEditScreen.storyboard; sourceTree = "<group>"; };
+		D969FC7E1FE1857200FA3353 /* CreateEditScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenConfigurator.swift; sourceTree = "<group>"; };
+		D969FC801FE1857200FA3353 /* CreateEditScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenInteractor.swift; sourceTree = "<group>"; };
+		D969FC821FE1857200FA3353 /* CreateEditScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEditScreenRouter.swift; sourceTree = "<group>"; };
 		D9E5C4D11FDAE02D00E28C06 /* LoginScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenRouter.swift; sourceTree = "<group>"; };
 		D9E5C4D61FDAE24500E28C06 /* ProjectsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsScreenPresenter.swift; sourceTree = "<group>"; };
 		D9E5C4D81FDAE24500E28C06 /* ProjectsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProjectsScreen.storyboard; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				C591FDF11FD6CA6F007BE2D3 /* LoginScreen */,
 				D9E5C4D31FDAE24500E28C06 /* ProjectsScreen */,
 				D9E5C5191FDAE70400E28C06 /* FeaturesScreen */,
-				D9E5C52D1FDAED8100E28C06 /* CreateEditScreen */,
+				D969FC771FE1857200FA3353 /* CreateEditScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -205,47 +205,6 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		D969FC5E1FE14E2D00FA3353 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC5F1FE14E2D00FA3353 /* CreateEditScreenInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		D969FC601FE14E2D00FA3353 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC611FE14E2D00FA3353 /* CreateEditScreenPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		D969FC621FE14E2D00FA3353 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC631FE14E2D00FA3353 /* CreateEditScreen.storyboard */,
-				D969FC641FE14E2D00FA3353 /* CreateEditScreenViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D969FC651FE14E2D00FA3353 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC661FE14E2D00FA3353 /* CreateEditScreenConfigurator.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		D969FC671FE14E2D00FA3353 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC681FE14E2D00FA3353 /* CreateEditScreenRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		D969FC721FE1512600FA3353 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +213,59 @@
 			name = Entity;
 			path = aPartime/Modules/ProjectsScreen/Entity;
 			sourceTree = SOURCE_ROOT;
+		};
+		D969FC771FE1857200FA3353 /* CreateEditScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC781FE1857200FA3353 /* Presenter */,
+				D969FC7A1FE1857200FA3353 /* View */,
+				D969FC7D1FE1857200FA3353 /* Configurator */,
+				D969FC7F1FE1857200FA3353 /* Interactor */,
+				D969FC811FE1857200FA3353 /* Router */,
+			);
+			path = CreateEditScreen;
+			sourceTree = "<group>";
+		};
+		D969FC781FE1857200FA3353 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC791FE1857200FA3353 /* CreateEditScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D969FC7A1FE1857200FA3353 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC7B1FE1857200FA3353 /* CreateEditScreenViewController.swift */,
+				D969FC7C1FE1857200FA3353 /* CreateEditScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D969FC7D1FE1857200FA3353 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC7E1FE1857200FA3353 /* CreateEditScreenConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D969FC7F1FE1857200FA3353 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC801FE1857200FA3353 /* CreateEditScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D969FC811FE1857200FA3353 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D969FC821FE1857200FA3353 /* CreateEditScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
 		};
 		D9E5C4D01FDAE02D00E28C06 /* Router */ = {
 			isa = PBXGroup;
@@ -372,18 +384,6 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		D9E5C52D1FDAED8100E28C06 /* CreateEditScreen */ = {
-			isa = PBXGroup;
-			children = (
-				D969FC621FE14E2D00FA3353 /* View */,
-				D969FC601FE14E2D00FA3353 /* Presenter */,
-				D969FC5E1FE14E2D00FA3353 /* Interactor */,
-				D969FC651FE14E2D00FA3353 /* Configurator */,
-				D969FC671FE14E2D00FA3353 /* Router */,
-			);
-			path = CreateEditScreen;
-			sourceTree = "<group>";
-		};
 		E42521EF777570630E9306EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,9 +461,9 @@
 			files = (
 				D9E5C5271FDAE70400E28C06 /* FeaturesScreen.storyboard in Resources */,
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
-				D969FC6B1FE14E2D00FA3353 /* CreateEditScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreen.storyboard in Resources */,
+				D969FC851FE1857200FA3353 /* CreateEditScreen.storyboard in Resources */,
 				D9E5C4E31FDAE24500E28C06 /* ProjectsScreen.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
 				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
@@ -569,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9E5C4E21FDAE24500E28C06 /* ProjectsScreenPresenter.swift in Sources */,
+				D969FC871FE1857200FA3353 /* CreateEditScreenInteractor.swift in Sources */,
 				D9E5C4E41FDAE24500E28C06 /* ProjectCell.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				D9E5C4E71FDAE24500E28C06 /* ProjectsScreenInteractor.swift in Sources */,
@@ -580,21 +581,20 @@
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsScreenViewController.swift in Sources */,
+				D969FC831FE1857200FA3353 /* CreateEditScreenPresenter.swift in Sources */,
 				D969FC761FE17EEA00FA3353 /* AlertManager.swift in Sources */,
-				D969FC6D1FE14E2D00FA3353 /* CreateEditScreenConfigurator.swift in Sources */,
 				D9E5C5281FDAE70400E28C06 /* FeatureCell.swift in Sources */,
-				D969FC6A1FE14E2D00FA3353 /* CreateEditScreenPresenter.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
+				D969FC861FE1857200FA3353 /* CreateEditScreenConfigurator.swift in Sources */,
+				D969FC881FE1857200FA3353 /* CreateEditScreenRouter.swift in Sources */,
 				D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */,
-				D969FC691FE14E2D00FA3353 /* CreateEditScreenInteractor.swift in Sources */,
 				D9E5C5261FDAE70400E28C06 /* FeaturesScreenPresenter.swift in Sources */,
-				D969FC6C1FE14E2D00FA3353 /* CreateEditScreenViewController.swift in Sources */,
+				D969FC841FE1857200FA3353 /* CreateEditScreenViewController.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				D9E5C4E81FDAE24500E28C06 /* ProjectsScreenRouter.swift in Sources */,
 				D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,
-				D969FC6E1FE14E2D00FA3353 /* CreateEditScreenRouter.swift in Sources */,
 				D969FC741FE1512600FA3353 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
