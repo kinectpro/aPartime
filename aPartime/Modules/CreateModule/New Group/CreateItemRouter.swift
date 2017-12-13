@@ -8,6 +8,10 @@
 
 import Foundation
 
-class CreateItemRouter {
+class CreateItemRouterProtocol {
+    
+}
+
+class CreateItemRouter: CreateItemRouterProtocol {
     
 }

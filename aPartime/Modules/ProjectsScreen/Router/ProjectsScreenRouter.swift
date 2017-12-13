@@ -39,6 +39,7 @@ class ProjectsScreenRouter {
             
             featuresViewController.project = project
             projectsScreenViewController.present(featuresViewController, animated: true)
-        }    }
+        }        
+    }
 }
 

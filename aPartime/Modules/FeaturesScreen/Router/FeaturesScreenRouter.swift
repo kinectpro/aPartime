@@ -11,10 +11,20 @@ import UIKit
 
 protocol FeaturesScreenRouterProtocol {
     func presentNewFeatureScreen(featuresScreenViewController: FeaturesScreenViewController)
-    func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) 
+    func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String)
+    func presentTasksScreen(featuresScreenViewController: FeaturesScreenViewController, feature: String)
 }
 
 class FeaturesScreenRouter {
+    
+    func presentTasksScreen(featuresScreenViewController: FeaturesScreenViewController, feature: String) {
+        if let tasksViewController = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController{
+            
+            tasksViewController.feature = feature
+            featuresScreenViewController.present(tasksViewController, animated: true)
+        }
+    }
+    
     func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) {
         if let createFeatureViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
             

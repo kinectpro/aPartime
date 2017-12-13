@@ -33,7 +33,7 @@ class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
             } else {
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
-                    var project = Project()
+                    let project = Project()
                     project.name = document.documentID
                     project.descriptionProject = document.data()["description"] as? String
                     projectsList.append(project)

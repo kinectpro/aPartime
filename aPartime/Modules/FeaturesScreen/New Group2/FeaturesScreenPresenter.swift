@@ -13,6 +13,7 @@ protocol FeaturesScreenPresenterProtocol {
     func getAllFeatures(projectName: String, success:@escaping (_ features:[Feature]) -> Void, fail:@escaping() -> Void)
     func createNewFeature()
     func editFeature(name: String, description: String)
+    func openTasksFor(feature: String)
 }
 
 class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
@@ -39,5 +40,9 @@ class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
     func editFeature(name: String, description: String){
         
         featuresScreenRouter.presentEditFeatureScreen(featuresScreenViewController: featuresScreenViewController, name: name, description: description)
+    }
+    
+    func openTasksFor(feature: String) {
+        featuresScreenRouter.presentTasksScreen(featuresScreenViewController: featuresScreenViewController, feature: feature)
     }
 }

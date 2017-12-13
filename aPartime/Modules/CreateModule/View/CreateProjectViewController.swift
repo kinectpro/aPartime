@@ -46,6 +46,7 @@ class CreateProjectViewController: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Add item
     @IBAction func okDidTapped(_ sender: UIButton) {
         
         guard category != "" else {return}
@@ -59,10 +60,18 @@ class CreateProjectViewController: UIViewController{
             if categoryName != "" {
                 data["project"] = categoryName
             }
-            
             data["description"] = descriptionTextField.text ?? ""
-          
-        //data for project
+            
+        //data for task
+        }else if category == "tasks" {
+            
+            if categoryName != "" {
+                data["feature"] = categoryName
+            }
+            data["description"] = descriptionTextField.text ?? ""
+            data["isFinished"] = false
+            
+         //data for project
         } else if category == "projects" {
             
             data = ["description": descriptionTextField.text ?? ""]

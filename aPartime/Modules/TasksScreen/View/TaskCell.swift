@@ -10,6 +10,14 @@ import UIKit
 
 class TaskCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var startPauseButton: UIButton!
+    
+    var startTappedHandler: ()->Void = {}
+    var stopTappedHandler: ()->Void = {}
+    var isPause = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +29,17 @@ class TaskCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func startPauseTapped(_ sender: UIButton) {
+        isPause = !isPause
+        
+        let imageButton:UIImage = isPause ? #imageLiteral(resourceName: "pause") : #imageLiteral(resourceName: "play")
+       
+        startPauseButton.setImage(imageButton, for: .normal)
+        
+        startTappedHandler()
+    }
+    
+    @IBAction func stopTapped(_ sender: UIButton) {
+        stopTappedHandler()
+    }
 }
