@@ -98,7 +98,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name task" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnR-zA-5km">
-                                                    <rect key="frame" x="55" y="15" width="188" height="35"/>
+                                                    <rect key="frame" x="55" y="15" width="173" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="pM6-ps-rFl"/>
                                                     </constraints>
@@ -107,10 +107,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMk-4I-aEI">
-                                                    <rect key="frame" x="248" y="17.5" width="65" height="30"/>
+                                                    <rect key="frame" x="233" y="17.5" width="80" height="30"/>
                                                     <color key="backgroundColor" red="0.86456986010000003" green="0.86456986010000003" blue="0.86456986010000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="Cyd-We-dB4"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Cyd-We-dB4"/>
                                                         <constraint firstAttribute="height" constant="30" id="ljv-dd-Oku"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>

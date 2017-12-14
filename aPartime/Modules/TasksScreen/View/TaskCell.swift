@@ -17,29 +17,85 @@ class TaskCell: UITableViewCell {
     var startTappedHandler: ()->Void = {}
     var stopTappedHandler: ()->Void = {}
     var isPause = false
+    //var timerTask:Timer?
+    var startDate:Date!
+    var stopDate: Date!
+    var spentTime: Double = 0.0
+    var taskTimer: TaskTimer!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     @IBAction func startPauseTapped(_ sender: UIButton) {
-        isPause = !isPause
-        
-        let imageButton:UIImage = isPause ? #imageLiteral(resourceName: "pause") : #imageLiteral(resourceName: "play")
-       
-        startPauseButton.setImage(imageButton, for: .normal)
-        
-        startTappedHandler()
+       isPause = !isPause
+       didPause()
+       startTappedHandler()
     }
     
     @IBAction func stopTapped(_ sender: UIButton) {
         stopTappedHandler()
     }
+    
+    func didPause(){
+        
+        let imageButton:UIImage = isPause ? #imageLiteral(resourceName: "pause") : #imageLiteral(resourceName: "play")
+        
+        //isPause ? startTimer() : pauseTimer()
+        
+        startPauseButton.setImage(imageButton, for: .normal)
+        
+    }
+    
+    func trackingTime() {
+        if startDate == nil {
+            startDate = Date()
+        }
+        spentTime += 1
+        timeLabel.text = stringFromTimeInterval(interval: spentTime) as String
+    }
+//    func startTimer () {
+//
+//        if startDate == nil {
+//            startDate = Date()
+//        }
+//
+//        if timerTask == nil {
+//            timerTask = Timer.scheduledTimer(
+//                timeInterval: TimeInterval(1.0),
+//                target      : self,
+//                selector    : #selector(timerAction),
+//                userInfo    : nil,
+//                repeats     : true)
+//        }
+//    }
+//
+//    @objc func timerAction(){
+//        spentTime += 1.0
+//        timeLabel.text = stringFromTimeInterval(interval: spentTime) as String
+//    }
+//
+//    func pauseTimer() {
+//        if timerTask != nil {
+//            timerTask?.invalidate()
+//            timerTask = nil
+//            //startDate = nil
+//        }
+//    }
+//
+    func stringFromTimeInterval(interval: Double) -> NSString {
+
+        let hours = (Int(interval) / 3600)
+        let minutes = Int(interval / 60) - Int(hours * 60)
+        let seconds = Int(interval) - (Int(interval / 60) * 60)
+
+        return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
+    }
+
 }

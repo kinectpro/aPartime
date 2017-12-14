@@ -11,7 +11,7 @@ import UIKit
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var tasksPresenter: TaskPresenterProtocol!
+    var tasksPresenter: TaskPresenter!
     var feature = ""
     var data = [String]()
     
@@ -50,14 +50,43 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TaskCell
         let name = data[indexPath.row]
+        cell.taskTimer = TaskTimer()
         cell.nameLabel.text = name
         cell.startTappedHandler = {
-            //cell.timeLabel.text = self.tasksPresenter.getStartTime()
+            self.pauseAllTasks()
+            if cell.isPause {
+                cell.startPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+                cell.taskTimer.startTimer()
+            }else{
+                //cell.isPause = !cell.isPause
+                cell.taskTimer.pauseTimer()
+            }
+            //cell.isPause = !cell.isPause
         }
+        cell.taskTimer.timerHandler = {
+            cell.trackingTime()
+        }
+
         cell.stopTappedHandler = {
+            
             self.tasksPresenter.finishedTask(viewController: self, nameTask: name)
         }
+        
         return cell
+    }
+    
+    func pauseAllTasks() {
+        var i = 0
+        for _ in data {
+            let cell = tableView.cellForRow(at: IndexPath(item: i, section: 0)) as! TaskCell
+            //cell.isPause = !cell.isPause
+            cell.startPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            if cell.isPause{
+                cell.taskTimer.pauseTimer()
+            }
+            
+            i += 1
+        }
     }
     
     //MARK: UITableViewDelegate

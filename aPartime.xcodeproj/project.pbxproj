@@ -20,6 +20,7 @@
 		C55AA2251FE14C0B0088C5FA /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA2241FE14C0B0088C5FA /* TaskRouter.swift */; };
 		C55AA2281FE14C2A0088C5FA /* TaskConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA2271FE14C290088C5FA /* TaskConfigurator.swift */; };
 		C55AA22A1FE16CB30088C5FA /* TaskFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA2291FE16CB30088C5FA /* TaskFinishedViewController.swift */; };
+		C55AA22C1FE27F6E0088C5FA /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA22B1FE27F6E0088C5FA /* TaskTimer.swift */; };
 		C57ED6281FDECD2D00588171 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6271FDECD2D00588171 /* Feature.swift */; };
 		C57ED62A1FDFFA0500588171 /* CreateItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */; };
 		C57ED62C1FDFFA2700588171 /* CreateItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */; };
@@ -69,6 +70,7 @@
 		C55AA2241FE14C0B0088C5FA /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
 		C55AA2271FE14C290088C5FA /* TaskConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigurator.swift; sourceTree = "<group>"; };
 		C55AA2291FE16CB30088C5FA /* TaskFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFinishedViewController.swift; sourceTree = "<group>"; };
+		C55AA22B1FE27F6E0088C5FA /* TaskTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
 		C57ED6271FDECD2D00588171 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemPresenter.swift; sourceTree = "<group>"; };
 		C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemRouter.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				C55AA2211FE14BEA0088C5FA /* TaskInteractor.swift */,
+				C55AA22B1FE27F6E0088C5FA /* TaskTimer.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				D91303C61FD6ED9F00F6F9E7 /* ProjectsScreenViewController.swift in Sources */,
 				1F2DEE561FD9D97E00739406 /* FeaturesScreenConfigurator.swift in Sources */,
 				C55AA21F1FE14BC80088C5FA /* TaskPresenter.swift in Sources */,
+				C55AA22C1FE27F6E0088C5FA /* TaskTimer.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
 				C5F184F71FD838F9002AA55E /* CreateProjectViewController.swift in Sources */,
 				C57ED6371FE0313A00588171 /* TaskCell.swift in Sources */,
