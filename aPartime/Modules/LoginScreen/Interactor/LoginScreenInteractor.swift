@@ -19,7 +19,7 @@ protocol LoginScreenInteractorProtocol {
 
 class LoginScreenInteractor: NSObject, LoginScreenInteractorProtocol {
     
-    var presenter: LoginScreenPresenter!
+    var presenter: LoginScreenPresenterProtocol!
     
     func executeGoogleLogin(viewController: LoginScreenViewController) {
         GIDSignIn.sharedInstance().delegate = self

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProjectsScreenViewControllerProtocol {
-    func showProjects(projects: [String])
+    func showProjects(projects: [ProjectViewModel])
 }
 
 class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectsScreenViewControllerProtocol {
@@ -19,7 +19,7 @@ class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     var presenter: ProjectsScreenPresenter!
     
-    var projects = [String]()
+    var projects = [ProjectViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,31 +38,23 @@ class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ProjectCell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProjectCell
-        
-        let project = projects[indexPath.row]
-        cell.projectNameLabel.text = project
+        let index = indexPath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
+        let project = projects[index]
+        cell.projectNameLabel.text = project.name
         cell.editTappedHandler = {
-            self.presenter.editProject(name: project)
+            self.presenter.editProject(project: project)
         }
-        
-        
         return cell
     }
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath) as! ProjectCell
-        if let nameProject = cell.projectNameLabel.text {
-            presenter.openFeaturesFor(project: nameProject)
-        }
-        
+        let index = indexPath.row
+        presenter.openFeaturesFor(project: projects[index])
     }
     
-    func showProjects(projects: [String]) {
+    func showProjects(projects: [ProjectViewModel]) {
         self.projects = projects
         projectsTableView.reloadData()
     }

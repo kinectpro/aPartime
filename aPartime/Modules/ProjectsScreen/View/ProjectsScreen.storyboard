@@ -14,7 +14,7 @@
         <scene sceneID="gAB-jk-eba">
             <objects>
                 <viewController storyboardIdentifier="ProjectsScreenViewController" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bo4-JW-n7f" customClass="ProjectsScreenViewController" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W1V-P4-fo3">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="W1V-P4-fo3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

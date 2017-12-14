@@ -19,8 +19,8 @@ protocol LoginScreenPresenterProtocol {
 class LoginScreenPresenter: NSObject, LoginScreenPresenterProtocol {
     
     var viewController: LoginScreenViewController!
-    var interactor: LoginScreenInteractor!
-    var router: LoginScreenRouter!
+    var interactor: LoginScreenInteractorProtocol!
+    var router: LoginScreenRouterProtocol!
     
     var token: String?
     

@@ -11,8 +11,8 @@ import Foundation
 protocol ProjectsScreenPresenterProtocol {
     func getAllProjects()
     func createNewProject()
-    func editProject(name: String)
-    func openFeaturesFor(project: String)
+    func editProject(project: ProjectViewModel)
+    func openFeaturesFor(project: ProjectViewModel)
     func projectsDidGetWithSuccess(projects: [Project])
     func projectsDidGetWithError(error: String)
 }
@@ -20,8 +20,8 @@ protocol ProjectsScreenPresenterProtocol {
 class ProjectsScreenPresenter: NSObject, ProjectsScreenPresenterProtocol {
     
     var viewController: ProjectsScreenViewController!
-    var router: ProjectsScreenRouter!
-    var interactor: ProjectsScreenInteractor!
+    var router: ProjectsScreenRouterProtocol!
+    var interactor: ProjectsScreenInteractorProtocol!
     
     var projects = [Project]()
     
@@ -30,23 +30,29 @@ class ProjectsScreenPresenter: NSObject, ProjectsScreenPresenterProtocol {
     }
     
     func createNewProject(){
-        router.presentNewProjectsScreen(viewController: viewController, name: "")
+        router.presentCreateEditScreen(project: Project(), viewController: viewController)
     }
     
-    func editProject(name: String){
-        router.presentNewProjectsScreen(viewController: viewController, name: name)
+    func editProject(project: ProjectViewModel){
+        if let project = projects.filter({ $0.name == project.name }).first {
+            router.presentCreateEditScreen(project: project, viewController: viewController)
+        }
     }
     
-    func openFeaturesFor(project: String) {
-        router.presentFeaturesScreen(viewController: viewController, project: project)
+    func openFeaturesFor(project: ProjectViewModel) {
+        if let project = projects.filter({ $0.name == project.name }).first {
+            router.presentFeaturesScreen(project: project, viewController: viewController)
+        }
     }
     
     func projectsDidGetWithSuccess(projects: [Project]) {
-        let projectsNames = projects.flatMap({ $0.name })
-        viewController.showProjects(projects: projectsNames)
+        self.projects = projects
+        let projectViewModels = projects.flatMap({ ProjectViewModel(name: $0.name) })
+        viewController.showProjects(projects: projectViewModels)
     }
     
     func projectsDidGetWithError(error: String) {
-        
+        router.presentGetProjectsErrorPopup(error: error, viewController: viewController)
     }
+    
 }

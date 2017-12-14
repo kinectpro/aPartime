@@ -14,7 +14,7 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
-    var editTappedHandler: ()->Void = {}
+    var editTappedHandler: () -> Void = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()

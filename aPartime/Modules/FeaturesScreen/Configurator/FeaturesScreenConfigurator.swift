@@ -10,16 +10,16 @@ import Foundation
 
 class FeaturesScreenConfigurator {
     
-    static func setupDependencies(featuresScreenViewController: FeaturesScreenViewController) {
-        let featuresScreenPresenter = FeaturesScreenPresenter()
-        let featuresScreenRouter = FeaturesScreenRouter()
-        let featuresScreenInteractor = FeaturesScreenInteractor()
+    static func setupDependencies(viewController: FeaturesScreenViewController) {
+        let interactor = FeaturesScreenInteractor()
+        let presenter = FeaturesScreenPresenter()
+        let router = FeaturesScreenRouter()
         
-        featuresScreenViewController.featuresScreenPresenter = featuresScreenPresenter
-        featuresScreenPresenter.featuresScreenViewController = featuresScreenViewController
-        featuresScreenPresenter.featuresScreenRouter = featuresScreenRouter
-        featuresScreenPresenter.featuresScreenInteractor = featuresScreenInteractor
-        
+        viewController.presenter = presenter
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        presenter.interactor = interactor
+        presenter.router = router
     }
     
 }

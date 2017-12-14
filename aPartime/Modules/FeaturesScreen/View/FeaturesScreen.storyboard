@@ -168,6 +168,7 @@
                     <navigationItem key="navigationItem" id="IMq-aq-NHf"/>
                     <connections>
                         <outlet property="addButton" destination="raT-z6-wp3" id="B6q-km-EJW"/>
+                        <outlet property="featuresTableView" destination="gM3-il-Ti0" id="2LU-yH-cEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep8-Fa-xpb" userLabel="First Responder" sceneMemberID="firstResponder"/>

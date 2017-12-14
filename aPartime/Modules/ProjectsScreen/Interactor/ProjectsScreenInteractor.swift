@@ -12,7 +12,7 @@ protocol ProjectsScreenInteractorProtocol {
     func getAllProjects()
 }
 
-class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
+class ProjectsScreenInteractor: NSObject, ProjectsScreenInteractorProtocol {
     
     var presenter: ProjectsScreenPresenterProtocol!
     
@@ -28,10 +28,11 @@ class ProjectsScreenInteractor: ProjectsScreenInteractorProtocol {
             }
             var projects = [Project]()
             for document in querySnapshot.documents {
-                let project = Project()
-                project.name = document.documentID
-                project.description = document.data()["description"] as? String
-                projects.append(project)
+                if let description = document.data()["description"] as? String {
+                    let name = document.documentID
+                    let project = Project(name: name, description: description)
+                    projects.append(project)
+                }
             }
             self.presenter.projectsDidGetWithSuccess(projects: projects)
         }

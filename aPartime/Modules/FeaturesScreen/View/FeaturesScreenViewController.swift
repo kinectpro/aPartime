@@ -8,53 +8,61 @@
 
 import UIKit
 
-class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol FeaturesScreenViewControllerProtocol {
+    func showFeatures(features: [FeatureViewModel])
+}
+
+class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeaturesScreenViewControllerProtocol {
 
     @IBOutlet weak var addButton: UIButton!
-    var data = [String]()
-    var featuresScreenPresenter: FeaturesScreenPresenterProtocol!
-    var project = ""
+    @IBOutlet weak var featuresTableView: UITableView!
+    
+    var presenter: FeaturesScreenPresenterProtocol!
+    
+    var features = [FeatureViewModel]()
+    var project = Project()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FeaturesScreenConfigurator.setupDependencies(featuresScreenViewController: self)
-        
-        data = featuresScreenPresenter.getAllFeatures()
+        FeaturesScreenConfigurator.setupDependencies(viewController: self)
+        presenter.getAllFeatures(forProject: project)
     }
     
     //MARK: IBActions
     @IBAction func addNewTapped(_ sender: UIButton) {
-        featuresScreenPresenter.createNewFeature()
+        presenter.createNewFeature()
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return features.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "FeatureCell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FeatureCell
-        
-        cell.nameLabel.text = data[indexPath.row]
-        
+        let index = indexPath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath) as! FeatureCell
+        let feature = features[index]
+        cell.nameLabel.text = feature.name
+        cell.editTappedHandler = {
+            self.presenter.editFeature(feature: feature)
+        }
         return cell
     }
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath) as! FeatureCell
-        if let name = cell.nameLabel.text {
-            featuresScreenPresenter.editFeature(name: name)
-        }
-        
+        let index = indexPath.row
+        presenter.openTasksFor(feature: features[index])
+    }
+    
+    // MARK: FeaturesScreenViewControllerProtocol implementation
+    func showFeatures(features: [FeatureViewModel]) {
+        self.features = features
+        featuresTableView.reloadData()
     }
 
 }

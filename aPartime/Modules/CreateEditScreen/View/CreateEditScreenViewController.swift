@@ -21,20 +21,20 @@ class CreateEditScreenViewController: UIViewController{
     
     var category = "projects"
     var categoryName = ""
-    var nameProject = ""
-    var descriptionProject = ""
+    var project = Project()
+    var feature = Feature()
+//    var task = Task()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         CreateEditScreenConfigurator.setupDependencies(createProjectViewController: self)
-        
-        navBarTitle.text = nameProject != "" ? "Edit Item" : "New Item"
-        nameTextField.text = nameProject
-        descriptionTextField.text = descriptionProject
+        let projectName = project.name
+        navBarTitle.text = projectName != "" ? "Edit Item" : "New Item"
+        nameTextField.text = project.name
+        descriptionTextField.text = project.description
         
         self.okButton.roundedAndShadowButton()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

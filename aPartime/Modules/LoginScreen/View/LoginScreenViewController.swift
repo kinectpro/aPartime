@@ -14,7 +14,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var googleLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
     
-    var presenter: LoginScreenPresenter!
+    var presenter: LoginScreenPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()

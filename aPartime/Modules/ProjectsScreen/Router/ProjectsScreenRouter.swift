@@ -10,20 +10,21 @@ import Foundation
 import UIKit
 
 protocol ProjectsScreenRouterProtocol {
-    func presentNewProjectsScreen(viewController: ProjectsScreenViewController, name: String)
-    func presentFeaturesScreen(viewController: ProjectsScreenViewController, project: String)
+    func presentCreateEditScreen(project: Project, viewController: ProjectsScreenViewController)
+    func presentFeaturesScreen(project: Project, viewController: ProjectsScreenViewController)
     func presentGetProjectsErrorPopup(error: String, viewController: ProjectsScreenViewController)
 }
 
-class ProjectsScreenRouter {
-    func presentNewProjectsScreen(viewController: ProjectsScreenViewController, name: String) {
-        if let createProjectViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createProjectViewController.nameProject = name
-            viewController.present(createProjectViewController, animated: true)
+class ProjectsScreenRouter: NSObject, ProjectsScreenRouterProtocol {
+    
+    func presentCreateEditScreen(project: Project, viewController: ProjectsScreenViewController) {
+        if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
+            createEditScreenViewController.project = project
+            viewController.present(createEditScreenViewController, animated: true)
         }
     }
     
-    func presentFeaturesScreen(viewController: ProjectsScreenViewController, project: String) {
+    func presentFeaturesScreen(project: Project, viewController: ProjectsScreenViewController) {
         if let featuresViewController = UIStoryboard(name: "FeaturesScreen", bundle: nil).instantiateViewController(withIdentifier: "FeaturesScreenViewController") as? FeaturesScreenViewController {
             featuresViewController.project = project
             viewController.present(featuresViewController, animated: true)
