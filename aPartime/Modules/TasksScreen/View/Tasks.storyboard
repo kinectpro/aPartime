@@ -263,12 +263,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDK-wg-7nB">
-                                <rect key="frame" x="86" y="253" width="202" height="74"/>
+                                <rect key="frame" x="77" y="253" width="220" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="HWo-1i-DWF"/>
-                                    <constraint firstAttribute="width" constant="202" id="LDr-C1-RQl"/>
+                                    <constraint firstAttribute="width" constant="220" id="LDr-C1-RQl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="45"/>
                                 <color key="textColor" red="0.74294742280654458" green="0.76637319519328839" blue="0.89425378326735749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -321,6 +321,7 @@
                         <viewLayoutGuide key="safeArea" id="Sxo-is-q6m"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextField" destination="Nk4-zh-zNh" id="krY-mp-X9m"/>
                         <outlet property="finishedButton" destination="QSo-41-Rx0" id="HHg-CZ-tCx"/>
                         <outlet property="nameLabel" destination="tQg-A4-Rkw" id="nFg-hu-cFR"/>
                         <outlet property="timeLabel" destination="nDK-wg-7nB" id="hqh-hh-3Bb"/>

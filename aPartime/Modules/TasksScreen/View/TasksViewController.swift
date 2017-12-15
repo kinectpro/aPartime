@@ -13,7 +13,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     var tasksPresenter: TaskPresenter!
     var feature = ""
-    var data = [String]()
+    var data = [Task]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +47,28 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "taskCell"
-        
+        //TODO: move cell prepare to presenter !!!!!!!!!!!!
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TaskCell
-        let name = data[indexPath.row]
+        let task = data[indexPath.row]
+        let name = task.name!
         cell.taskTimer = TaskTimer()
+        let spentTime = task.spentTime!//self.tasksPresenter.getSpentTime(taskName: name, featureName: self.feature)
+        cell.spentTime = spentTime
+        cell.timeLabel.text = tasksPresenter.stringFromTimeInterval(interval: spentTime) as String
         cell.nameLabel.text = name
+        
         cell.startTappedHandler = {
+            
             self.pauseAllTasks()
             if cell.isPause {
                 cell.startPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+                self.tasksPresenter.saveStartTime(taskName: name, featureName: self.feature)
                 cell.taskTimer.startTimer()
+                self.tasksPresenter.saveSpentTime(taskName: name, featureName: self.feature, spentTime: cell.spentTime, isPause: false)
             }else{
                 //cell.isPause = !cell.isPause
                 cell.taskTimer.pauseTimer()
+                self.tasksPresenter.saveSpentTime(taskName: name, featureName: self.feature, spentTime: cell.spentTime, isPause: true)
             }
             //cell.isPause = !cell.isPause
         }
@@ -68,8 +77,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         cell.stopTappedHandler = {
+            self.pauseAllTasks()
+            self.tasksPresenter.finishedTask(viewController: self, nameTask: name, spentTime: cell.spentTime)
             
-            self.tasksPresenter.finishedTask(viewController: self, nameTask: name)
         }
         
         return cell
@@ -83,6 +93,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.startPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             if cell.isPause{
                 cell.taskTimer.pauseTimer()
+                self.tasksPresenter.saveSpentTime(taskName: cell.nameLabel.text!, featureName: self.feature, spentTime: cell.spentTime, isPause: true)
             }
             
             i += 1

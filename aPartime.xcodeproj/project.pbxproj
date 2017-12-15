@@ -21,6 +21,7 @@
 		C55AA2281FE14C2A0088C5FA /* TaskConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA2271FE14C290088C5FA /* TaskConfigurator.swift */; };
 		C55AA22A1FE16CB30088C5FA /* TaskFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA2291FE16CB30088C5FA /* TaskFinishedViewController.swift */; };
 		C55AA22C1FE27F6E0088C5FA /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA22B1FE27F6E0088C5FA /* TaskTimer.swift */; };
+		C55AA22F1FE3B6800088C5FA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AA22E1FE3B6800088C5FA /* Task.swift */; };
 		C57ED6281FDECD2D00588171 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6271FDECD2D00588171 /* Feature.swift */; };
 		C57ED62A1FDFFA0500588171 /* CreateItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */; };
 		C57ED62C1FDFFA2700588171 /* CreateItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */; };
@@ -71,6 +72,7 @@
 		C55AA2271FE14C290088C5FA /* TaskConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigurator.swift; sourceTree = "<group>"; };
 		C55AA2291FE16CB30088C5FA /* TaskFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFinishedViewController.swift; sourceTree = "<group>"; };
 		C55AA22B1FE27F6E0088C5FA /* TaskTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
+		C55AA22E1FE3B6800088C5FA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C57ED6271FDECD2D00588171 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		C57ED6291FDFFA0500588171 /* CreateItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemPresenter.swift; sourceTree = "<group>"; };
 		C57ED62B1FDFFA2700588171 /* CreateItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemRouter.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		C55AA22D1FE3B6620088C5FA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C55AA22E1FE3B6800088C5FA /* Task.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		C57ED6261FDECD1200588171 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +332,7 @@
 		C591FDF41FD6CA9E007BE2D3 /* TasksScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C55AA22D1FE3B6620088C5FA /* Entity */,
 				C55AA2261FE14C100088C5FA /* Configurator */,
 				C55AA2231FE14BF50088C5FA /* Router */,
 				C55AA2201FE14BCE0088C5FA /* Interactor */,
@@ -646,6 +657,7 @@
 				C57ED6281FDECD2D00588171 /* Feature.swift in Sources */,
 				C57ED62E1FDFFA4400588171 /* CreateItemConfigurator.swift in Sources */,
 				1F2DEE5C1FD9DAF700739406 /* FeaturesScreenRouter.swift in Sources */,
+				C55AA22F1FE3B6800088C5FA /* Task.swift in Sources */,
 				D91303CA1FD6EDF100F6F9E7 /* LoginScreenRouter.swift in Sources */,
 				1F2DEE591FD9D9C200739406 /* FeaturesScreenPresenter.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,

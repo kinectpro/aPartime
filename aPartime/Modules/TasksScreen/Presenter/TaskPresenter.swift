@@ -10,12 +10,13 @@ import Foundation
 
 protocol TaskPresenterProtocol {
     func createNewTask()
-    func getAllTasks(featureName: String, success:@escaping (_ tasks:[String]) -> Void, fail:@escaping() -> Void)
-    func finishedTask(viewController: TasksViewController, nameTask: String)
-    func startTimer ()
-    func pauseTimer()
+    func getAllTasks(featureName: String, success:@escaping (_ tasks:[Task]) -> Void, fail:@escaping() -> Void)
+    func finishedTask(viewController: TasksViewController, nameTask: String, spentTime: Double)
     func stringFromTimeInterval(interval: Double) -> NSString
-    //func getStartTime() -> String
+    func saveStartTime(taskName: String, featureName: String)
+    func saveSpentTime(taskName: String, featureName: String, spentTime: Double, isPause: Bool)
+    func saveStopTime(featureName: String, taskName: String, description: String)
+
 }
 
 class TaskPresenter: TaskPresenterProtocol {
@@ -25,13 +26,14 @@ class TaskPresenter: TaskPresenterProtocol {
     var tasksInteractor: TaskInteractorProtocol!
     var timerHandler: ()->Void = {}
     var timerTask : Timer?
-    //var spentTime: Double = 0.0
+    var featureName: String?
     
     func createNewTask() {
+        //featureName = tasksViewController.feature
         tasksRouter.presentNewTask(tasksViewController: tasksViewController)
     }
     
-    func getAllTasks(featureName: String, success:@escaping (_ tasks:[String]) -> Void, fail:@escaping() -> Void) {
+    func getAllTasks(featureName: String, success:@escaping (_ tasks:[Task]) -> Void, fail:@escaping() -> Void) {
         tasksInteractor.getAllTasks(featureName: featureName, success: { (tasksList) in
             success(tasksList)
         }){
@@ -39,32 +41,27 @@ class TaskPresenter: TaskPresenterProtocol {
         }
     }
     
-    func finishedTask(viewController: TasksViewController, nameTask: String) {
-        tasksRouter.presentFinishedTaskScreen(tasksViewController: tasksViewController, nameTask: nameTask)
+    func finishedTask(viewController: TasksViewController, nameTask: String, spentTime: Double) {
+        let time = stringFromTimeInterval(interval: spentTime) as String
+        tasksRouter.presentFinishedTaskScreen(tasksViewController: viewController, nameTask: nameTask, spentTime: time)
     }
     
-    func startTimer () {
-        
-        if timerTask == nil {
-            timerTask = Timer.scheduledTimer(
-                timeInterval: TimeInterval(1.0),
-                target      : self,
-                selector    : #selector(timerAction),
-                userInfo    : nil,
-                repeats     : true)
-        }
+    func saveStartTime(taskName: String, featureName: String) {
+        self.tasksInteractor.saveStartTime(taskName: taskName, featureName: featureName, success: {
+            print("Save start time of task is success!")
+        }) { }
     }
     
-    @objc func timerAction(){
-        timerHandler()
+    func saveSpentTime(taskName: String, featureName: String, spentTime: Double, isPause: Bool){
+        self.tasksInteractor.saveSpentTime(taskName: taskName, featureName: featureName, spentTime: spentTime, isPause: isPause, success: {
+            print("Save spent time of task is success!")
+        }) {}
     }
     
-    func pauseTimer() {
-        if timerTask != nil {
-            timerTask?.invalidate()
-            timerTask = nil
-            //startDate = nil
-        }
+    func saveStopTime(featureName: String, taskName: String, description: String){
+        self.tasksInteractor.saveStopTime(taskName: taskName, featureName: featureName, description: description, success: {
+            print("Save close task is success!")
+        }) {}
     }
     
     func stringFromTimeInterval(interval: Double) -> NSString {
@@ -75,14 +72,4 @@ class TaskPresenter: TaskPresenterProtocol {
         
         return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
-    
-//    func getStartTime() -> String {
-//        let startTime = Date()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "HH:mm"
-//        let timeString = dateFormatter.string(from: startTime)
-//        print(timeString)
-//
-//        return timeString
-//    }
 }

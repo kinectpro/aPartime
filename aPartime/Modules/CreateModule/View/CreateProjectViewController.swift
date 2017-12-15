@@ -48,7 +48,7 @@ class CreateProjectViewController: UIViewController{
     
     //Add item
     @IBAction func okDidTapped(_ sender: UIButton) {
-        
+        //TODO: move create data process to presenter !!!!!!!!!
         guard category != "" else {return}
         guard let name = nameTextField.text, !name.isEmpty else {return}
         
@@ -69,7 +69,11 @@ class CreateProjectViewController: UIViewController{
                 data["feature"] = categoryName
             }
             data["description"] = descriptionTextField.text ?? ""
-            data["isFinished"] = false
+            data["isStart"] = false
+            data["isClose"] = false
+            data["isPause"] = false
+            data["spentTime"] = 0.0
+            data["descriptionAfterClose"] = ""
             
          //data for project
         } else if category == "projects" {
