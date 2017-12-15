@@ -14,6 +14,9 @@ class FeatureCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     var editTappedHandler: ()->Void = {}
     
     override func awakeFromNib() {
@@ -21,6 +24,10 @@ class FeatureCell: UITableViewCell {
         cellBackgroundView.layer.cornerRadius = 5.0
         cellBackgroundView.layer.borderWidth = 1.0
         cellBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
+        cellBackgroundView.layer.shadowColor = UIColor.darkGray.cgColor
+        cellBackgroundView.layer.shadowOpacity = 0.3
+        cellBackgroundView.layer.shadowOffset = CGSize.zero
+        cellBackgroundView.layer.shadowRadius = 2
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

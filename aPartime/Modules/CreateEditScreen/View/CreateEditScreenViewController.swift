@@ -23,7 +23,7 @@ class CreateEditScreenViewController: UIViewController{
     var categoryName = ""
     var project = Project()
     var feature = Feature()
-//    var task = Task()
+    var task = Task()
 
     override func viewDidLoad() {
         super.viewDidLoad()

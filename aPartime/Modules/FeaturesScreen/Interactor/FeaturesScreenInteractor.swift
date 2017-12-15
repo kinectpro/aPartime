@@ -12,7 +12,7 @@ protocol FeaturesScreenInteractorProtocol {
     func getAllFeatures(forProject: Project)
 }
 
-class FeaturesScreenInteractor: FeaturesScreenInteractorProtocol {
+class FeaturesScreenInteractor: NSObject, FeaturesScreenInteractorProtocol {
     
     var presenter: FeaturesScreenPresenterProtocol!
     

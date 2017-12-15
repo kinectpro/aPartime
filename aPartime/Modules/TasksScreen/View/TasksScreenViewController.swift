@@ -1,5 +1,5 @@
 //
-//  FeaturesScreenViewController.swift
+//  TasksScreenViewController.swift
 //  aPartime
 //
 //  Created by den on 07/12/2017.
@@ -8,20 +8,20 @@
 
 import UIKit
 
-protocol FeaturesScreenViewControllerProtocol {
-    func showFeatures(features: [FeatureViewModel])
+protocol TasksScreenViewControllerProtocol {
+    func showTasks(tasks: [TaskViewModel])
 }
 
-class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FeaturesScreenViewControllerProtocol {
+class TasksScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TasksScreenViewControllerProtocol {
 
     @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var featuresTableView: UITableView!
+    @IBOutlet weak var tasksTableView: UITableView!
     
-    var presenter: FeaturesScreenPresenterProtocol!
+    var presenter: TasksScreenPresenterProtocol!
     
-    var features = [FeatureViewModel]()
-    var project = Project()
+    var tasks = [TaskViewModel]()
+    var feature = Feature()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +29,13 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
         navigationBarView.layer.shadowOpacity = 0.6
         navigationBarView.layer.shadowOffset = CGSize.zero
         navigationBarView.layer.shadowRadius = 4
-        FeaturesScreenConfigurator.setupDependencies(viewController: self)
-        presenter.getAllFeatures(forProject: project)
+        TasksScreenConfigurator.setupDependencies(viewController: self)
+        presenter.getAllTasks(forFeature: feature)
     }
     
     //MARK: IBActions
     @IBAction func addNewTapped(_ sender: UIButton) {
-        presenter.createNewFeature()
+        presenter.createNewTask()
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
@@ -44,22 +44,22 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return features.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath) as! FeatureCell
-        let feature = features[index]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
+        let task = tasks[index]
         if index == 0 {
             cell.topConstraint.constant = 8.0
         }
-        if index == features.count - 1 {
+        if index == tasks.count - 1 {
             cell.bottomConstraint.constant = 8.0
         }
-        cell.nameLabel.text = feature.name
+        cell.nameLabel.text = task.name
         cell.editTappedHandler = {
-            self.presenter.editFeature(feature: feature)
+            self.presenter.editTask(task: task)
         }
         return cell
     }
@@ -67,13 +67,13 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        presenter.openTasksFor(feature: features[index])
+        
     }
     
     // MARK: FeaturesScreenViewControllerProtocol implementation
-    func showFeatures(features: [FeatureViewModel]) {
-        self.features = features
-        featuresTableView.reloadData()
+    func showTasks(tasks: [TaskViewModel]) {
+        self.tasks = tasks
+        tasksTableView.reloadData()
     }
 
 }

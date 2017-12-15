@@ -14,6 +14,7 @@ protocol ProjectsScreenViewControllerProtocol {
 
 class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectsScreenViewControllerProtocol {
     
+    @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var projectsTableView: UITableView!
     
@@ -23,6 +24,10 @@ class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
+        navigationBarView.layer.shadowOpacity = 0.6
+        navigationBarView.layer.shadowOffset = CGSize.zero
+        navigationBarView.layer.shadowRadius = 4
         ProjectsScreenConfigurator.setupDependencies(viewController: self)
         presenter.getAllProjects()
     }
@@ -41,6 +46,12 @@ class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITab
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         let project = projects[index]
+        if index == 0 {
+            cell.topConstraint.constant = 8.0
+        }
+        if index == projects.count - 1 {
+            cell.bottomConstraint.constant = 8.0
+        }
         cell.projectNameLabel.text = project.name
         cell.editTappedHandler = {
             self.presenter.editProject(project: project)

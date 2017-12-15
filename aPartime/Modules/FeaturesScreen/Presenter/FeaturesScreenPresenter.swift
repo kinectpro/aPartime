@@ -17,7 +17,7 @@ protocol FeaturesScreenPresenterProtocol {
     func featuresDidGetWithError(error: String)
 }
 
-class FeaturesScreenPresenter: FeaturesScreenPresenterProtocol {
+class FeaturesScreenPresenter: NSObject, FeaturesScreenPresenterProtocol {
     
     var viewController: FeaturesScreenViewController!
     var router: FeaturesScreenRouter!

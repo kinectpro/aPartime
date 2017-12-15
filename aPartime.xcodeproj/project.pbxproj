@@ -46,6 +46,16 @@
 		D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */; };
 		D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */; };
 		D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */; };
+		D9FBF8E71FE2D2F8002F23D6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8D91FE2D2F8002F23D6 /* Task.swift */; };
+		D9FBF8E81FE2D2F8002F23D6 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8DA1FE2D2F8002F23D6 /* TaskViewModel.swift */; };
+		D9FBF8E91FE2D2F8002F23D6 /* TasksScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8DC1FE2D2F8002F23D6 /* TasksScreenPresenter.swift */; };
+		D9FBF8EA1FE2D2F8002F23D6 /* TasksScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FBF8DE1FE2D2F8002F23D6 /* TasksScreen.storyboard */; };
+		D9FBF8EB1FE2D2F8002F23D6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8DF1FE2D2F8002F23D6 /* TaskCell.swift */; };
+		D9FBF8EC1FE2D2F8002F23D6 /* TasksScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8E01FE2D2F8002F23D6 /* TasksScreenViewController.swift */; };
+		D9FBF8ED1FE2D2F8002F23D6 /* TasksScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8E21FE2D2F8002F23D6 /* TasksScreenConfigurator.swift */; };
+		D9FBF8EE1FE2D2F8002F23D6 /* TasksScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8E41FE2D2F8002F23D6 /* TasksScreenInteractor.swift */; };
+		D9FBF8EF1FE2D2F8002F23D6 /* TasksScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8E61FE2D2F8002F23D6 /* TasksScreenRouter.swift */; };
+		D9FBF8F21FE41AD5002F23D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF8F11FE41AD5002F23D6 /* User.swift */; };
 		DC0D1F4C7DB8D9CD88038393 /* Pods_aPartime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +103,16 @@
 		D9E5C5211FDAE70400E28C06 /* FeaturesScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenConfigurator.swift; sourceTree = "<group>"; };
 		D9E5C5231FDAE70400E28C06 /* FeaturesScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenInteractor.swift; sourceTree = "<group>"; };
 		D9E5C5251FDAE70400E28C06 /* FeaturesScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesScreenRouter.swift; sourceTree = "<group>"; };
+		D9FBF8D91FE2D2F8002F23D6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D9FBF8DA1FE2D2F8002F23D6 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		D9FBF8DC1FE2D2F8002F23D6 /* TasksScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksScreenPresenter.swift; sourceTree = "<group>"; };
+		D9FBF8DE1FE2D2F8002F23D6 /* TasksScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TasksScreen.storyboard; sourceTree = "<group>"; };
+		D9FBF8DF1FE2D2F8002F23D6 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		D9FBF8E01FE2D2F8002F23D6 /* TasksScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksScreenViewController.swift; sourceTree = "<group>"; };
+		D9FBF8E21FE2D2F8002F23D6 /* TasksScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksScreenConfigurator.swift; sourceTree = "<group>"; };
+		D9FBF8E41FE2D2F8002F23D6 /* TasksScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksScreenInteractor.swift; sourceTree = "<group>"; };
+		D9FBF8E61FE2D2F8002F23D6 /* TasksScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksScreenRouter.swift; sourceTree = "<group>"; };
+		D9FBF8F11FE41AD5002F23D6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD470F8E1502B8054162C024 /* Pods-aPartime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.release.xcconfig"; sourceTree = "<group>"; };
 		F460FA9BC4160BD6AB1A4269 /* Pods-aPartime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPartime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aPartime/Pods-aPartime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +181,7 @@
 				C591FDF11FD6CA6F007BE2D3 /* LoginScreen */,
 				D9E5C4D31FDAE24500E28C06 /* ProjectsScreen */,
 				D9E5C5191FDAE70400E28C06 /* FeaturesScreen */,
+				D9FBF8D71FE2D2F8002F23D6 /* TasksScreen */,
 				D969FC771FE1857200FA3353 /* CreateEditScreen */,
 			);
 			path = Modules;
@@ -172,6 +193,7 @@
 				C591FDF51FD6CAAF007BE2D3 /* View */,
 				C591FDF71FD6CAC1007BE2D3 /* Interactor */,
 				C591FDF61FD6CAB8007BE2D3 /* Presenter */,
+				D9FBF8F01FE41AB6002F23D6 /* Entity */,
 				D9E5C4D01FDAE02D00E28C06 /* Router */,
 				D91303CB1FD6FA6100F6F9E7 /* Configurator */,
 			);
@@ -401,6 +423,78 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D9FBF8D71FE2D2F8002F23D6 /* TasksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8DD1FE2D2F8002F23D6 /* View */,
+				D9FBF8E31FE2D2F8002F23D6 /* Interactor */,
+				D9FBF8DB1FE2D2F8002F23D6 /* Presenter */,
+				D9FBF8D81FE2D2F8002F23D6 /* Entity */,
+				D9FBF8E51FE2D2F8002F23D6 /* Router */,
+				D9FBF8E11FE2D2F8002F23D6 /* Configurator */,
+			);
+			path = TasksScreen;
+			sourceTree = "<group>";
+		};
+		D9FBF8D81FE2D2F8002F23D6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8D91FE2D2F8002F23D6 /* Task.swift */,
+				D9FBF8DA1FE2D2F8002F23D6 /* TaskViewModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D9FBF8DB1FE2D2F8002F23D6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8DC1FE2D2F8002F23D6 /* TasksScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D9FBF8DD1FE2D2F8002F23D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8DE1FE2D2F8002F23D6 /* TasksScreen.storyboard */,
+				D9FBF8DF1FE2D2F8002F23D6 /* TaskCell.swift */,
+				D9FBF8E01FE2D2F8002F23D6 /* TasksScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9FBF8E11FE2D2F8002F23D6 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8E21FE2D2F8002F23D6 /* TasksScreenConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D9FBF8E31FE2D2F8002F23D6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8E41FE2D2F8002F23D6 /* TasksScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D9FBF8E51FE2D2F8002F23D6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8E61FE2D2F8002F23D6 /* TasksScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D9FBF8F01FE41AB6002F23D6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBF8F11FE41AD5002F23D6 /* User.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		E42521EF777570630E9306EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +574,7 @@
 				C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* LoginScreen.storyboard in Resources */,
+				D9FBF8EA1FE2D2F8002F23D6 /* TasksScreen.storyboard in Resources */,
 				D969FC851FE1857200FA3353 /* CreateEditScreen.storyboard in Resources */,
 				D9E5C4E31FDAE24500E28C06 /* ProjectsScreen.storyboard in Resources */,
 				C591FDE41FD6C811007BE2D3 /* Main.storyboard in Resources */,
@@ -588,32 +683,41 @@
 				D9E5C4E21FDAE24500E28C06 /* ProjectsScreenPresenter.swift in Sources */,
 				D969FC871FE1857200FA3353 /* CreateEditScreenInteractor.swift in Sources */,
 				D9E5C4E41FDAE24500E28C06 /* ProjectCell.swift in Sources */,
+				D9FBF8EC1FE2D2F8002F23D6 /* TasksScreenViewController.swift in Sources */,
 				D969FC8A1FE2767400FA3353 /* ProjectViewModel.swift in Sources */,
 				C591FDE11FD6C811007BE2D3 /* ViewController.swift in Sources */,
+				D9FBF8E91FE2D2F8002F23D6 /* TasksScreenPresenter.swift in Sources */,
 				D9E5C4E71FDAE24500E28C06 /* ProjectsScreenInteractor.swift in Sources */,
 				D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */,
+				D9FBF8EB1FE2D2F8002F23D6 /* TaskCell.swift in Sources */,
 				D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */,
 				D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
+				D9FBF8E81FE2D2F8002F23D6 /* TaskViewModel.swift in Sources */,
 				D9E5C5291FDAE70400E28C06 /* FeaturesScreenViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D969FC8D1FE2844300FA3353 /* Feature.swift in Sources */,
 				D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsScreenViewController.swift in Sources */,
+				D9FBF8ED1FE2D2F8002F23D6 /* TasksScreenConfigurator.swift in Sources */,
 				D969FC831FE1857200FA3353 /* CreateEditScreenPresenter.swift in Sources */,
 				D969FC761FE17EEA00FA3353 /* AlertManager.swift in Sources */,
 				D9E5C5281FDAE70400E28C06 /* FeatureCell.swift in Sources */,
 				D969FC8F1FE2879F00FA3353 /* FeatureViewModel.swift in Sources */,
 				D91303C01FD6E7F200F6F9E7 /* LoginScreenPresenter.swift in Sources */,
+				D9FBF8E71FE2D2F8002F23D6 /* Task.swift in Sources */,
 				D969FC861FE1857200FA3353 /* CreateEditScreenConfigurator.swift in Sources */,
 				D969FC881FE1857200FA3353 /* CreateEditScreenRouter.swift in Sources */,
+				D9FBF8F21FE41AD5002F23D6 /* User.swift in Sources */,
 				D9E5C4D21FDAE02D00E28C06 /* LoginScreenRouter.swift in Sources */,
 				D9E5C5261FDAE70400E28C06 /* FeaturesScreenPresenter.swift in Sources */,
 				D969FC841FE1857200FA3353 /* CreateEditScreenViewController.swift in Sources */,
 				D91303BE1FD6E74800F6F9E7 /* LoginScreenViewController.swift in Sources */,
 				D9E5C4E81FDAE24500E28C06 /* ProjectsScreenRouter.swift in Sources */,
+				D9FBF8EF1FE2D2F8002F23D6 /* TasksScreenRouter.swift in Sources */,
 				D9E5C52B1FDAE70400E28C06 /* FeaturesScreenInteractor.swift in Sources */,
 				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
+				D9FBF8EE1FE2D2F8002F23D6 /* TasksScreenInteractor.swift in Sources */,
 				D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */,
 				D969FC741FE1512600FA3353 /* Project.swift in Sources */,
 			);

@@ -34,7 +34,15 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate {
         googleLoginButton.layer.cornerRadius = 5.0
         googleLoginButton.layer.borderWidth = 1.0
         googleLoginButton.layer.borderColor = UIColor.lightGray.cgColor
+        googleLoginButton.layer.shadowColor = UIColor.darkGray.cgColor
+        googleLoginButton.layer.shadowOpacity = 0.3
+        googleLoginButton.layer.shadowOffset = CGSize.zero
+        googleLoginButton.layer.shadowRadius = 2
         facebookLoginButton.layer.cornerRadius = 5.0
+        facebookLoginButton.layer.shadowColor = UIColor.darkGray.cgColor
+        facebookLoginButton.layer.shadowOpacity = 0.3
+        facebookLoginButton.layer.shadowOffset = CGSize.zero
+        facebookLoginButton.layer.shadowRadius = 2
     }
     
 }
