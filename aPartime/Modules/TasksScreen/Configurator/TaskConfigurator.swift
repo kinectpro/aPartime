@@ -21,4 +21,16 @@ class TaskConfigurator {
         taskPresenter.tasksInteractor = taskInteractor
         
     }
+    
+    static func setupDependencies(viewController: TaskFinishedViewController) {
+        let taskPresenter = TaskPresenter()
+        let taskRouter = TaskRouter()
+        let taskInteractor = TaskInteractor()
+        
+        viewController.tasksPresenter = taskPresenter
+        //taskPresenter.tasksViewController = viewController
+        taskPresenter.tasksRouter = taskRouter
+        taskPresenter.tasksInteractor = taskInteractor
+        
+    }
 }

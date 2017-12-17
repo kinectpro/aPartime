@@ -23,7 +23,7 @@ class TaskFinishedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tasksPresenter = TaskPresenter()
+        TaskConfigurator.setupDependencies(viewController: self)
         finishedButton.roundedAndShadowButton()
         nameLabel.text = nameTask
         timeLabel.text = spentTime
