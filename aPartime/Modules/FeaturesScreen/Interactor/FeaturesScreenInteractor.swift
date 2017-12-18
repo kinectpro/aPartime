@@ -9,15 +9,15 @@
 import Foundation
 
 protocol FeaturesScreenInteractorProtocol {
-    func getAllFeatures(forProject: Project)
+    func getAllFeatures(inProject: Project)
 }
 
 class FeaturesScreenInteractor: NSObject, FeaturesScreenInteractorProtocol {
     
     var presenter: FeaturesScreenPresenterProtocol!
     
-    func getAllFeatures(forProject: Project) {
-        DbManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: forProject.name) .getDocuments() { (querySnapshot, error) in
+    func getAllFeatures(inProject: Project) {
+        DbManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: inProject.name).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.featuresDidGetWithError(error: error.localizedDescription)
                 return

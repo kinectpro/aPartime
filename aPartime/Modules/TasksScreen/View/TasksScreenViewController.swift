@@ -25,12 +25,20 @@ class TasksScreenViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TasksScreenConfigurator.setupDependencies(viewController: self)
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getAllTasks(inFeature: feature)
+    }
+    
+    func setupViews() {
         navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
         navigationBarView.layer.shadowOpacity = 0.6
         navigationBarView.layer.shadowOffset = CGSize.zero
         navigationBarView.layer.shadowRadius = 4
-        TasksScreenConfigurator.setupDependencies(viewController: self)
-        presenter.getAllTasks(forFeature: feature)
     }
     
     //MARK: IBActions

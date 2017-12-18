@@ -19,7 +19,7 @@ class ProjectsScreenRouter: NSObject, ProjectsScreenRouterProtocol {
     
     func presentCreateEditScreen(project: Project, viewController: ProjectsScreenViewController) {
         if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createEditScreenViewController.project = project
+            createEditScreenViewController.item = Item(type: .project, name: project.name, description: project.description)
             viewController.present(createEditScreenViewController, animated: true)
         }
     }

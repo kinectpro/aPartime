@@ -19,7 +19,7 @@ class FeaturesScreenRouter: NSObject, FeaturesScreenRouterProtocol {
     
     func presentCreateEditScreen(feature: Feature, viewController: FeaturesScreenViewController) {
         if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createEditScreenViewController.feature = feature
+            createEditScreenViewController.item = Item(type: .feature, name: feature.name, description: feature.description, parent: feature.project)
             viewController.present(createEditScreenViewController, animated: true)
         }
     }

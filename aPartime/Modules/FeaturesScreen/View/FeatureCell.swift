@@ -17,7 +17,7 @@ class FeatureCell: UITableViewCell {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var editTappedHandler: ()->Void = {}
+    var editTappedHandler: () -> Void = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()

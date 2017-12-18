@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TasksScreenPresenterProtocol {
-    func getAllTasks(forFeature: Feature)
+    func getAllTasks(inFeature: Feature)
     func createNewTask()
     func editTask(task: TaskViewModel)
     func tasksDidGetWithSuccess(tasks: [Task])
@@ -25,13 +25,13 @@ class TasksScreenPresenter: NSObject, TasksScreenPresenterProtocol {
     var tasks = [Task]()
     var feature = Feature()
     
-    func getAllTasks(forFeature: Feature) {
-        self.feature = forFeature
-        interactor.getAllTasks(forFeature: feature)
+    func getAllTasks(inFeature: Feature) {
+        self.feature = inFeature
+        interactor.getAllTasks(inFeature: feature)
     }
     
     func createNewTask(){
-        router.presentCreateEditScreen(task: Task(), viewController: viewController)
+        router.presentCreateEditScreen(task: Task(feature: feature.name), viewController: viewController)
     }
     
     func editTask(task: TaskViewModel){

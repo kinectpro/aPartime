@@ -35,7 +35,21 @@ class LoginScreenInteractor: NSObject, LoginScreenInteractorProtocol {
             case .cancelled:
                 self.presenter.loginDidExecuteWithError(error: "User cancelled login")
             case .success(_, _, let accessToken):
-                self.presenter.loginDidExecuteWithSuccess(token: accessToken.authenticationToken)
+                let request = GraphRequest(graphPath: "me", parameters: ["fields" : "email, name"], accessToken: accessToken, httpMethod: .GET, apiVersion: FacebookCore.GraphAPIVersion.defaultVersion)
+                request.start { (response, result) in
+                    switch result {
+                    case .failed(let error):
+                        self.presenter.loginDidExecuteWithError(error: error.localizedDescription)
+                    case .success(let value):
+                        guard let profile = value.dictionaryValue, let name = profile["name"] as? String, let id = profile["email"] as? String ?? profile["id"] as? String else {
+                            self.presenter.loginDidExecuteWithError(error: "Login data parsing error")
+                            return
+                        }
+                        let user = User(id: id, name: name, role: .developer)
+                        self.presenter.loginDidExecuteWithSuccess(user: user)
+                        return
+                    }
+                }
             }
         })
     }
@@ -49,11 +63,12 @@ extension LoginScreenInteractor: GIDSignInDelegate {
             presenter.loginDidExecuteWithError(error: error.localizedDescription)
             return
         }
-        guard let authentication = user.authentication else {
-            presenter.loginDidExecuteWithError(error: "Response parsing error")
+        guard let profile = user.profile, let name = profile.name, let id = profile.email else {
+            presenter.loginDidExecuteWithError(error: "Login data parsing error")
             return
         }
-        presenter.loginDidExecuteWithSuccess(token: authentication.accessToken)
+        let user = User(id: id, name: name, role: .developer)
+        presenter.loginDidExecuteWithSuccess(user: user)
     }
     
 }

@@ -10,15 +10,15 @@ import Foundation
 
 class CreateEditScreenConfigurator {
     
-    static func setupDependencies(createProjectViewController: CreateEditScreenViewController) {
-        let createItemPresenter = CreateEditScreenPresenter()
-        let createItemRouter = CreateEditScreenRouter()
-        let createItemInteractor = CreateEditScreenInteractor()
+    static func setupDependencies(viewController: CreateEditScreenViewController) {
+        let interactor = CreateEditScreenInteractor()
+        let presenter = CreateEditScreenPresenter()
+        let router = CreateEditScreenRouter()
         
-        createProjectViewController.createItemPresenter = createItemPresenter
-        createItemPresenter.createItemController = createProjectViewController
-        createItemPresenter.createItemRouter = createItemRouter
-        createItemPresenter.createItemInteractor = createItemInteractor
+        viewController.presenter = presenter
+        presenter.viewController = viewController
+        presenter.router = router
+        presenter.interactor = interactor
         
     }
 }

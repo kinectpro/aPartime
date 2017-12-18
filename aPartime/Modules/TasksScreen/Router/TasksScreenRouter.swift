@@ -18,7 +18,7 @@ class TasksScreenRouter: NSObject, TasksScreenRouterProtocol {
     
     func presentCreateEditScreen(task: Task, viewController: TasksScreenViewController) {
         if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createEditScreenViewController.task = task
+            createEditScreenViewController.item = Item(type: .task, name: task.name, description: task.description, parent: task.feature)
             viewController.present(createEditScreenViewController, animated: true)
         }
     }

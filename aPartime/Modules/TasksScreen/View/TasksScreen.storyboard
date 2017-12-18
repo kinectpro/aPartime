@@ -78,7 +78,7 @@
                                                                 <action selector="editTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="KVB-rR-dVa"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dex-Np-LGk">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dex-Np-LGk">
                                                             <rect key="frame" x="264" y="8" width="32" height="32"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>

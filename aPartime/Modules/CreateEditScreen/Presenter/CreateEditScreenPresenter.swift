@@ -14,13 +14,13 @@ protocol CreateEditScreenPresenterProtocol {
 
 class CreateEditScreenPresenter: CreateEditScreenPresenterProtocol {
     
-    var createItemController: CreateEditScreenViewController!
-    var createItemRouter: CreateEditScreenRouter!
-    var createItemInteractor: CreateEditScreenInteractorProtocol!
+    var viewController: CreateEditScreenViewController!
+    var router: CreateEditScreenRouter!
+    var interactor: CreateEditScreenInteractorProtocol!
     
     func saveData(category: String, documentName: String, data: [String : Any], success:@escaping () -> Void, fail:@escaping() -> Void) {
-            createItemInteractor.saveData(category: category, documentName: documentName, data: data, success: {
-                success()
+        interactor.saveData(category: category, documentName: documentName, data: data, success: {
+            success()
         }) {
             fail()
         }

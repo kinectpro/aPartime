@@ -11,34 +11,40 @@ import Firebase
 
 class CreateEditScreenViewController: UIViewController{
     
+    @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var navBarTitle: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var createItemPresenter: CreateEditScreenPresenterProtocol!
+    var presenter: CreateEditScreenPresenterProtocol!
     
-    var category = "projects"
-    var categoryName = ""
-    var project = Project()
-    var feature = Feature()
-    var task = Task()
+    var item = Item()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CreateEditScreenConfigurator.setupDependencies(createProjectViewController: self)
-        let projectName = project.name
-        navBarTitle.text = projectName != "" ? "Edit Item" : "New Item"
-        nameTextField.text = project.name
-        descriptionTextField.text = project.description
-        
-        self.okButton.roundedAndShadowButton()
+        CreateEditScreenConfigurator.setupDependencies(viewController: self)
+        setupViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func setupViews() {
+        navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
+        navigationBarView.layer.shadowOpacity = 0.6
+        navigationBarView.layer.shadowOffset = CGSize.zero
+        navigationBarView.layer.shadowRadius = 4
+        switch item.type {
+        case .project:
+            navigationBarView.backgroundColor = UIColor(red: 100/255, green: 160/255, blue: 190/255, alpha: 1.0)
+        case .feature:
+            navigationBarView.backgroundColor = UIColor(red: 160/255, green: 190/255, blue: 100/255, alpha: 1.0)
+        case .task:
+            navigationBarView.backgroundColor = UIColor(red: 190/255, green: 100/255, blue: 160/255, alpha: 1.0)
+        }
+        navBarTitle.text = (item.name.isEmpty ? "New " : "Edit ") + item.type.rawValue
+        nameTextField.text = item.name
+        descriptionTextField.text = item.description
+        okButton.roundedAndShadowButton()
     }
 
     //MARK: IBActions
@@ -47,28 +53,29 @@ class CreateEditScreenViewController: UIViewController{
     }
     
     @IBAction func okDidTapped(_ sender: UIButton) {
-        
-        guard category != "" else {return}
-        guard let name = nameTextField.text, !name.isEmpty else {return}
-        
-        var data = [String:Any]()
-        
-        //data for feature
-        if category == "features" {
-            
-            if categoryName != "" {
-                data["project"] = categoryName
-            }
-            
-            data["description"] = descriptionTextField.text ?? ""
-          
-        //data for project
-        } else if category == "projects" {
-            
-            data = ["description": descriptionTextField.text ?? ""]
+        guard let name = nameTextField.text, let description = descriptionTextField.text, !name.isEmpty else {
+            return
         }
         
-        createItemPresenter.saveData(category: category, documentName: name, data: data, success: {
+        var data = [String : Any]()
+        
+        switch item.type {
+        case .project:
+            data["description"] = description
+        case .feature:
+            data["project"] = item.parent
+            data["description"] = description
+        case .task:
+            data["feature"] = item.parent
+            data["description"] = description
+            data["isStart"] = false
+            data["isClose"] = false
+            data["isPause"] = false
+            data["spentTime"] = 0.0
+            data["comments"] = ""
+        }
+        
+        presenter.saveData(category: item.type.rawValue + "s", documentName: name, data: data, success: {
             self.dismiss(animated: true, completion: nil)
         }) {}
         
@@ -87,7 +94,6 @@ extension UIButton{
         self.layer.shadowRadius = 7.0
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 12
-        
         
     }
 }

@@ -25,12 +25,20 @@ class FeaturesScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FeaturesScreenConfigurator.setupDependencies(viewController: self)
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getAllFeatures(inProject: project)
+    }
+    
+    func setupViews() {
         navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
         navigationBarView.layer.shadowOpacity = 0.6
         navigationBarView.layer.shadowOffset = CGSize.zero
         navigationBarView.layer.shadowRadius = 4
-        FeaturesScreenConfigurator.setupDependencies(viewController: self)
-        presenter.getAllFeatures(forProject: project)
     }
     
     //MARK: IBActions

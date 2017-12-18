@@ -12,7 +12,7 @@ import UIKit
 protocol LoginScreenPresenterProtocol {
     func executeGoogleLogin()
     func executeFacebookLogin()
-    func loginDidExecuteWithSuccess(token: String)
+    func loginDidExecuteWithSuccess(user: User)
     func loginDidExecuteWithError(error: String)
 }
 
@@ -22,7 +22,7 @@ class LoginScreenPresenter: NSObject, LoginScreenPresenterProtocol {
     var interactor: LoginScreenInteractorProtocol!
     var router: LoginScreenRouterProtocol!
     
-    var token: String?
+    var user = User()
     
     func executeGoogleLogin() {
         interactor.executeGoogleLogin(viewController: viewController)
@@ -32,8 +32,8 @@ class LoginScreenPresenter: NSObject, LoginScreenPresenterProtocol {
         interactor.executeFacebookLogin(viewController: viewController)
     }
     
-    func loginDidExecuteWithSuccess(token: String) {
-        self.token = token
+    func loginDidExecuteWithSuccess(user: User) {
+        self.user = user
         router.presentProjectsScreen(viewController: viewController)
     }
     

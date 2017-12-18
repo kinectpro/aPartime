@@ -8,13 +8,18 @@
 
 import Foundation
 
+enum UserRole {
+    case developer
+    case manager
+}
+
 class User {
     
     var id: String
     var name: String
-    var role: String
+    var role: UserRole
     
-    init(id: String, name: String, role: String = "developer") {
+    init(id: String = "", name: String = "", role: UserRole = .developer) {
         self.id = id
         self.name = name
         self.role = role

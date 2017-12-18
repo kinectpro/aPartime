@@ -9,15 +9,15 @@
 import Foundation
 
 protocol TasksScreenInteractorProtocol {
-    func getAllTasks(forFeature: Feature)
+    func getAllTasks(inFeature: Feature)
 }
 
 class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
     
     var presenter: TasksScreenPresenterProtocol!
     
-    func getAllTasks(forFeature: Feature) {
-        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: forFeature.name).getDocuments() { (querySnapshot, error) in
+    func getAllTasks(inFeature: Feature) {
+        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: inFeature.name).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.tasksDidGetWithError(error: error.localizedDescription)
                 return

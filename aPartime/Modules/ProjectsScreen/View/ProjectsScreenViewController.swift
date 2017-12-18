@@ -24,12 +24,20 @@ class ProjectsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProjectsScreenConfigurator.setupDependencies(viewController: self)
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getAllProjects()
+    }
+    
+    func setupViews() {
         navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
         navigationBarView.layer.shadowOpacity = 0.6
         navigationBarView.layer.shadowOffset = CGSize.zero
         navigationBarView.layer.shadowRadius = 4
-        ProjectsScreenConfigurator.setupDependencies(viewController: self)
-        presenter.getAllProjects()
     }
     
     //MARK: IBActions

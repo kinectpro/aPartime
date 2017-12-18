@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FeaturesScreenPresenterProtocol {
-    func getAllFeatures(forProject: Project)
+    func getAllFeatures(inProject: Project)
     func createNewFeature()
     func editFeature(feature: FeatureViewModel)
     func openTasksFor(feature: FeatureViewModel)
@@ -26,13 +26,13 @@ class FeaturesScreenPresenter: NSObject, FeaturesScreenPresenterProtocol {
     var features = [Feature]()
     var project = Project()
     
-    func getAllFeatures(forProject: Project) {
-        self.project = forProject
-        interactor.getAllFeatures(forProject: project)
+    func getAllFeatures(inProject: Project) {
+        self.project = inProject
+        interactor.getAllFeatures(inProject: project)
     }
     
     func createNewFeature(){
-        router.presentCreateEditScreen(feature: Feature(), viewController: viewController)
+        router.presentCreateEditScreen(feature: Feature(project: project.name), viewController: viewController)
     }
     
     func editFeature(feature: FeatureViewModel){
