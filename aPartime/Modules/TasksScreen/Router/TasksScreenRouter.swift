@@ -12,6 +12,8 @@ import UIKit
 protocol TasksScreenRouterProtocol {
     func presentCreateEditScreen(task: Task, viewController: TasksScreenViewController)
     func presentGetTasksErrorPopup(error: String, viewController: TasksScreenViewController)
+    
+    func presentFinishedTaskScreen(viewController: TasksScreenViewController, nameTask: String, spentTime: String)
 }
 
 class TasksScreenRouter: NSObject, TasksScreenRouterProtocol {
@@ -23,19 +25,18 @@ class TasksScreenRouter: NSObject, TasksScreenRouterProtocol {
         }
     }
     
-//    func presentEditFeatureScreen(featuresScreenViewController: FeaturesScreenViewController, name: String, description: String) {
-//        if let createFeatureViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
-//
-//            createFeatureViewController.category = "features"
-//            createFeatureViewController.nameProject = name
-//            createFeatureViewController.descriptionProject = description
-//            featuresScreenViewController.present(createFeatureViewController, animated: true)
-//        }
-//    }
-    
-    
     func presentGetTasksErrorPopup(error: String, viewController: TasksScreenViewController) {
         AlertManager.shared.showAlert(title: "Get tasks error", message: error, viewController: viewController)
+    }
+    
+    
+    func presentFinishedTaskScreen(viewController: TasksScreenViewController, nameTask: String, spentTime: String) {
+        if let finishedTaskViewController = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TaskFinishedViewController") as? TaskFinishedViewController {
+            finishedTaskViewController.nameTask = nameTask
+            finishedTaskViewController.spentTime = spentTime
+            finishedTaskViewController.feature = viewController.feature
+            viewController.present(finishedTaskViewController, animated: true)
+        }
     }
     
 }

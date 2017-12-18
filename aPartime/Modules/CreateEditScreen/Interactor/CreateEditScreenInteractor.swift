@@ -16,7 +16,7 @@ protocol CreateEditScreenInteractorProtocol {
 class CreateEditScreenInteractor: CreateEditScreenInteractorProtocol {
     
     func saveData(category: String, documentName: String, data: [String : Any], success:@escaping () -> Void, fail:@escaping() -> Void) {
-        DbManager.shared.defaultStore.collection(category).document(documentName).setData(data, options: SetOptions.merge()) { err in
+        DBManager.shared.defaultStore.collection(category).document(documentName).setData(data, options: SetOptions.merge()) { err in
             if let err = err {
                 print("Error writing document: \(err)")
                 fail()

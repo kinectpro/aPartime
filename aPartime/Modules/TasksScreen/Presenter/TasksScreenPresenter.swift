@@ -14,6 +14,11 @@ protocol TasksScreenPresenterProtocol {
     func editTask(task: TaskViewModel)
     func tasksDidGetWithSuccess(tasks: [Task])
     func tasksDidGetWithError(error: String)
+    
+    func finishedTask(viewController: TasksScreenViewController, nameTask: String, spentTime: Double)
+    func saveStartTime(taskName: String, featureName: String)
+    func saveSpentTime(taskName: String, featureName: String, spentTime: Double, isPause: Bool)
+    func saveStopTime(featureName: String, taskName: String, description: String)
 }
 
 class TasksScreenPresenter: NSObject, TasksScreenPresenterProtocol {
@@ -48,6 +53,36 @@ class TasksScreenPresenter: NSObject, TasksScreenPresenterProtocol {
     
     func tasksDidGetWithError(error: String) {
         router.presentGetTasksErrorPopup(error: error, viewController: viewController)
+    }
+    
+    func finishedTask(viewController: TasksScreenViewController, nameTask: String, spentTime: Double) {
+        let time = stringFromTimeInterval(interval: spentTime) as String
+        router.presentFinishedTaskScreen(viewController: viewController, nameTask: nameTask, spentTime: time)
+    }
+    
+    func saveStartTime(taskName: String, featureName: String) {
+        interactor.saveStartTime(taskName: taskName, featureName: featureName, success: {
+            print("Save start time of task is success!")
+        }) { }
+    }
+    
+    func saveSpentTime(taskName: String, featureName: String, spentTime: Double, isPause: Bool) {
+        interactor.saveSpentTime(taskName: taskName, featureName: featureName, spentTime: spentTime, isPause: isPause, success: {
+            print("Save spent time of task is success!")
+        }) {}
+    }
+    
+    func saveStopTime(featureName: String, taskName: String, description: String) {
+        interactor.saveStopTime(taskName: taskName, featureName: featureName, description: description, success: {
+            print("Save close task is success!")
+        }) {}
+    }
+    
+    func stringFromTimeInterval(interval: Double) -> NSString {
+        let hours = (Int(interval) / 3600)
+        let minutes = Int(interval / 60) - Int(hours * 60)
+        let seconds = Int(interval) - (Int(interval / 60) * 60)
+        return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
     
 }

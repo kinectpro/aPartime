@@ -20,7 +20,8 @@
 		D91303CD1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */; };
 		D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */; };
 		D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */; };
-		D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC5A1FE14A4200FA3353 /* DbManager.swift */; };
+		D966F7051FE8124D00FA3294 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966F7041FE8124D00FA3294 /* TaskTimer.swift */; };
+		D969FC5B1FE14A4300FA3353 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC5A1FE14A4200FA3353 /* DBManager.swift */; };
 		D969FC741FE1512600FA3353 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC731FE1512600FA3353 /* Project.swift */; };
 		D969FC761FE17EEA00FA3353 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC751FE17EEA00FA3353 /* AlertManager.swift */; };
 		D969FC831FE1857200FA3353 /* CreateEditScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969FC791FE1857200FA3353 /* CreateEditScreenPresenter.swift */; };
@@ -77,7 +78,8 @@
 		D91303CC1FD6FA8300F6F9E7 /* LoginScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenConfigurator.swift; sourceTree = "<group>"; };
 		D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D95BE3811FD838CA005BA9A0 /* LoginScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenInteractor.swift; sourceTree = "<group>"; };
-		D969FC5A1FE14A4200FA3353 /* DbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
+		D966F7041FE8124D00FA3294 /* TaskTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
+		D969FC5A1FE14A4200FA3353 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D969FC5D1FE14D4C00FA3353 /* aPartime.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = aPartime.entitlements; sourceTree = "<group>"; };
 		D969FC731FE1512600FA3353 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D969FC751FE17EEA00FA3353 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 				C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */,
 				D969FC751FE17EEA00FA3353 /* AlertManager.swift */,
 				C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */,
-				D969FC5A1FE14A4200FA3353 /* DbManager.swift */,
+				D969FC5A1FE14A4200FA3353 /* DBManager.swift */,
 				C591FDE01FD6C811007BE2D3 /* ViewController.swift */,
 				C591FDE21FD6C811007BE2D3 /* Main.storyboard */,
 				C591FDE51FD6C811007BE2D3 /* Assets.xcassets */,
@@ -486,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				D9FBF8E41FE2D2F8002F23D6 /* TasksScreenInteractor.swift */,
+				D966F7041FE8124D00FA3294 /* TaskTimer.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -702,13 +705,14 @@
 				D9E5C4E71FDAE24500E28C06 /* ProjectsScreenInteractor.swift in Sources */,
 				D9E5C52A1FDAE70400E28C06 /* FeaturesScreenConfigurator.swift in Sources */,
 				D9FBF8EB1FE2D2F8002F23D6 /* TaskCell.swift in Sources */,
-				D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */,
+				D969FC5B1FE14A4300FA3353 /* DBManager.swift in Sources */,
 				D9E5C52C1FDAE70400E28C06 /* FeaturesScreenRouter.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginScreenInteractor.swift in Sources */,
 				D9FBF8E81FE2D2F8002F23D6 /* TaskViewModel.swift in Sources */,
 				D9E5C5291FDAE70400E28C06 /* FeaturesScreenViewController.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
 				D969FC8D1FE2844300FA3353 /* Feature.swift in Sources */,
+				D966F7051FE8124D00FA3294 /* TaskTimer.swift in Sources */,
 				D9E5C4E61FDAE24500E28C06 /* ProjectsScreenConfigurator.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsScreenViewController.swift in Sources */,
 				D9FBF8ED1FE2D2F8002F23D6 /* TasksScreenConfigurator.swift in Sources */,

@@ -66,9 +66,9 @@ class TasksScreenViewController: UIViewController, UITableViewDelegate, UITableV
             cell.bottomConstraint.constant = 8.0
         }
         cell.nameLabel.text = task.name
-        cell.editTappedHandler = {
-            self.presenter.editTask(task: task)
-        }
+//        cell.editTappedHandler = {
+//            self.presenter.editTask(task: task)
+//        }
         return cell
     }
     

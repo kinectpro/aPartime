@@ -8,35 +8,78 @@
 
 import UIKit
 
-class TaskCell: UITableViewCell {
+//class TaskCell: UITableViewCell {
+//
+//    @IBOutlet weak var cellBackgroundView: UIView!
+//    @IBOutlet weak var nameLabel: UILabel!
+//    @IBOutlet weak var editButton: UIButton!
+//
+//    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+//
+//    var editTappedHandler: ()->Void = {}
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        cellBackgroundView.layer.cornerRadius = 5.0
+//        cellBackgroundView.layer.borderWidth = 1.0
+//        cellBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
+//        cellBackgroundView.layer.shadowColor = UIColor.black.cgColor
+//        cellBackgroundView.layer.shadowOpacity = 0.3
+//        cellBackgroundView.layer.shadowOffset = CGSize.zero
+//        cellBackgroundView.layer.shadowRadius = 2
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+//
+//    @IBAction func editTapped(_ sender: UIButton) {
+//        editTappedHandler()
+//    }
+//}
 
-    @IBOutlet weak var cellBackgroundView: UIView!
+class TaskCell: UITableViewCell {
+    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var startPauseButton: UIButton!
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var editTappedHandler: ()->Void = {}
+    var startTappedHandler: () -> Void = {}
+    var stopTappedHandler: () -> Void = {}
+    var startDate: Date!
+    var stopDate: Date!
+    var spentTime: Double = 0.0
+    var taskTimer: TaskTimer!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        cellBackgroundView.layer.cornerRadius = 5.0
-        cellBackgroundView.layer.borderWidth = 1.0
-        cellBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
-        cellBackgroundView.layer.shadowColor = UIColor.black.cgColor
-        cellBackgroundView.layer.shadowOpacity = 0.3
-        cellBackgroundView.layer.shadowOffset = CGSize.zero
-        cellBackgroundView.layer.shadowRadius = 2
+    @IBAction func startPauseTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        startTappedHandler()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    @IBAction func stopTapped(_ sender: UIButton) {
+        stopTappedHandler()
     }
-
-    @IBAction func editTapped(_ sender: UIButton) {
-        editTappedHandler()
+    
+    func trackingTime() {
+        if startDate == nil {
+            startDate = Date()
+        }
+        spentTime += 1
+        timeLabel.text = stringFromTimeInterval(interval: spentTime) as String
     }
+    
+    func stringFromTimeInterval(interval: Double) -> NSString {
+        let hours = (Int(interval) / 3600)
+        let minutes = Int(interval / 60) - Int(hours * 60)
+        let seconds = Int(interval) - (Int(interval / 60) * 60)
+        return NSString(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
+    }
+    
 }
+

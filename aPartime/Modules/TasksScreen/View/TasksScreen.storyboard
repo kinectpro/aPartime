@@ -44,7 +44,7 @@
                                                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-eU-koC" userLabel="Play Pause Button">
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-eU-koC" userLabel="Start Pause Button">
                                                             <rect key="frame" x="8" y="8" width="32" height="32"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -60,7 +60,7 @@
                                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="editTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="e1K-gk-JHy"/>
+                                                                <action selector="startPauseTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="c5W-3j-Z4V"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-Cw-zEO" userLabel="Stop Button">
@@ -76,6 +76,7 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="editTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="KVB-rR-dVa"/>
+                                                                <action selector="stopTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="bTI-dA-KUt"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dex-Np-LGk">
@@ -136,6 +137,8 @@
                                             <outlet property="cellBackgroundView" destination="zBa-DF-pJw" id="1R4-Wt-hKf"/>
                                             <outlet property="editButton" destination="Dex-Np-LGk" id="AcG-W8-XxD"/>
                                             <outlet property="nameLabel" destination="I3I-DM-pb9" id="OA2-cq-EXx"/>
+                                            <outlet property="startPauseButton" destination="7ht-eU-koC" id="xA4-L2-BgP"/>
+                                            <outlet property="timeLabel" destination="H8N-2p-ICJ" id="jBa-7j-raD"/>
                                             <outlet property="topConstraint" destination="18V-cx-2PC" id="Yum-TR-XZN"/>
                                         </connections>
                                     </tableViewCell>

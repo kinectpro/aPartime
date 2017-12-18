@@ -17,7 +17,7 @@ class FeaturesScreenInteractor: NSObject, FeaturesScreenInteractorProtocol {
     var presenter: FeaturesScreenPresenterProtocol!
     
     func getAllFeatures(inProject: Project) {
-        DbManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: inProject.name).getDocuments() { (querySnapshot, error) in
+        DBManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: inProject.name).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.featuresDidGetWithError(error: error.localizedDescription)
                 return

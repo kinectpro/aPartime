@@ -17,7 +17,7 @@ class ProjectsScreenInteractor: NSObject, ProjectsScreenInteractorProtocol {
     var presenter: ProjectsScreenPresenterProtocol!
     
     func getAllProjects() {
-        DbManager.shared.defaultStore.collection("projects").getDocuments() { (querySnapshot, error) in
+        DBManager.shared.defaultStore.collection("projects").getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.projectsDidGetWithError(error: error.localizedDescription)
                 return
