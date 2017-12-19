@@ -18,15 +18,18 @@ protocol FeaturesScreenRouterProtocol {
 class FeaturesScreenRouter: NSObject, FeaturesScreenRouterProtocol {
     
     func presentCreateEditScreen(feature: Feature, viewController: FeaturesScreenViewController) {
-        if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createEditScreenViewController.item = Item(type: .feature, name: feature.name, description: feature.description, parent: feature.project)
+        if let createEditScreenViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+            createEditScreenViewController.category = "features"
+            createEditScreenViewController.nameProject = feature.name
+            createEditScreenViewController.descriptionProject = feature.description
+            createEditScreenViewController.categoryName = feature.project
             viewController.present(createEditScreenViewController, animated: true)
         }
     }
     
     func presentTasksScreen(feature: Feature, viewController: FeaturesScreenViewController) {
-        if let tasksViewController = UIStoryboard(name: "TasksScreen", bundle: nil).instantiateViewController(withIdentifier: "TasksScreenViewController") as? TasksScreenViewController {
-            tasksViewController.feature = feature
+        if let tasksViewController = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController {
+            tasksViewController.feature = feature.name
             viewController.present(tasksViewController, animated: true)
         }
     }

@@ -2,14 +2,6 @@
 //  TaskTimer.swift
 //  aPartime
 //
-//  Created by Sergey Kobzin on 18.12.2017.
-//  Copyright © 2017 kinectpro. All rights reserved.
-//
-
-//
-//  TaskTimer.swift
-//  aPartime
-//
 //  Created by Bobby numdevios on 14.12.2017.
 //  Copyright © 2017 kinectpro. All rights reserved.
 //
@@ -20,7 +12,8 @@ class TaskTimer {
     var timerTask : Timer?
     var timerHandler: ()->Void = {}
     
-    func startTimer() {
+    func startTimer () {
+        
         if timerTask == nil {
             timerTask = Timer.scheduledTimer(
                 timeInterval: TimeInterval(1.0),
@@ -41,5 +34,4 @@ class TaskTimer {
             timerTask = nil
         }
     }
-    
 }

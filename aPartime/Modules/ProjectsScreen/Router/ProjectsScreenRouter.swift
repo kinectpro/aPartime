@@ -18,8 +18,10 @@ protocol ProjectsScreenRouterProtocol {
 class ProjectsScreenRouter: NSObject, ProjectsScreenRouterProtocol {
     
     func presentCreateEditScreen(project: Project, viewController: ProjectsScreenViewController) {
-        if let createEditScreenViewController = UIStoryboard(name: "CreateEditScreen", bundle: nil).instantiateViewController(withIdentifier: "CreateEditScreenViewController") as? CreateEditScreenViewController {
-            createEditScreenViewController.item = Item(type: .project, name: project.name, description: project.description)
+        if let createEditScreenViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+            createEditScreenViewController.category = "projects"
+            createEditScreenViewController.nameProject = project.name
+            createEditScreenViewController.descriptionProject = project.description
             viewController.present(createEditScreenViewController, animated: true)
         }
     }
