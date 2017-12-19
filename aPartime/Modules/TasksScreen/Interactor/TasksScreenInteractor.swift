@@ -23,7 +23,7 @@ class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
     var presenter: TasksScreenPresenterProtocol!
     
     func getAllTasks(inFeature: Feature) {
-        DBManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: inFeature.name).getDocuments() { (querySnapshot, error) in
+        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: inFeature.name).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.tasksDidGetWithError(error: error.localizedDescription)
                 return
@@ -53,7 +53,7 @@ class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
                     return
                 }
                 if doc.documentID == taskName && !(isStart as! Bool) {
-                    DBManager.shared.defaultStore.collection("tasks").document(taskName).setData(["startTime":Date(), "isStart": true], options: SetOptions.merge()){ err in
+                    DbManager.shared.defaultStore.collection("tasks").document(taskName).setData(["startTime":Date(), "isStart": true], options: SetOptions.merge()){ err in
                         if let err = err {
                             print("Error writing document: \(err)")
                             fail()
@@ -73,7 +73,7 @@ class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
         getAllTasksDocuments(featureName: featureName, success: { (documents) in
             for doc in documents {
                 if doc.documentID == taskName {
-                    DBManager.shared.defaultStore.collection("tasks").document(taskName).setData(["spentTime":spentTime, "isPause": isPause], options: SetOptions.merge()) { err in
+                    DbManager.shared.defaultStore.collection("tasks").document(taskName).setData(["spentTime":spentTime, "isPause": isPause], options: SetOptions.merge()) { err in
                         if let err = err {
                             print("Error writing document: \(err)")
                             fail()
@@ -93,7 +93,7 @@ class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
         getAllTasksDocuments(featureName: featureName, success: { (documents) in
             for doc in documents {
                 if doc.documentID == taskName {
-                    DBManager.shared.defaultStore.collection("tasks").document(taskName).setData(["descriptionAfterClose" : description, "stopTime" : Date(), "isClose": true], options: SetOptions.merge()) { err in
+                    DbManager.shared.defaultStore.collection("tasks").document(taskName).setData(["descriptionAfterClose" : description, "stopTime" : Date(), "isClose": true], options: SetOptions.merge()) { err in
                         if let err = err {
                             print("Error writing document: \(err)")
                             fail()
@@ -127,7 +127,7 @@ class TasksScreenInteractor: NSObject, TasksScreenInteractorProtocol {
     }
     
     private func getAllTasksDocuments(featureName: String, success: @escaping (_ tasksSnapshots: [DocumentSnapshot]) -> Void, fail: @escaping() -> Void){
-        DBManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: featureName).getDocuments() { (querySnapshot, err) in
+        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: featureName).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting list of TasksDocuments: \(err)")
                 fail()
