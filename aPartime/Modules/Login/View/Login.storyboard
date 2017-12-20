@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7pq-Jg-ecL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TimesNewRoman.ttf">
+            <string>TimesNewRomanPSMT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="8s8-ff-Fwm">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7pq-Jg-ecL" userLabel="Login View Controller" customClass="LoginViewController" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hp2-AV-gcJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-vL-hII">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K14-bN-HAp" userLabel="Google Login Button">
+                                <rect key="frame" x="67.5" y="489" width="240" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Login with Google">
+                                    <color key="titleColor" white="0.0" alpha="0.54120291095890416" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleLoginButtonDidTap:" destination="7pq-Jg-ecL" eventType="touchUpInside" id="BcX-OJ-1B2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGY-7C-Cbv" userLabel="Facebook Login Button">
+                                <rect key="frame" x="67.5" y="569" width="240" height="48"/>
+                                <color key="backgroundColor" red="0.25270676612854004" green="0.39700967073440552" blue="0.70349717140197754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ajt-o3-esf"/>
+                                    <constraint firstAttribute="width" constant="240" id="fxC-z8-133"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookLoginButtonDidTap:" destination="7pq-Jg-ecL" eventType="touchUpInside" id="LCl-JS-k0W"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FacebookIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kac-I2-Ow9" userLabel="Facebook Image View">
+                                <rect key="frame" x="75.5" y="577" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kac-I2-Ow9" secondAttribute="height" multiplier="1:1" id="RyY-Mb-9Qk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoogleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-vg-DNM" userLabel="Google Image View">
+                                <rect key="frame" x="75.5" y="497" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aPartime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvN-Ks-pmb" userLabel="Title Label">
+                                <rect key="frame" x="45.5" y="140" width="284.5" height="89"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by K.O.Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdN-A3-qlT" userLabel="Author Label">
+                                <rect key="frame" x="135" y="269" width="105.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VCT-vg-DNM" firstAttribute="top" secondItem="K14-bN-HAp" secondAttribute="top" constant="8" id="4ZI-D8-xTv"/>
+                            <constraint firstItem="K14-bN-HAp" firstAttribute="trailing" secondItem="hGY-7C-Cbv" secondAttribute="trailing" id="84S-Cf-r5q"/>
+                            <constraint firstItem="kac-I2-Ow9" firstAttribute="leading" secondItem="hGY-7C-Cbv" secondAttribute="leading" constant="8" id="E9W-WP-YRk"/>
+                            <constraint firstItem="GdN-A3-qlT" firstAttribute="top" secondItem="MvN-Ks-pmb" secondAttribute="bottom" constant="40" id="EdG-r8-azG"/>
+                            <constraint firstItem="hGY-7C-Cbv" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="FoK-eh-Zav"/>
+                            <constraint firstItem="nbS-vL-hII" firstAttribute="leading" secondItem="WGD-uD-fcT" secondAttribute="leading" id="K9h-zI-FFo"/>
+                            <constraint firstItem="K14-bN-HAp" firstAttribute="height" secondItem="hGY-7C-Cbv" secondAttribute="height" id="MT7-5C-pOG"/>
+                            <constraint firstItem="kac-I2-Ow9" firstAttribute="bottom" secondItem="hGY-7C-Cbv" secondAttribute="bottom" constant="-8" id="QQX-zz-D2x"/>
+                            <constraint firstItem="hGY-7C-Cbv" firstAttribute="top" secondItem="K14-bN-HAp" secondAttribute="bottom" constant="32" id="Qqj-tA-xyP"/>
+                            <constraint firstItem="WGD-uD-fcT" firstAttribute="bottom" secondItem="hGY-7C-Cbv" secondAttribute="bottom" constant="50" id="Ra7-NQ-JTf"/>
+                            <constraint firstItem="GdN-A3-qlT" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="Vxz-SD-LJq"/>
+                            <constraint firstItem="K14-bN-HAp" firstAttribute="leading" secondItem="hGY-7C-Cbv" secondAttribute="leading" id="bgW-rH-AAE"/>
+                            <constraint firstItem="MvN-Ks-pmb" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="bpA-K8-ylS"/>
+                            <constraint firstItem="VCT-vg-DNM" firstAttribute="width" secondItem="VCT-vg-DNM" secondAttribute="height" multiplier="1:1" id="dr1-Un-dsX"/>
+                            <constraint firstItem="VCT-vg-DNM" firstAttribute="bottom" secondItem="K14-bN-HAp" secondAttribute="bottom" constant="-8" id="gb1-jw-TLO"/>
+                            <constraint firstItem="kac-I2-Ow9" firstAttribute="top" secondItem="hGY-7C-Cbv" secondAttribute="top" constant="8" id="l0A-PY-nMs"/>
+                            <constraint firstItem="nbS-vL-hII" firstAttribute="top" secondItem="WGD-uD-fcT" secondAttribute="top" constant="-20" id="lE2-69-bVl"/>
+                            <constraint firstItem="WGD-uD-fcT" firstAttribute="trailing" secondItem="nbS-vL-hII" secondAttribute="trailing" id="mOk-9J-TX3"/>
+                            <constraint firstItem="VCT-vg-DNM" firstAttribute="leading" secondItem="K14-bN-HAp" secondAttribute="leading" constant="8" id="nPI-tX-gZc"/>
+                            <constraint firstItem="WGD-uD-fcT" firstAttribute="bottom" secondItem="nbS-vL-hII" secondAttribute="bottom" id="pbY-2k-obL"/>
+                            <constraint firstItem="MvN-Ks-pmb" firstAttribute="top" secondItem="WGD-uD-fcT" secondAttribute="top" constant="120" id="r0W-6c-L1h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WGD-uD-fcT"/>
+                    </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="hGY-7C-Cbv" id="U7e-Y8-bWF"/>
+                        <outlet property="googleLoginButton" destination="K14-bN-HAp" id="ZmH-PT-Tz8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maZ-Yw-Z7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.59999999999999" y="-5591.1544227886061"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FacebookIcon" width="49" height="49"/>
+        <image name="GoogleIcon" width="40" height="40"/>
+        <image name="LoginScreenBackground" width="512" height="512"/>
+    </resources>
+</document>

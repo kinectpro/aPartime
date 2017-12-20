@@ -30,6 +30,11 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         })
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        pauseAllTasks()
+    }
+    
     //MARK: IBActions
     @IBAction func backTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
