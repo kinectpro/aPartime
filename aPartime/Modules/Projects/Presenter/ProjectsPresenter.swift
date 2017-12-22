@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProjectsPresenterProtocol {
+    func present(viewController: UIViewController)
     func getAllProjects()
-    func createNewProject()
-    func editProject(project: ProjectViewModel)
-    func openFeaturesFor(project: ProjectViewModel)
     func projectsDidGetWithSuccess(projects: [Project])
     func projectsDidGetWithError(error: String)
+    func createNewProject()
+    func editProject(project: ProjectViewModel)
+    func openFeatures(forProject: ProjectViewModel)
 }
 
 class ProjectsPresenter: NSObject, ProjectsPresenterProtocol {
@@ -24,6 +26,28 @@ class ProjectsPresenter: NSObject, ProjectsPresenterProtocol {
     var interactor: ProjectsInteractorProtocol!
     
     var projects = [Project]()
+    
+    override init() {
+        super.init()
+        setupDependencies()
+    }
+    
+    func setupDependencies() {
+        guard let viewController = UIStoryboard(name: "Projects", bundle: nil).instantiateViewController(withIdentifier: "ProjectsViewController") as? ProjectsViewController else {
+            return
+        }
+        let interactor = ProjectsInteractor()
+        let router = ProjectsRouter()
+        viewController.presenter = self
+        interactor.presenter = self
+        self.viewController = viewController
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    func present(viewController: UIViewController) {
+        viewController.present(self.viewController, animated: true)
+    }
     
     func getAllProjects() {
         interactor.getAllProjects()
@@ -43,13 +67,13 @@ class ProjectsPresenter: NSObject, ProjectsPresenterProtocol {
         router.goToCreateEditModule(project: Project(), viewController: viewController)
     }
     
-    func editProject(project: ProjectViewModel){
+    func editProject(project: ProjectViewModel) {
         if let project = projects.filter({ $0.id == project.id }).first {
             router.goToCreateEditModule(project: project, viewController: viewController)
         }
     }
     
-    func openFeaturesFor(project: ProjectViewModel) {
+    func openFeatures(forProject project: ProjectViewModel) {
         if let project = projects.filter({ $0.id == project.id }).first {
             router.goToFeaturesModule(project: project, viewController: viewController)
         }

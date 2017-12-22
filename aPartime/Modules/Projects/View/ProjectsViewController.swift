@@ -24,7 +24,6 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProjectsConfigurator.setupDependencies(viewController: self)
         setupViews()
     }
     
@@ -70,7 +69,8 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        presenter.openFeaturesFor(project: projects[index])
+        let project = projects[index]
+        presenter.openFeatures(forProject: project)
     }
     
     func showProjects(projects: [ProjectViewModel]) {

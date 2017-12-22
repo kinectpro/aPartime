@@ -25,14 +25,13 @@ class FeaturesRouter: NSObject, FeaturesRouterProtocol {
     }
     
     func goToCreateEditModule(feature: Feature, viewController: FeaturesViewController) {
-        if let createEditViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
-            createEditViewController.id = feature.id
-            createEditViewController.category = "features"
-            createEditViewController.nameProject = feature.name
-            createEditViewController.descriptionProject = feature.description
-            createEditViewController.categoryName = feature.project
-            viewController.present(createEditViewController, animated: true)
-        }
+        let type = ItemType.feature
+        let id = feature.id
+        let name = feature.name
+        let description = feature.description
+        let parent = feature.project
+        let item = Item(type: type, id: id, name: name, description: description, parent: parent)
+        CreateEditPresenter().present(item: item, viewController: viewController)
     }
     
     func goToGetFeaturesErrorPopup(error: String, viewController: FeaturesViewController) {

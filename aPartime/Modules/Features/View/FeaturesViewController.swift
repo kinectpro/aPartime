@@ -21,17 +21,15 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, UITableView
     var presenter: FeaturesPresenterProtocol!
     
     var features = [FeatureViewModel]()
-    var project = Project()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FeaturesConfigurator.setupDependencies(viewController: self)
         setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.getAllFeatures(inProject: project)
+        presenter.getAllFeatures()
     }
     
     func setupViews() {
@@ -75,7 +73,8 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        presenter.openTasksFor(feature: features[index])
+        let feature = features[index]
+        presenter.openTasks(forFeature: feature)
     }
     
     // MARK: FeaturesScreenViewControllerProtocol implementation

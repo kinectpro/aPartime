@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol ProjectsRouterProtocol {
     func goToFeaturesModule(project: Project, viewController: ProjectsViewController)
@@ -18,20 +17,17 @@ protocol ProjectsRouterProtocol {
 class ProjectsRouter: NSObject, ProjectsRouterProtocol {
     
     func goToFeaturesModule(project: Project, viewController: ProjectsViewController) {
-        if let featuresViewController = UIStoryboard(name: "FeaturesScreen", bundle: nil).instantiateViewController(withIdentifier: "FeaturesViewController") as? FeaturesViewController {
-            featuresViewController.project = project
-            viewController.present(featuresViewController, animated: true)
-        }
+        FeaturesPresenter().present(project: project, viewController: viewController)
     }
     
     func goToCreateEditModule(project: Project, viewController: ProjectsViewController) {
-        if let createEditViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
-            createEditViewController.id = project.id
-            createEditViewController.category = "projects"
-            createEditViewController.nameProject = project.name
-            createEditViewController.descriptionProject = project.description
-            viewController.present(createEditViewController, animated: true)
-        }
+        let type = ItemType.project
+        let id = project.id
+        let name = project.name
+        let description = project.description
+        let parent = "jUN28Jn18DbaQElxpPuj"
+        let item = Item(type: type, id: id, name: name, description: description, parent: parent)
+        CreateEditPresenter().present(item: item, viewController: viewController)
     }
     
     func goToGetProjectsErrorPopup(error: String, viewController: ProjectsViewController) {

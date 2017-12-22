@@ -17,12 +17,12 @@ protocol TaskRouterProtocol {
 class TaskRouter: TaskRouterProtocol {
     
     func presentNewTask(tasksViewController: TasksViewController) {
-        if let createTaskViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
-            
-            createTaskViewController.category = "tasks"
-            createTaskViewController.categoryName = tasksViewController.feature
-            tasksViewController.present(createTaskViewController, animated: true)
-        }
+//        if let createTaskViewController = UIStoryboard(name: "CreateProject", bundle: nil).instantiateViewController(withIdentifier: "CreateProjectViewController") as? CreateProjectViewController {
+//            
+//            createTaskViewController.category = "tasks"
+//            createTaskViewController.categoryName = tasksViewController.feature
+//            tasksViewController.present(createTaskViewController, animated: true)
+//        }
     }
     
     func presentFinishedTaskScreen(tasksViewController: TasksViewController, nameTask: String, spentTime: String) {

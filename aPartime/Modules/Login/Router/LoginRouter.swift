@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol LoginRouterProtocol {
     func goToProjectsModule(viewController: LoginViewController)
@@ -17,9 +16,7 @@ protocol LoginRouterProtocol {
 class LoginRouter: NSObject, LoginRouterProtocol {
     
     func goToProjectsModule(viewController: LoginViewController) {
-        if let projectsViewController = UIStoryboard(name: "Projects", bundle: nil).instantiateViewController(withIdentifier: "ProjectsViewController") as? ProjectsViewController {
-            viewController.present(projectsViewController, animated: true)
-        }
+        ProjectsPresenter().present(viewController: viewController)
     }
     
     func goToLoginErrorPopup(error: String, viewController: LoginViewController) {

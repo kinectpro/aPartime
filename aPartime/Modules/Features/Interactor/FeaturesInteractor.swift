@@ -9,15 +9,15 @@
 import Foundation
 
 protocol FeaturesInteractorProtocol {
-    func getAllFeatures(inProject: Project)
+    func getAllFeatures(forProject: Project)
 }
 
 class FeaturesInteractor: NSObject, FeaturesInteractorProtocol {
     
     var presenter: FeaturesPresenterProtocol!
     
-    func getAllFeatures(inProject: Project) {
-        DbManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: inProject.name).getDocuments() { (querySnapshot, error) in
+    func getAllFeatures(forProject project: Project) {
+        DbManager.shared.defaultStore.collection("features").whereField("project", isEqualTo: project.name).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.featuresDidGetWithError(error: error.localizedDescription)
                 return
@@ -26,14 +26,16 @@ class FeaturesInteractor: NSObject, FeaturesInteractorProtocol {
                 self.presenter.featuresDidGetWithError(error: "Get features error")
                 return
             }
-            var features = [Feature]()
-            for document in querySnapshot.documents {
-                if let description = document.data()["description"] as? String, let project = document.data()["project"] as? String {
-                    let name = document.documentID
-                    let feature = Feature(name: name, description: description, project: project)
-                    features.append(feature)
-                }
-            }
+            let features = querySnapshot.documents.map({ (document) -> Feature in
+                let id = document.documentID
+                let name = document.data()["name"] as? String ?? ""
+                let description = document.data()["description"] as? String ?? ""
+                let project = document.data()["project"] as? String ?? ""
+                let created = document.data()["created"] as? Date ?? Date()
+                let modified = document.data()["modified"] as? Date ?? Date()
+                let feature = Feature(id: id, name: name, description: description, project: project, created: created, modified: modified)
+                return feature
+            }).sorted(by: { $0.modified > $1.modified })
             self.presenter.featuresDidGetWithSuccess(features: features)
         }
     }

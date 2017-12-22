@@ -13,15 +13,17 @@ class Project {
     var id: String
     var name: String
     var description: String
-    var features: [String]
-    var users: [String]
+    var team: String
+    var created: Date
+    var modified: Date
     
-    init(id: String = "", name: String = "", description: String = "", features: [String] = [], users: [String] = []) {
+    init(id: String = "", name: String = "", description: String = "", team: String = "", created: Date = Date(), modified: Date = Date()) {
         self.id = id
         self.name = name
         self.description = description
-        self.features = features
-        self.users = users
+        self.team = team
+        self.created = created
+        self.modified = modified
     }
     
 }

@@ -30,10 +30,12 @@ class ProjectsInteractor: NSObject, ProjectsInteractorProtocol {
                 let id = document.documentID
                 let name = document.data()["name"] as? String ?? ""
                 let description = document.data()["description"] as? String ?? ""
-                let features = document.data()["features"] as? [String] ?? [String]()
-                let users = document.data()["users"] as? [String] ?? [String]()
-                return Project(id: id, name: name, description: description, features: features, users: users)
-            })
+                let team = document.data()["team"] as? String ?? ""
+                let created = document.data()["created"] as? Date ?? Date()
+                let modified = document.data()["modified"] as? Date ?? Date()
+                let project = Project(id: id, name: name, description: description, team: team, created: created, modified: modified)
+                return project
+            }).sorted(by: { $0.modified > $1.modified })
             self.presenter.projectsDidGetWithSuccess(projects: projects)
         }
     }
