@@ -47,8 +47,8 @@ class FeaturesPresenter: NSObject, FeaturesPresenterProtocol {
     }
     
     func present(project: Project, viewController: UIViewController) {
-        self.project = project
         viewController.present(self.viewController, animated: true)
+        self.project = project
     }
     
     func getAllFeatures() {
@@ -57,7 +57,7 @@ class FeaturesPresenter: NSObject, FeaturesPresenterProtocol {
     
     func featuresDidGetWithSuccess(features: [Feature]) {
         self.features = features
-        let featureViewModels = features.flatMap({ FeatureViewModel(name: $0.name) })
+        let featureViewModels = features.flatMap({ FeatureViewModel(id: $0.id, name: $0.name) })
         viewController.showFeatures(features: featureViewModels)
     }
     
@@ -66,17 +66,18 @@ class FeaturesPresenter: NSObject, FeaturesPresenterProtocol {
     }
     
     func createNewFeature(){
-        router.goToCreateEditModule(feature: Feature(project: project.name), viewController: viewController)
+        let feature = Feature(project: project.id)
+        router.goToCreateEditModule(feature: feature, viewController: viewController)
     }
     
     func editFeature(feature: FeatureViewModel){
-        if let feature = features.filter({ $0.name == feature.name }).first {
+        if let feature = features.filter({ $0.id == feature.id }).first {
             router.goToCreateEditModule(feature: feature, viewController: viewController)
         }
     }
     
     func openTasks(forFeature feature: FeatureViewModel) {
-        if let feature = features.filter({ $0.name == feature.name }).first {
+        if let feature = features.filter({ $0.id == feature.id }).first {
             router.goToTasksModule(feature: feature, viewController: viewController)
         }
     }

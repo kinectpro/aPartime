@@ -64,7 +64,8 @@ class ProjectsPresenter: NSObject, ProjectsPresenterProtocol {
     }
     
     func createNewProject(){
-        router.goToCreateEditModule(project: Project(), viewController: viewController)
+        let project = Project()
+        router.goToCreateEditModule(project: project, viewController: viewController)
     }
     
     func editProject(project: ProjectViewModel) {
