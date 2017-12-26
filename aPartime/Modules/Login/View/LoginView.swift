@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginView.swift
 //  aPartime
 //
 //  Created by Sergey Kobzin on 05.12.2017.
@@ -9,7 +9,7 @@
 import GoogleSignIn
 import UIKit
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginView: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var googleLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginConfigurator.setupDependencies(viewController: self)
         setupViews()
     }
 

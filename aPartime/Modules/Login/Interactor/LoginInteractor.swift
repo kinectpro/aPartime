@@ -13,22 +13,22 @@ import Firebase
 import Foundation
 
 protocol LoginInteractorProtocol {
-    func executeGoogleLogin(viewController: LoginViewController)
-    func executeFacebookLogin(viewController: LoginViewController)
+    func executeGoogleLogin(view: LoginView)
+    func executeFacebookLogin(view: LoginView)
 }
 
 class LoginInteractor: NSObject, LoginInteractorProtocol {
     
     var presenter: LoginPresenterProtocol!
     
-    func executeGoogleLogin(viewController: LoginViewController) {
+    func executeGoogleLogin(view: LoginView) {
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = viewController
+        GIDSignIn.sharedInstance().uiDelegate = view
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func executeFacebookLogin(viewController: LoginViewController) {
-        LoginManager().logIn(readPermissions: [.publicProfile], viewController: viewController, completion: { loginResult in
+    func executeFacebookLogin(view: LoginView) {
+        LoginManager().logIn(readPermissions: [.publicProfile], viewController: view, completion: { loginResult in
             switch loginResult {
             case .failed(let error):
                 self.presenter.loginDidExecuteWithError(error: error.localizedDescription)

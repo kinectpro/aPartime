@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Features-->
+        <!--Tasks View Controller-->
         <scene sceneID="TbI-Wi-n9X">
             <objects>
-                <viewController storyboardIdentifier="FeaturesView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P8l-s6-3i0" customClass="FeaturesView" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P8l-s6-3i0" userLabel="Tasks View Controller" customClass="TasksView" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fEX-ry-fyQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,11 +21,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Vix-8E-7pp" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-il-Ti0" userLabel="Features Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-il-Ti0" userLabel="Tasks Table View">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureCell" rowHeight="70" id="x7A-OR-xPD" userLabel="Feature Cell" customClass="FeatureCell" customModule="aPartime" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" rowHeight="70" id="x7A-OR-xPD" userLabel="Task Cell" customClass="TaskCell" customModule="aPartime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x7A-OR-xPD" id="UPu-kk-qod">
@@ -35,7 +36,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBa-DF-pJw" userLabel="Cell Background View">
                                                     <rect key="frame" x="8" y="4" width="304" height="48"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feature Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3I-DM-pb9" userLabel="Feature Name Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3I-DM-pb9" userLabel="Task Name Label">
                                                             <rect key="frame" x="16" y="14" width="240" height="20.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -58,7 +59,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.98039215686274506" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Dex-Np-LGk" secondAttribute="bottom" priority="750" constant="8" id="0A5-Np-2RW"/>
                                                         <constraint firstItem="I3I-DM-pb9" firstAttribute="centerY" secondItem="zBa-DF-pJw" secondAttribute="centerY" id="GhL-wS-GW5"/>
@@ -97,6 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gM3-il-Ti0" firstAttribute="top" secondItem="x2K-cJ-KUR" secondAttribute="top" id="4dN-nk-kUY"/>
                             <constraint firstItem="gM3-il-Ti0" firstAttribute="trailing" secondItem="x2K-cJ-KUR" secondAttribute="trailing" id="c25-Uw-rrB"/>
                             <constraint firstItem="x2K-cJ-KUR" firstAttribute="bottom" secondItem="Vix-8E-7pp" secondAttribute="bottom" id="g9g-JN-wqh"/>
                             <constraint firstItem="x2K-cJ-KUR" firstAttribute="trailing" secondItem="Vix-8E-7pp" secondAttribute="trailing" id="ktC-So-YfC"/>
@@ -104,13 +106,12 @@
                             <constraint firstItem="gM3-il-Ti0" firstAttribute="bottom" secondItem="x2K-cJ-KUR" secondAttribute="bottom" id="tuF-al-sMy"/>
                             <constraint firstItem="Vix-8E-7pp" firstAttribute="top" secondItem="x2K-cJ-KUR" secondAttribute="top" constant="-20" id="uot-vc-Yua"/>
                             <constraint firstItem="Vix-8E-7pp" firstAttribute="leading" secondItem="x2K-cJ-KUR" secondAttribute="leading" id="vv1-qp-b05"/>
-                            <constraint firstItem="gM3-il-Ti0" firstAttribute="top" secondItem="x2K-cJ-KUR" secondAttribute="top" id="zUX-qZ-UfC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x2K-cJ-KUR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Features" id="IMq-aq-NHf" userLabel="Navigation Item"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="IMq-aq-NHf" userLabel="Navigation Item"/>
                     <connections>
-                        <outlet property="featuresTableView" destination="gM3-il-Ti0" id="2LU-yH-cEM"/>
+                        <outlet property="tasksTableView" destination="gM3-il-Ti0" id="xth-fS-Odm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep8-Fa-xpb" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let view = LoginPresenter().view {
+            window?.rootViewController = view
+            window?.makeKeyAndVisible()
+        }
         return true
     }
 

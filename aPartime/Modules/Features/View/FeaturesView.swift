@@ -1,5 +1,5 @@
 //
-//  FeaturesViewController.swift
+//  FeaturesView.swift
 //  aPartime
 //
 //  Created by den on 07/12/2017.
@@ -14,8 +14,6 @@ protocol FeaturesViewProtocol {
 
 class FeaturesView: UIViewController, UITableViewDelegate, UITableViewDataSource, FeaturesViewProtocol {
 
-    @IBOutlet weak var navigationBarView: UIView!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var featuresTableView: UITableView!
     
     var presenter: FeaturesPresenterProtocol!
@@ -24,28 +22,26 @@ class FeaturesView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        addViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupViews()
         presenter.getAllFeatures()
     }
     
+    func addViews() {
+        let createBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonDidTap))
+        navigationItem.rightBarButtonItems = [createBarButtonItem]
+    }
+    
     func setupViews() {
-        navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
-        navigationBarView.layer.shadowOpacity = 0.6
-        navigationBarView.layer.shadowOffset = CGSize.zero
-        navigationBarView.layer.shadowRadius = 4
+        navigationController?.navigationBar.barTintColor = UIColor(red: 160 / 255, green: 190 / 255, blue: 100 / 255, alpha: 1.0)
     }
     
-    //MARK: IBActions
-    @IBAction func addNewTapped(_ sender: UIButton) {
-        presenter.createNewFeature()
-    }
-    
-    @IBAction func backTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @objc func createButtonDidTap() {
+        presenter.createFeature()
     }
     
     //MARK: UITableViewDataSource

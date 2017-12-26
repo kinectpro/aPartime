@@ -9,18 +9,21 @@
 import Foundation
 
 protocol LoginRouterProtocol {
-    func goToProjectsModule(viewController: LoginViewController)
-    func goToLoginErrorPopup(error: String, viewController: LoginViewController)
+    func goToTabsModule(view: LoginView)
+    func goToLoginErrorPopup(error: String, view: LoginView)
 }
 
 class LoginRouter: NSObject, LoginRouterProtocol {
     
-    func goToProjectsModule(viewController: LoginViewController) {
-        ProjectsPresenter().present(viewController: viewController)
+    func goToTabsModule(view: LoginView) {
+        guard let tabsView = TabsPresenter().view else {
+            return
+        }
+        view.present(tabsView, animated: true)
     }
     
-    func goToLoginErrorPopup(error: String, viewController: LoginViewController) {
-        AlertManager.shared.showAlert(title: "Login error", message: error, viewController: viewController)
+    func goToLoginErrorPopup(error: String, view: LoginView) {
+        AlertManager.shared.showAlert(title: "Login error", message: error, viewController: view)
     }
     
 }

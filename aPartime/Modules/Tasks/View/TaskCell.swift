@@ -1,5 +1,5 @@
 //
-//  FeatureCell.swift
+//  TaskCell.swift
 //  aPartime
 //
 //  Created by den on 07/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeatureCell: UITableViewCell {
+class TaskCell: UITableViewCell {
 
     @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,8 +29,9 @@ class FeatureCell: UITableViewCell {
         cellBackgroundView.layer.shadowOffset = CGSize.zero
         cellBackgroundView.layer.shadowRadius = 2
     }
-
+    
     @IBAction func editTapped(_ sender: UIButton) {
         editTappedHandler()
     }
+    
 }

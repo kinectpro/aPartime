@@ -35,6 +35,10 @@ class CreateEditInteractor: CreateEditInteractorProtocol {
                     "modified"    : Date()] as [String : Any]
         if id.isEmpty {
             data["created"] = data["modified"]
+            if item.type == .task {
+                data["spentTime"] = 0.0
+                data["status"] = TaskStatus.created.rawValue
+            }
             DbManager.shared.defaultStore.collection(collection).addDocument(data: data, completion: { (error) in
                 if let error = error {
                     self.presenter.dataDidSaveWithError(error: error.localizedDescription)

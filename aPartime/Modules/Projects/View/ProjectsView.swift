@@ -1,5 +1,5 @@
 //
-//  ProjectsViewController.swift
+//  ProjectsView.swift
 //  aPartime
 //
 //  Created by Sergey Kobzin on 05.12.2017.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-protocol ProjectsViewControllerProtocol {
+protocol ProjectsViewProtocol {
     func showProjects(projects: [ProjectViewModel])
 }
 
-class ProjectsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectsViewControllerProtocol {
+class ProjectsView: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectsViewProtocol {
     
-    @IBOutlet weak var navigationBarView: UIView!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var projectsTableView: UITableView!
     
     var presenter: ProjectsPresenter!
@@ -24,24 +22,31 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        addViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupViews()
         presenter.getAllProjects()
     }
     
-    func setupViews() {
-        navigationBarView.layer.shadowColor = UIColor.darkGray.cgColor
-        navigationBarView.layer.shadowOpacity = 0.6
-        navigationBarView.layer.shadowOffset = CGSize.zero
-        navigationBarView.layer.shadowRadius = 4
+    func addViews() {
+        let createBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonDidTap))
+        let exportBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(exportButtonDidTap))
+        navigationItem.rightBarButtonItems = [createBarButtonItem, exportBarButtonItem]
     }
     
-    //MARK: IBActions
-    @IBAction func addNewTapped(_ sender: UIButton) {
-        presenter.createNewProject()
+    func setupViews() {
+        navigationController?.navigationBar.barTintColor = UIColor(red: 100 / 255, green: 160 / 255, blue: 190 / 255, alpha: 1.0)
+    }
+    
+    @objc func exportButtonDidTap() {
+        
+    }
+    
+    @objc func createButtonDidTap() {
+        presenter.createProject()
     }
     
     //MARK: UITableViewDataSource
@@ -51,6 +56,7 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
+        let project = projects[index]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         if index == 0 {
             cell.topConstraint.constant = 8.0
@@ -58,7 +64,6 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
         if index == projects.count - 1 {
             cell.bottomConstraint.constant = 8.0
         }
-        let project = projects[index]
         cell.projectNameLabel.text = project.name
         cell.editTappedHandler = {
             self.presenter.editProject(project: project)
