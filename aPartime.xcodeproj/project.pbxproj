@@ -12,6 +12,10 @@
 		C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */; };
 		C591FDFA1FD6CB0B007BE2D3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDF91FD6CB0B007BE2D3 /* Login.storyboard */; };
 		C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */; };
+		C59F90B31FF52AA7005DC13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F90B21FF52AA7005DC13E /* AppDelegate.swift */; };
+		C59F90B51FF52AA7005DC13E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F90B41FF52AA7005DC13E /* ViewController.swift */; };
+		C59F90B71FF52AA7005DC13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B61FF52AA7005DC13E /* Assets.xcassets */; };
+		C59F90BA1FF52AA7005DC13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B81FF52AA7005DC13E /* Main.storyboard */; };
 		D9106E3D1FEA85AF0079B1D1 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */; };
 		D9106E3E1FEA85AF0079B1D1 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3C1FEA85AF0079B1D1 /* Project.swift */; };
 		D9106E431FEAC9440079B1D1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E421FEAC9440079B1D1 /* Item.swift */; };
@@ -68,6 +72,13 @@
 		C591FDEA1FD6C811007BE2D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C591FDF91FD6CB0B007BE2D3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		C59F90B01FF52AA7005DC13E /* aPartime-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aPartime-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C59F90B21FF52AA7005DC13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C59F90B41FF52AA7005DC13E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C59F90B61FF52AA7005DC13E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C59F90B91FF52AA7005DC13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C59F90BB1FF52AA7005DC13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C59F90BC1FF52AA7005DC13E /* aPartime_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPartime_mac.entitlements; sourceTree = "<group>"; };
 		D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		D9106E3C1FEA85AF0079B1D1 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D9106E421FEAC9440079B1D1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -126,6 +137,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C59F90AD1FF52AA7005DC13E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -142,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C591FDDD1FD6C811007BE2D3 /* aPartime */,
+				C59F90B11FF52AA7005DC13E /* aPartime-mac */,
 				C591FDDC1FD6C811007BE2D3 /* Products */,
 				9498883B2E75E3793943E603 /* Pods */,
 				E42521EF777570630E9306EE /* Frameworks */,
@@ -152,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				C591FDDB1FD6C811007BE2D3 /* aPartime.app */,
+				C59F90B01FF52AA7005DC13E /* aPartime-mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +242,19 @@
 				D95BE3811FD838CA005BA9A0 /* LoginInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C59F90B11FF52AA7005DC13E /* aPartime-mac */ = {
+			isa = PBXGroup;
+			children = (
+				C59F90B21FF52AA7005DC13E /* AppDelegate.swift */,
+				C59F90B41FF52AA7005DC13E /* ViewController.swift */,
+				C59F90B61FF52AA7005DC13E /* Assets.xcassets */,
+				C59F90B81FF52AA7005DC13E /* Main.storyboard */,
+				C59F90BB1FF52AA7005DC13E /* Info.plist */,
+				C59F90BC1FF52AA7005DC13E /* aPartime_mac.entitlements */,
+			);
+			path = "aPartime-mac";
 			sourceTree = "<group>";
 		};
 		D9106E3A1FEA85AF0079B1D1 /* Entity */ = {
@@ -541,13 +574,30 @@
 			productReference = C591FDDB1FD6C811007BE2D3 /* aPartime.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C59F90AF1FF52AA7005DC13E /* aPartime-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C59F90BF1FF52AA8005DC13E /* Build configuration list for PBXNativeTarget "aPartime-mac" */;
+			buildPhases = (
+				C59F90AC1FF52AA7005DC13E /* Sources */,
+				C59F90AD1FF52AA7005DC13E /* Frameworks */,
+				C59F90AE1FF52AA7005DC13E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "aPartime-mac";
+			productName = "aPartime-mac";
+			productReference = C59F90B01FF52AA7005DC13E /* aPartime-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C591FDD31FD6C811007BE2D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = kinectpro;
 				TargetAttributes = {
@@ -559,6 +609,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					C59F90AF1FF52AA7005DC13E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -576,6 +630,7 @@
 			projectRoot = "";
 			targets = (
 				C591FDDA1FD6C811007BE2D3 /* aPartime */,
+				C59F90AF1FF52AA7005DC13E /* aPartime-mac */,
 			);
 		};
 /* End PBXProject section */
@@ -595,6 +650,15 @@
 				D9E5C4E31FDAE24500E28C06 /* Projects.storyboard in Resources */,
 				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
 				D918E1561FE904220054087B /* CreateEdit.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59F90AE1FF52AA7005DC13E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59F90B71FF52AA7005DC13E /* Assets.xcassets in Resources */,
+				C59F90BA1FF52AA7005DC13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +802,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C59F90AC1FF52AA7005DC13E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59F90B51FF52AA7005DC13E /* ViewController.swift in Sources */,
+				C59F90B31FF52AA7005DC13E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -747,6 +820,14 @@
 				C591FDE81FD6C811007BE2D3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C59F90B81FF52AA7005DC13E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59F90B91FF52AA7005DC13E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -895,6 +976,44 @@
 			};
 			name = Release;
 		};
+		C59F90BD1FF52AA7005DC13E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "aPartime-mac/aPartime_mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7XSVATSQ6N;
+				INFOPLIST_FILE = "aPartime-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "team.kinectpro.aPartime-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C59F90BE1FF52AA7005DC13E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "aPartime-mac/aPartime_mac.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7XSVATSQ6N;
+				INFOPLIST_FILE = "aPartime-mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "team.kinectpro.aPartime-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -912,6 +1031,15 @@
 			buildConfigurations = (
 				C591FDEE1FD6C811007BE2D3 /* Debug */,
 				C591FDEF1FD6C811007BE2D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C59F90BF1FF52AA8005DC13E /* Build configuration list for PBXNativeTarget "aPartime-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C59F90BD1FF52AA7005DC13E /* Debug */,
+				C59F90BE1FF52AA7005DC13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -62,8 +62,11 @@ class TasksView: UIViewController, UITableViewDelegate, UITableViewDataSource, T
             cell.bottomConstraint.constant = 8.0
         }
         cell.nameLabel.text = task.name
-        cell.editTappedHandler = {
-            self.presenter.editTask(task: task)
+        cell.playTappedHandler = {
+            //self.presenter.editTask(task: task)
+        }
+        cell.stopTappedHandler = {
+            
         }
         return cell
     }

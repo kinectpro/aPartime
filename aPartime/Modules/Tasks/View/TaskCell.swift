@@ -12,12 +12,14 @@ class TaskCell: UITableViewCell {
 
     @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var editTappedHandler: () -> Void = {}
+    var playTappedHandler: () -> Void = {}
+    var stopTappedHandler: () -> Void = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +32,12 @@ class TaskCell: UITableViewCell {
         cellBackgroundView.layer.shadowRadius = 2
     }
     
-    @IBAction func editTapped(_ sender: UIButton) {
-        editTappedHandler()
+
+    @IBAction func playTapped(_ sender: UIButton) {
+        playTappedHandler()
     }
     
+    @IBAction func stopTapped(_ sender: UIButton) {
+        stopTappedHandler()
+    }
 }
