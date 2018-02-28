@@ -9,11 +9,14 @@
 import Foundation
 
 enum TaskStatus: Int {
-    case created = 0
+//    case created = 0
+//    case started = 1
+//    case paused = 2
+//    case unpaused = 3
+//    case finished = 4
+    case paused = 0
     case started = 1
-    case paused = 2
-    case unpaused = 3
-    case finished = 4
+    case finished = 3
 }
 
 class Task {
@@ -31,7 +34,7 @@ class Task {
     var unpaused: Date
     var finished: Date
     
-    init(id: String = "", name: String = "", description: String = "", feature: String = "", spentTime: Double = 0.0, status: TaskStatus = .created, created: Date = Date(), modified: Date = Date(), started: Date = Date(), paused: Date = Date(), unpaused: Date = Date(), finished: Date = Date()) {
+    init(id: String = "", name: String = "", description: String = "", feature: String = "", spentTime: Double = 0.0, status: TaskStatus = .paused, created: Date = Date(), modified: Date = Date(), started: Date = Date(), paused: Date = Date(), unpaused: Date = Date(), finished: Date = Date()) {
         self.id = id
         self.name = name
         self.description = description

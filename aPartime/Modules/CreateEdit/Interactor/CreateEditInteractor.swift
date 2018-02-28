@@ -37,7 +37,7 @@ class CreateEditInteractor: CreateEditInteractorProtocol {
             data["created"] = data["modified"]
             if item.type == .task {
                 data["spentTime"] = 0.0
-                data["status"] = TaskStatus.created.rawValue
+                data["status"] = TaskStatus.paused.rawValue
             }
             DbManager.shared.defaultStore.collection(collection).addDocument(data: data, completion: { (error) in
                 if let error = error {

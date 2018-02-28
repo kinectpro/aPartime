@@ -57,6 +57,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <state key="selected" image="PauseIcon"/>
                                                             <connections>
                                                                 <action selector="playTapped:" destination="x7A-OR-xPD" eventType="touchUpInside" id="lVd-4o-Oxa"/>
                                                             </connections>
@@ -124,6 +125,7 @@
                                             <outlet property="nameLabel" destination="I3I-DM-pb9" id="OA2-cq-EXx"/>
                                             <outlet property="playButton" destination="Dex-Np-LGk" id="Mcu-sf-Jbj"/>
                                             <outlet property="stopButton" destination="CoD-dG-wgI" id="kk6-pP-AIO"/>
+                                            <outlet property="timeLabel" destination="IR1-8G-iPi" id="2n1-gG-Xz7"/>
                                             <outlet property="topConstraint" destination="18V-cx-2PC" id="awM-mg-XV7"/>
                                         </connections>
                                     </tableViewCell>
@@ -160,6 +162,7 @@
     </scenes>
     <resources>
         <image name="MainScreenBackground" width="512" height="512"/>
+        <image name="PauseIcon" width="32" height="32"/>
         <image name="PlayIcon" width="32" height="32"/>
         <image name="StopIcon" width="32" height="32"/>
     </resources>

@@ -16,6 +16,7 @@
 		C59F90B51FF52AA7005DC13E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F90B41FF52AA7005DC13E /* ViewController.swift */; };
 		C59F90B71FF52AA7005DC13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B61FF52AA7005DC13E /* Assets.xcassets */; };
 		C59F90BA1FF52AA7005DC13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B81FF52AA7005DC13E /* Main.storyboard */; };
+		C5C792E320469C9B00C99795 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792E220469C9B00C99795 /* TaskTimer.swift */; };
 		D9106E3D1FEA85AF0079B1D1 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */; };
 		D9106E3E1FEA85AF0079B1D1 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3C1FEA85AF0079B1D1 /* Project.swift */; };
 		D9106E431FEAC9440079B1D1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E421FEAC9440079B1D1 /* Item.swift */; };
@@ -79,6 +80,7 @@
 		C59F90B91FF52AA7005DC13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C59F90BB1FF52AA7005DC13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59F90BC1FF52AA7005DC13E /* aPartime_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPartime_mac.entitlements; sourceTree = "<group>"; };
+		C5C792E220469C9B00C99795 /* TaskTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
 		D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		D9106E3C1FEA85AF0079B1D1 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D9106E421FEAC9440079B1D1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				C591FDEA1FD6C811007BE2D3 /* Info.plist */,
 				D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */,
 				D969FC5D1FE14D4C00FA3353 /* aPartime.entitlements */,
+				C5C792E220469C9B00C99795 /* TaskTimer.swift */,
 			);
 			path = aPartime;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */,
 				D9D1E8521FED4DEC000B296C /* TasksRouter.swift in Sources */,
 				D9CF72F71FF24E0B00C80F9B /* TabsPresenter.swift in Sources */,
+				C5C792E320469C9B00C99795 /* TaskTimer.swift in Sources */,
 				D9E5C52C1FDAE70400E28C06 /* FeaturesRouter.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginInteractor.swift in Sources */,
 				D9E5C5291FDAE70400E28C06 /* FeaturesView.swift in Sources */,

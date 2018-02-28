@@ -61,12 +61,28 @@ class TasksView: UIViewController, UITableViewDelegate, UITableViewDataSource, T
         if index == tasks.count - 1 {
             cell.bottomConstraint.constant = 8.0
         }
+        cell.spentTime = task.spentTime
         cell.nameLabel.text = task.name
+        cell.timeLabel.text = cell.stringFromTimeInterval(interval: task.spentTime) as String
         cell.playTappedHandler = {
+            task.spentTime = cell.spentTime
+            self.pauseAllTasks()
+            if cell.isPause {
+                cell.playButton.isSelected = false
+                cell.taskTimer.pauseTimer()
+                self.presenter.updateTask(task, status: TaskStatus.paused)
+            }else{
+                cell.playButton.isSelected = true
+                cell.taskTimer.startTimer()
+                self.presenter.updateTask(task, status: TaskStatus.started)
+                
+            }
             //self.presenter.editTask(task: task)
         }
         cell.stopTappedHandler = {
-            
+            cell.playButton.isSelected = false
+            cell.taskTimer.pauseTimer()
+            self.presenter.updateTask(task, status: TaskStatus.finished)
         }
         return cell
     }
@@ -75,6 +91,21 @@ class TasksView: UIViewController, UITableViewDelegate, UITableViewDataSource, T
     func showTasks(tasks: [TaskViewModel]) {
         self.tasks = tasks
         tasksTableView.reloadData()
+    }
+    
+    func pauseAllTasks() {
+        var i = 0
+        for task in tasks {
+            let cell = tasksTableView.cellForRow(at: IndexPath(item: i, section: 0)) as! TaskCell
+            if !cell.isPause{
+                cell.playButton.isSelected = false
+                cell.taskTimer.pauseTimer()
+                task.spentTime = cell.spentTime
+                self.presenter.updateTask(task, status: TaskStatus.paused)
+            }
+            
+            i += 1
+        }
     }
 
 }

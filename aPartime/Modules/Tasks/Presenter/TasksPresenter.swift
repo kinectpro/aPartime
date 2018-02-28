@@ -15,6 +15,9 @@ protocol TasksPresenterProtocol {
     func tasksDidGetWithError(error: String)
     func createTask()
     func editTask(task: TaskViewModel)
+    func dataDidSaveWithSuccess()
+    func dataDidSaveWithError(error: String)
+    func updateTask(_ task: TaskViewModel, status: TaskStatus)
 }
 
 class TasksPresenter: NSObject, TasksPresenterProtocol {
@@ -70,4 +73,21 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
         }
     }
     
+    func updateTask(_ task: TaskViewModel, status: TaskStatus) {
+        let taskCurrent = Task()
+        taskCurrent.id = task.id
+        taskCurrent.name  = task.name
+        taskCurrent.spentTime = task.spentTime
+        taskCurrent.status = status
+        taskCurrent.feature = self.feature.id
+        interactor.updateTask(taskCurrent)
+    }
+    
+    func dataDidSaveWithSuccess() {
+        print("SUCCESS")
+    }
+    
+    func dataDidSaveWithError(error: String) {
+        print("ERROR")
+    }
 }

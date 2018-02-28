@@ -13,6 +13,7 @@ class TaskViewModel {
     var id: String
     var name: String
     var spentTime: Double
+    //var status: TaskStatus
     
     init(id: String = "", name: String = "", spentTime: Double = 0.0) {
         self.id = id

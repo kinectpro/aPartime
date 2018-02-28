@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Firebase
 
 protocol TasksInteractorProtocol {
     func getAllTasks(forFeature: Feature)
+    func updateTask(_ task:Task)
 }
 
 class TasksInteractor: NSObject, TasksInteractorProtocol {
@@ -42,6 +44,24 @@ class TasksInteractor: NSObject, TasksInteractorProtocol {
                 return task
             }).sorted(by: { $0.modified > $1.modified })
             self.presenter.tasksDidGetWithSuccess(tasks: tasks)
+        }
+    }
+    
+    func updateTask(_ task: Task) {
+        let data = ["name"        : task.name,
+                    "description" : task.description,
+                    "feature"     : task.feature,
+                    "spentTime"   : task.spentTime,
+                    "status"      : task.status.rawValue,
+                    "modified"    : Date()] as [String : Any]
+        
+        DbManager.shared.defaultStore.collection("tasks").document(task.id).setData(data, options: SetOptions.merge()) { err in
+            if let err = err {
+                self.presenter.dataDidSaveWithError(error: err.localizedDescription)
+                return
+            }
+            
+            self.presenter.dataDidSaveWithSuccess()
         }
     }
     
