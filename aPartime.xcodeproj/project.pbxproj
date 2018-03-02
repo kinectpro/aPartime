@@ -11,12 +11,15 @@
 		C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE51FD6C811007BE2D3 /* Assets.xcassets */; };
 		C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */; };
 		C591FDFA1FD6CB0B007BE2D3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDF91FD6CB0B007BE2D3 /* Login.storyboard */; };
-		C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */; };
 		C59F90B31FF52AA7005DC13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F90B21FF52AA7005DC13E /* AppDelegate.swift */; };
 		C59F90B51FF52AA7005DC13E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F90B41FF52AA7005DC13E /* ViewController.swift */; };
 		C59F90B71FF52AA7005DC13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B61FF52AA7005DC13E /* Assets.xcassets */; };
 		C59F90BA1FF52AA7005DC13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59F90B81FF52AA7005DC13E /* Main.storyboard */; };
 		C5C792E320469C9B00C99795 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792E220469C9B00C99795 /* TaskTimer.swift */; };
+		C5C792E9204971A000C99795 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792E82049719F00C99795 /* FavoritesView.swift */; };
+		C5C792EB204972F300C99795 /* FavoriteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792EA204972F300C99795 /* FavoriteViewCell.swift */; };
+		C5C792EE204978B900C99795 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792ED204978B900C99795 /* Favorite.swift */; };
+		C5C792F120498FE200C99795 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C792F020498FE200C99795 /* FavoriteInteractor.swift */; };
 		D9106E3D1FEA85AF0079B1D1 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */; };
 		D9106E3E1FEA85AF0079B1D1 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E3C1FEA85AF0079B1D1 /* Project.swift */; };
 		D9106E431FEAC9440079B1D1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9106E421FEAC9440079B1D1 /* Item.swift */; };
@@ -72,7 +75,6 @@
 		C591FDE81FD6C811007BE2D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C591FDEA1FD6C811007BE2D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C591FDF91FD6CB0B007BE2D3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		C59F90B01FF52AA7005DC13E /* aPartime-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aPartime-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59F90B21FF52AA7005DC13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C59F90B41FF52AA7005DC13E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		C59F90BB1FF52AA7005DC13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59F90BC1FF52AA7005DC13E /* aPartime_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPartime_mac.entitlements; sourceTree = "<group>"; };
 		C5C792E220469C9B00C99795 /* TaskTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
+		C5C792E82049719F00C99795 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		C5C792EA204972F300C99795 /* FavoriteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewCell.swift; sourceTree = "<group>"; };
+		C5C792ED204978B900C99795 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		C5C792F020498FE200C99795 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		D9106E3B1FEA85AF0079B1D1 /* ProjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		D9106E3C1FEA85AF0079B1D1 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		D9106E421FEAC9440079B1D1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -184,14 +190,13 @@
 				C591FDF01FD6CA5C007BE2D3 /* Modules */,
 				C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */,
 				D969FC751FE17EEA00FA3353 /* AlertManager.swift */,
-				C591FE011FD6D0D6007BE2D3 /* AppDependencies.swift */,
+				C5C792E220469C9B00C99795 /* TaskTimer.swift */,
 				D969FC5A1FE14A4200FA3353 /* DbManager.swift */,
 				C591FDE51FD6C811007BE2D3 /* Assets.xcassets */,
 				C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */,
 				C591FDEA1FD6C811007BE2D3 /* Info.plist */,
 				D95BE37C1FD7F668005BA9A0 /* GoogleService-Info.plist */,
 				D969FC5D1FE14D4C00FA3353 /* aPartime.entitlements */,
-				C5C792E220469C9B00C99795 /* TaskTimer.swift */,
 			);
 			path = aPartime;
 			sourceTree = "<group>";
@@ -258,6 +263,22 @@
 				C59F90BC1FF52AA7005DC13E /* aPartime_mac.entitlements */,
 			);
 			path = "aPartime-mac";
+			sourceTree = "<group>";
+		};
+		C5C792EC204978A600C99795 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C5C792ED204978B900C99795 /* Favorite.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C5C792EF20498FA100C99795 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C5C792F020498FE200C99795 /* FavoriteInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D9106E3A1FEA85AF0079B1D1 /* Entity */ = {
@@ -335,7 +356,9 @@
 		D9CF72EF1FF24CE000C80F9B /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				C5C792EC204978A600C99795 /* Entity */,
 				D9CF72F01FF24CF200C80F9B /* View */,
+				C5C792EF20498FA100C99795 /* Interactor */,
 				D9CF72F51FF24DE700C80F9B /* Presenter */,
 			);
 			path = Tabs;
@@ -345,6 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				D9CF72F11FF24D0200C80F9B /* Tabs.storyboard */,
+				C5C792E82049719F00C99795 /* FavoritesView.swift */,
+				C5C792EA204972F300C99795 /* FavoriteViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -763,10 +788,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C792F120498FE200C99795 /* FavoriteInteractor.swift in Sources */,
 				D9E5C4E21FDAE24500E28C06 /* ProjectsPresenter.swift in Sources */,
 				D9D1E84D1FED4DEC000B296C /* TasksPresenter.swift in Sources */,
 				D918E1551FE904220054087B /* CreateEditPresenter.swift in Sources */,
 				D9106E431FEAC9440079B1D1 /* Item.swift in Sources */,
+				C5C792E9204971A000C99795 /* FavoritesView.swift in Sources */,
 				D9106E3D1FEA85AF0079B1D1 /* ProjectViewModel.swift in Sources */,
 				D9D1E8501FED4DEC000B296C /* TasksView.swift in Sources */,
 				D918E15A1FE904220054087B /* CreateEditInteractor.swift in Sources */,
@@ -777,11 +804,13 @@
 				D969FC5B1FE14A4300FA3353 /* DbManager.swift in Sources */,
 				D9D1E8521FED4DEC000B296C /* TasksRouter.swift in Sources */,
 				D9CF72F71FF24E0B00C80F9B /* TabsPresenter.swift in Sources */,
+				C5C792EE204978B900C99795 /* Favorite.swift in Sources */,
 				C5C792E320469C9B00C99795 /* TaskTimer.swift in Sources */,
 				D9E5C52C1FDAE70400E28C06 /* FeaturesRouter.swift in Sources */,
 				D95BE3821FD838CA005BA9A0 /* LoginInteractor.swift in Sources */,
 				D9E5C5291FDAE70400E28C06 /* FeaturesView.swift in Sources */,
 				C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */,
+				C5C792EB204972F300C99795 /* FavoriteViewCell.swift in Sources */,
 				D969FC8D1FE2844300FA3353 /* Feature.swift in Sources */,
 				D9E5C4E51FDAE24500E28C06 /* ProjectsView.swift in Sources */,
 				D969FC761FE17EEA00FA3353 /* AlertManager.swift in Sources */,
@@ -800,7 +829,6 @@
 				D9E5C52B1FDAE70400E28C06 /* FeaturesInteractor.swift in Sources */,
 				D9D1E84B1FED4DEC000B296C /* Task.swift in Sources */,
 				D9D1E84F1FED4DEC000B296C /* TaskCell.swift in Sources */,
-				C591FE021FD6D0D6007BE2D3 /* AppDependencies.swift in Sources */,
 				D918E1571FE904220054087B /* CreateEditViewController.swift in Sources */,
 				D9D1E84C1FED4DEC000B296C /* TaskViewModel.swift in Sources */,
 			);
