@@ -2,14 +2,14 @@
 
 Application for tracking time.
 
-# Tech
+### Tech
 
 Application is written with Swift 4.0 requirements and used VIPER architecture. 
 
 VIPER (https://www.youtube.com/watch?v=FvwUIabkcvo ,https://github.com/mutualmobile/VIPER-SWIFT) is an application of the Clean Architecture to iOS projects. It stands for View, Interactor, Presenter, Entity, and Router. It's a really segmented way to divide responsibilities, fits very well with unit testing and makes your code more reusable.
 
 
-# Used frameworks:
+### Used frameworks:
 
 GoogleSignIn - https://developers.google.com/identity/sign-in/ios/start?ver=swift
 
