@@ -15,9 +15,10 @@ protocol TabsPresenterProtocol {
     func getAllFavorites()
 }
 
-class TabsPresenter: NSObject {
+class TabsPresenter: NSObject, TabsPresenterProtocol {
     
     var view: UITabBarController!
+    var interactor: FavoriteInteractorProtocol!
     var favoritesView: FavoritesView!
     var favorites = [Favorite]()
     
@@ -35,7 +36,12 @@ class TabsPresenter: NSObject {
             return
         }
         view = viewController
+        favoritesVC.presenter = self
         favoritesView = favoritesVC
+        
+        let interactor = FavoriteInteractor()
+        interactor.presenter = self
+        self.interactor = interactor
     }
     
     func setupSubmodules() {
@@ -56,6 +62,6 @@ class TabsPresenter: NSObject {
     }
     
     func getAllFavorites(){
-        
+        self.interactor.getFavorites()
     }
 }

@@ -20,7 +20,7 @@
         <!--Favorites View-->
         <scene sceneID="30C-0N-Uma">
             <objects>
-                <viewController storyboardIdentifier="FavView" id="buQ-al-FhE" customClass="FavoritesView" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="buQ-al-FhE" customClass="FavoritesView" customModule="aPartime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtp-2z-pcr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="hU7-qd-lPd"/>
                     <connections>
-                        <outlet property="tableView" destination="I5s-f4-MvP" id="9y1-uI-3To"/>
+                        <outlet property="favoritesTableView" destination="I5s-f4-MvP" id="9y1-uI-3To"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEM-gi-5Wr" userLabel="First Responder" sceneMemberID="firstResponder"/>

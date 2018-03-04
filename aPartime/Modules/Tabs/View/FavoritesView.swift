@@ -18,16 +18,17 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var favorites = [Favorite]()
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var favoritesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter = TabsPresenter()
+        presenter.getAllFavorites()
     }
     
     //MARK: UITableViewDataSource
@@ -39,12 +40,6 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let index = indexPath.row
         let favorite = favorites[index]
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteViewCell
-//        if index == 0 {
-//            cell.topConstraint.constant = 8.0
-//        }
-//        if index == favorites.count - 1 {
-//            cell.bottomConstraint.constant = 8.0
-//        }
         cell.nameLabel.text = favorite.name
         cell.dateLabel.text = "01.01.2025"//favorite.modified
         cell.statusLabel.text = "Pause"//favorite.status.rawValue
@@ -61,7 +56,10 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func showFavorites(favorites: [Favorite]) {
         self.favorites = favorites
-        tableView.reloadData()
+        guard let favoritesTableView = favoritesTableView else {
+            return
+        }
+        favoritesTableView.reloadData()
     }
     
     func stringFromTimeInterval(interval: Double) -> NSString {
