@@ -13,6 +13,7 @@ protocol TabsPresenterProtocol {
     func openTask(forFeature feature:String)
     func favoritesDidGetWithSuccess(favorites: [Favorite])
     func getAllFavorites()
+    var favoritesHandler:([Favorite]) -> (){ get set }
 }
 
 class TabsPresenter: NSObject, TabsPresenterProtocol {
@@ -21,6 +22,7 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
     var interactor: FavoriteInteractorProtocol!
     var favoritesView: FavoritesView!
     var favorites = [Favorite]()
+    var favoritesHandler:([Favorite]) -> () = {_ in }
     
     override init() {
         super.init()
@@ -62,6 +64,11 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
     }
     
     func getAllFavorites(){
-        self.interactor.getFavorites()
+        self.interactor.getFavorites(success: { (favorites) in
+            self.favorites = favorites
+            //self.favoritesView.showFavorites(favorites: favorites)
+            self.favoritesHandler(favorites)
+        }) {
+        }
     }
 }

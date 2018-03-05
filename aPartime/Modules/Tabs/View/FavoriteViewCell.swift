@@ -17,7 +17,8 @@ class FavoriteViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        spentTimeLabel.layer.cornerRadius = spentTimeLabel.frame.height/2
+        spentTimeLabel.layer.backgroundColor = UIColor(red: 171/255, green: 255/255, blue: 199/255, alpha: 0.3).cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

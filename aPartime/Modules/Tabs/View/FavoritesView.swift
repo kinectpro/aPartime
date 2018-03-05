@@ -22,12 +22,18 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        favoritesTableView.dataSource = self
+        favoritesTableView.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter = TabsPresenter()
+        presenter.favoritesHandler = {favorites in
+            self.favorites = favorites
+            self.favoritesTableView.reloadData()
+        }
         presenter.getAllFavorites()
     }
     
@@ -41,7 +47,7 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let favorite = favorites[index]
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteViewCell
         cell.nameLabel.text = favorite.name
-        cell.dateLabel.text = "01.01.2025"//favorite.modified
+        cell.dateLabel.text = favorite.modified.iso8601
         cell.statusLabel.text = "Pause"//favorite.status.rawValue
         cell.spentTimeLabel.text = stringFromTimeInterval(interval: favorite.spentTime) as String
         return cell

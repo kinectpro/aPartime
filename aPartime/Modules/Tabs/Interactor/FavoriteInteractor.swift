@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 protocol FavoriteInteractorProtocol {
-    func getFavorites()
+    func getFavorites( success:@escaping (_ favorites:[Favorite]) -> Void, fail:@escaping() -> Void)
     func getFeatureById(_ id: String) -> String
 }
 
@@ -19,11 +19,12 @@ class FavoriteInteractor: NSObject, FavoriteInteractorProtocol {
     var presenter: TabsPresenterProtocol!
     var defaultStore = DbManager.shared.defaultStore
     
-    func getFavorites(){
+    func getFavorites( success:@escaping (_ favorites:[Favorite]) -> Void, fail:@escaping() -> Void){
         defaultStore.collection("tasks").getDocuments { (querySnapshot, err) in
             
             guard let querySnapshot = querySnapshot else {
                 //self.presenter.projectsDidGetWithError(error: "Get projects error")
+                fail()
                 return
             }
             
@@ -42,7 +43,8 @@ class FavoriteInteractor: NSObject, FavoriteInteractorProtocol {
                 print(favorite.name)
                 return favorite
             }).sorted(by: { $0.modified > $1.modified })
-            self.presenter.favoritesDidGetWithSuccess(favorites: favorites)
+            //self.presenter.favoritesDidGetWithSuccess(favorites: favorites)
+            success(favorites)
         }
     }
     
