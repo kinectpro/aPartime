@@ -1,7 +1,7 @@
 # aPartime
 
 Application for tracking time.
-![image_1](./screenshots/1_portrait.png)
+![image_1](./aPartime/screenshots/1_portrait.png)
 
 ### Tech
 
