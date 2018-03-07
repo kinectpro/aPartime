@@ -48,7 +48,7 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteViewCell
         cell.nameLabel.text = favorite.name
         cell.dateLabel.text = favorite.modified.iso8601
-        cell.statusLabel.text = "Pause"//favorite.status.rawValue
+        cell.statusLabel.text = favorite.getStringStatus(status: favorite.status)//favorite.status.rawValue
         cell.spentTimeLabel.text = stringFromTimeInterval(interval: favorite.spentTime) as String
         return cell
     }
@@ -57,7 +57,7 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         let favorite = favorites[index]
-        //presenter.openTask(forFeature: favorite.feature)
+        presenter.openTask(forFeature: favorite.feature, view: self)
     }
     
     func showFavorites(favorites: [Favorite]) {

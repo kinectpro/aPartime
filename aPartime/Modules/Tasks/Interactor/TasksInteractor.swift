@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 protocol TasksInteractorProtocol {
-    func getAllTasks(forFeature: Feature)
+    func getAllTasks(forFeature: String)
     func updateTask(_ task:Task)
 }
 
@@ -18,8 +18,8 @@ class TasksInteractor: NSObject, TasksInteractorProtocol {
     
     var presenter: TasksPresenterProtocol!
     
-    func getAllTasks(forFeature feature: Feature) {
-        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: feature.id).getDocuments() { (querySnapshot, error) in
+    func getAllTasks(forFeature feature: String) {
+        DbManager.shared.defaultStore.collection("tasks").whereField("feature", isEqualTo: feature).getDocuments() { (querySnapshot, error) in
             if let error = error {
                 self.presenter.tasksDidGetWithError(error: error.localizedDescription)
                 return

@@ -18,7 +18,7 @@ protocol FeaturesRouterProtocol {
 class FeaturesRouter: NSObject, FeaturesRouterProtocol {
     
     func goToTasksModule(feature: Feature, view: FeaturesView) {
-        guard let tasksView = TasksPresenter(feature: feature).view else {
+        guard let tasksView = TasksPresenter(feature: feature.id).view else {
             return
         }
         view.navigationController?.pushViewController(tasksView, animated: true)

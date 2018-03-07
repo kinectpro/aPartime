@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol TabsPresenterProtocol {
-    func openTask(forFeature feature:String)
+    func openTask(forFeature feature:String, view: FavoritesView)
     func favoritesDidGetWithSuccess(favorites: [Favorite])
     func getAllFavorites()
     var favoritesHandler:([Favorite]) -> (){ get set }
@@ -23,6 +23,7 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
     var favoritesView: FavoritesView!
     var favorites = [Favorite]()
     var favoritesHandler:([Favorite]) -> () = {_ in }
+    var router: FavoritesRouter!
     
     override init() {
         super.init()
@@ -44,6 +45,8 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
         let interactor = FavoriteInteractor()
         interactor.presenter = self
         self.interactor = interactor
+        
+        self.router = FavoritesRouter()
     }
     
     func setupSubmodules() {
@@ -53,8 +56,8 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
         view.viewControllers?.append(navigationView)
     }
     
-    func openTask(forFeature feature:String){
-        
+    func openTask(forFeature feature:String, view: FavoritesView){
+        self.router.goToTasksModule(feature: feature, view: view)
     }
     
     func favoritesDidGetWithSuccess(favorites: [Favorite]) {

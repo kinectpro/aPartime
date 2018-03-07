@@ -27,9 +27,9 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
     var interactor: TasksInteractorProtocol!
     
     var tasks = [Task]()
-    var feature = Feature()
+    var feature = ""
     
-    init(feature: Feature) {
+    init(feature: String) {
         super.init()
         setupDependencies()
         self.feature = feature
@@ -63,7 +63,7 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
     }
     
     func createTask(){
-        let task = Task(feature: feature.id)
+        let task = Task(feature: feature)
         router.goToCreateEditModule(task: task, view: view)
     }
     
@@ -79,7 +79,7 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
         taskCurrent.name  = task.name
         taskCurrent.spentTime = task.spentTime
         taskCurrent.status = status
-        taskCurrent.feature = self.feature.id
+        taskCurrent.feature = self.feature
         interactor.updateTask(taskCurrent)
     }
     
