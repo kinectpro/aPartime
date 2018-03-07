@@ -2,6 +2,8 @@
 
 Application for tracking time.
 ![image_1](./aPartime/screenshots/1_portrait.png)
+![image_2](./aPartime/screenshots/2_portrait.png)
+![image_3](./aPartime/screenshots/3_portrait.png)
 
 ### Tech
 
