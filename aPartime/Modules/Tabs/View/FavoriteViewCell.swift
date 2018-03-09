@@ -15,6 +15,8 @@ class FavoriteViewCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var spentTimeLabel: UILabel!
     
+    var featureId = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         spentTimeLabel.layer.cornerRadius = spentTimeLabel.frame.height/2

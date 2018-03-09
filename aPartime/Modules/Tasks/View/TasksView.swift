@@ -90,7 +90,10 @@ class TasksView: UIViewController, UITableViewDelegate, UITableViewDataSource, T
     // MARK: TasksViewControllerProtocol implementation
     func showTasks(tasks: [TaskViewModel]) {
         self.tasks = tasks
-        tasksTableView.reloadData()
+        guard let tableView = tasksTableView else {
+            return
+        }
+        tableView.reloadData()
     }
     
     func pauseAllTasks() {

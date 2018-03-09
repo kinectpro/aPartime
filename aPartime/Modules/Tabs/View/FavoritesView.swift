@@ -22,9 +22,7 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoritesTableView.dataSource = self
-        favoritesTableView.delegate = self
-        // Do any additional setup after loading the view.
+        self.title = "Last Tasks"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +44,7 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let index = indexPath.row
         let favorite = favorites[index]
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteViewCell
+        cell.featureId = favorite.feature
         cell.nameLabel.text = favorite.name
         cell.dateLabel.text = favorite.modified.iso8601
         cell.statusLabel.text = favorite.getStringStatus(status: favorite.status)//favorite.status.rawValue
@@ -59,6 +58,16 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let favorite = favorites[index]
         presenter.openTask(forFeature: favorite.feature, view: self)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showTasks" {
+//            let cell = sender as? FavoriteViewCell
+//            guard let featureId = cell?.featureId else {return}
+//            if let vc = segue.destination as? TasksView {
+//                vc.presenter = TasksPresenter(feature: featureId)
+//            }
+//        }
+//    }
     
     func showFavorites(favorites: [Favorite]) {
         self.favorites = favorites

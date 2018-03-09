@@ -19,10 +19,8 @@ class FavoritesRouter: NSObject, FavoritesRouterProtocol {
         guard let tasksView = TasksPresenter(feature: feature).view else {
             return
         }
-        view.navigationController?.viewControllers.first?.present(tasksView, animated: true, completion: nil)
-        //view.navigationController?.pushViewController(tasksView, animated: true)
-        //view.present(tasksView, animated: true, completion: nil)
-        //NavigationPresenter().view.pushViewController(tasksView, animated: true)
+        
+        view.navigationController?.pushViewController(tasksView, animated: true)
     }
     
 }

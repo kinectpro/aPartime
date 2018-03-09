@@ -38,6 +38,7 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
         guard let favoritesVC = UIStoryboard(name: "Tabs", bundle: nil).instantiateViewController(withIdentifier: "FavView") as? FavoritesView else {
             return
         }
+
         view = viewController
         favoritesVC.presenter = self
         favoritesView = favoritesVC
@@ -57,7 +58,8 @@ class TabsPresenter: NSObject, TabsPresenterProtocol {
     }
     
     func openTask(forFeature feature:String, view: FavoritesView){
-        self.router.goToTasksModule(feature: feature, view: view)
+        //let view = TasksPresenter(feature: feature).view
+        router.goToTasksModule(feature: feature, view: view)
     }
     
     func favoritesDidGetWithSuccess(favorites: [Favorite]) {
