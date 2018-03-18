@@ -46,9 +46,10 @@ class FavoritesView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteViewCell
         cell.featureId = favorite.feature
         cell.nameLabel.text = favorite.name
-        cell.dateLabel.text = favorite.modified.iso8601
+        cell.dateLabel.text = favorite.modified.iso8601Date
         cell.statusLabel.text = favorite.getStringStatus(status: favorite.status)//favorite.status.rawValue
         cell.spentTimeLabel.text = stringFromTimeInterval(interval: favorite.spentTime) as String
+        cell.spentTimeLabel.layer.backgroundColor = UIColor(red: 171/255, green: 255/255, blue: 199/255, alpha: 0.3).cgColor
         return cell
     }
     

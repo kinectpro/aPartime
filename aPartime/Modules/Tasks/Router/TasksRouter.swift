@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TasksRouterProtocol {
     func goToCreateEditModule(task: Task, view: TasksView)
     func goToGetTasksErrorPopup(error: String, view: TasksView)
+    func presentFinishedTaskScreen(tasksViewController: TasksView, task: TaskViewModel, feature: String)
 }
 
 class TasksRouter: NSObject, TasksRouterProtocol {
@@ -29,4 +31,12 @@ class TasksRouter: NSObject, TasksRouterProtocol {
         AlertManager.shared.showAlert(title: "Get tasks error", message: error, viewController: view)
     }
     
+    func presentFinishedTaskScreen(tasksViewController: TasksView, task: TaskViewModel, feature: String) {
+        if let finishedTaskViewController = UIStoryboard(name: "Tasks", bundle:nil).instantiateViewController(withIdentifier: "TaskFinishedViewController") as? TaskFinishedViewController {
+            finishedTaskViewController.task = task
+            finishedTaskViewController.feature = feature
+            finishedTaskViewController.presenter = tasksViewController.presenter as! TasksPresenter
+            tasksViewController.present(finishedTaskViewController, animated: true)
+        }
+    }
 }
