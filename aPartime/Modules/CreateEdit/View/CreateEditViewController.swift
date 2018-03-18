@@ -31,7 +31,6 @@ class CreateEditViewController: UIViewController, CreateEditViewControllerProtoc
     }
     
     func setupViews() {
-        navBarTitle.text = (item.id.isEmpty ? "Create " : "Edit ") + item.type.rawValue
         okButton.layer.cornerRadius = 5.0
         okButton.layer.borderWidth = 1.0
         okButton.layer.borderColor = UIColor.lightGray.cgColor
@@ -43,6 +42,7 @@ class CreateEditViewController: UIViewController, CreateEditViewControllerProtoc
     
     func fillFields(forItem item: ItemViewModel) {
         self.item = item
+        navBarTitle.text = (item.id.isEmpty ? "Create " : "Edit ") + item.type.rawValue
         nameTextField.text = item.name
         descriptionTextField.text = item.description
     }
