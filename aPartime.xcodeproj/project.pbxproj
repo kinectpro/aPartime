@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		C529787D204FDB3000686E7E /* 2_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787A204FDB2D00686E7E /* 2_portrait.png */; };
 		C529787E204FDB3000686E7E /* 3_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787B204FDB2F00686E7E /* 3_portrait.png */; };
-		C529787F204FDB3000686E7E /* 1_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787C204FDB3000686E7E /* 1_portrait.png */; };
+		C529787F204FDB3000686E7E /* 1_portrait_ko.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787C204FDB3000686E7E /* 1_portrait_ko.png */; };
 		C52978822050294B00686E7E /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52978812050294B00686E7E /* FavoritesRouter.swift */; };
+		C52F71C22090992B00F2A53C /* 1_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C52F71C12090992B00F2A53C /* 1_portrait.png */; };
 		C591FDDF1FD6C811007BE2D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */; };
 		C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE51FD6C811007BE2D3 /* Assets.xcassets */; };
 		C591FDE91FD6C811007BE2D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C591FDE71FD6C811007BE2D3 /* LaunchScreen.storyboard */; };
@@ -71,8 +72,9 @@
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C529787A204FDB2D00686E7E /* 2_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_portrait.png; sourceTree = "<group>"; };
 		C529787B204FDB2F00686E7E /* 3_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_portrait.png; sourceTree = "<group>"; };
-		C529787C204FDB3000686E7E /* 1_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_portrait.png; sourceTree = "<group>"; };
+		C529787C204FDB3000686E7E /* 1_portrait_ko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_portrait_ko.png; sourceTree = "<group>"; };
 		C52978812050294B00686E7E /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		C52F71C12090992B00F2A53C /* 1_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_portrait.png; sourceTree = "<group>"; };
 		C591FDDB1FD6C811007BE2D3 /* aPartime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aPartime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C591FDDE1FD6C811007BE2D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C591FDE51FD6C811007BE2D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,7 +159,8 @@
 		C5297879204FDAD500686E7E /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				C529787C204FDB3000686E7E /* 1_portrait.png */,
+				C529787C204FDB3000686E7E /* 1_portrait_ko.png */,
+				C52F71C12090992B00F2A53C /* 1_portrait.png */,
 				C529787A204FDB2D00686E7E /* 2_portrait.png */,
 				C529787B204FDB2F00686E7E /* 3_portrait.png */,
 			);
@@ -648,9 +651,10 @@
 				D9CF72F21FF24D0200C80F9B /* Tabs.storyboard in Resources */,
 				C591FDE61FD6C811007BE2D3 /* Assets.xcassets in Resources */,
 				C591FDFA1FD6CB0B007BE2D3 /* Login.storyboard in Resources */,
+				C52F71C22090992B00F2A53C /* 1_portrait.png in Resources */,
 				D9D1E84E1FED4DEC000B296C /* Tasks.storyboard in Resources */,
 				C529787E204FDB3000686E7E /* 3_portrait.png in Resources */,
-				C529787F204FDB3000686E7E /* 1_portrait.png in Resources */,
+				C529787F204FDB3000686E7E /* 1_portrait_ko.png in Resources */,
 				D9E5C4E31FDAE24500E28C06 /* Projects.storyboard in Resources */,
 				D95BE37D1FD7F668005BA9A0 /* GoogleService-Info.plist in Resources */,
 				D918E1561FE904220054087B /* CreateEdit.storyboard in Resources */,
