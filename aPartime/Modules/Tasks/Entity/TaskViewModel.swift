@@ -13,12 +13,15 @@ class TaskViewModel {
     var id: String
     var name: String
     var spentTime: Double
-    //var status: TaskStatus
+    var description: String
+    var status: TaskStatus
     
-    init(id: String = "", name: String = "", spentTime: Double = 0.0) {
+    init(id: String = "", name: String = "", spentTime: Double = 0.0, description: String = "", status: TaskStatus = .paused) {
         self.id = id
         self.name = name
         self.spentTime = spentTime
+        self.description = description
+        self.status = status
     }
     
 }

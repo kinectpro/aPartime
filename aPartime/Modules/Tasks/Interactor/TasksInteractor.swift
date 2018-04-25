@@ -33,14 +33,19 @@ class TasksInteractor: NSObject, TasksInteractorProtocol {
                 let name = document.data()["name"] as? String ?? ""
                 let description = document.data()["description"] as? String ?? ""
                 let feature = document.data()["feature"] as? String ?? ""
-                let spentTime = document.data()["spentTime"] as? Double ?? 0.0
                 let created = document.data()["created"] as? Date ?? Date()
                 let modified = document.data()["modified"] as? Date ?? Date()
                 let started = document.data()["started"] as? Date ?? Date()
                 let paused = document.data()["paused"] as? Date ?? Date()
                 let unpaused = document.data()["unpaused"] as? Date ?? Date()
                 let finished = document.data()["finished"] as? Date ?? Date()
-                let task = Task(id: id, name: name, description: description, feature: feature, spentTime: spentTime, created: created, modified: modified, started: started, paused: paused, unpaused: unpaused, finished: finished)
+                let statusIndex = document.data()["status"] as? Int ?? 0
+                let status = TaskStatus(rawValue: statusIndex)!
+                var spentTime = document.data()["spentTime"] as? Double ?? 0.0
+                if status == .started {
+                    spentTime = spentTime + Date().timeIntervalSince(modified)
+                }
+                let task = Task(id: id, name: name, description: description, feature: feature, spentTime: spentTime, status: status, created: created, modified: modified, started: started, paused: paused, unpaused: unpaused, finished: finished)
                 return task
             }).sorted(by: { $0.modified > $1.modified })
             self.presenter.tasksDidGetWithSuccess(tasks: tasks)

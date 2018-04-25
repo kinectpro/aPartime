@@ -17,7 +17,8 @@ protocol TasksPresenterProtocol {
     func editTask(task: TaskViewModel)
     func dataDidSaveWithSuccess()
     func dataDidSaveWithError(error: String)
-    func updateTask(_ task: TaskViewModel, status: TaskStatus)
+    func updateTask(_ task: TaskViewModel)
+    func stopTask(_ task:TaskViewModel)
 }
 
 class TasksPresenter: NSObject, TasksPresenterProtocol {
@@ -25,6 +26,7 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
     var view: TasksView!
     var router: TasksRouter!
     var interactor: TasksInteractorProtocol!
+    var stopView: TaskFinishedViewController!
     
     var tasks = [Task]()
     var feature = ""
@@ -36,12 +38,12 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
     }
     
     func setupDependencies() {
-        guard let view = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TasksView") as? TasksView else {
-            return
-        }
+        guard let view = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TasksView") as? TasksView else {return}
+        guard let stopView = UIStoryboard(name: "Tasks", bundle: nil).instantiateViewController(withIdentifier: "TaskFinishedViewController") as? TaskFinishedViewController else {return}
         let interactor = TasksInteractor()
         let router = TasksRouter()
         view.presenter = self
+        stopView.presenter = self
         interactor.presenter = self
         self.view = view
         self.interactor = interactor
@@ -54,7 +56,7 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
     
     func tasksDidGetWithSuccess(tasks: [Task]) {
         self.tasks = tasks
-        let taskViewModels = tasks.flatMap({ TaskViewModel(id: $0.id, name: $0.name, spentTime: $0.spentTime) })
+        let taskViewModels = tasks.flatMap({ TaskViewModel(id: $0.id, name: $0.name, spentTime: $0.spentTime, description: $0.description, status: TaskStatus(rawValue: $0.status.rawValue)!) })
         view.showTasks(tasks: taskViewModels)
     }
     
@@ -73,14 +75,19 @@ class TasksPresenter: NSObject, TasksPresenterProtocol {
         }
     }
     
-    func updateTask(_ task: TaskViewModel, status: TaskStatus) {
+    func updateTask(_ task: TaskViewModel) {
         let taskCurrent = Task()
         taskCurrent.id = task.id
         taskCurrent.name  = task.name
         taskCurrent.spentTime = task.spentTime
-        taskCurrent.status = status
+        taskCurrent.status = task.status
         taskCurrent.feature = self.feature
-        interactor.updateTask(taskCurrent)
+        taskCurrent.description = task.description
+        self.interactor.updateTask(taskCurrent)
+    }
+    
+    func stopTask(_ task:TaskViewModel) {
+        router.presentFinishedTaskScreen(tasksViewController: self.view, task: task, feature: self.feature)
     }
     
     func dataDidSaveWithSuccess() {

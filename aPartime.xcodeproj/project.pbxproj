@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB39096205D9EBC00A8D286 /* TaskFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB39095205D9EBC00A8D286 /* TaskFinishedViewController.swift */; };
 		C529787D204FDB3000686E7E /* 2_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787A204FDB2D00686E7E /* 2_portrait.png */; };
 		C529787E204FDB3000686E7E /* 3_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787B204FDB2F00686E7E /* 3_portrait.png */; };
 		C529787F204FDB3000686E7E /* 1_portrait_ko.png in Resources */ = {isa = PBXBuildFile; fileRef = C529787C204FDB3000686E7E /* 1_portrait_ko.png */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FB39095205D9EBC00A8D286 /* TaskFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFinishedViewController.swift; sourceTree = "<group>"; };
 		A07C918B93D3BCD51E410A83 /* Pods_aPartime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPartime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C529787A204FDB2D00686E7E /* 2_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_portrait.png; sourceTree = "<group>"; };
 		C529787B204FDB2F00686E7E /* 3_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_portrait.png; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				D9D1E8441FED4DEC000B296C /* Tasks.storyboard */,
 				D9D1E8451FED4DEC000B296C /* TaskCell.swift */,
 				D9D1E8461FED4DEC000B296C /* TasksView.swift */,
+				1FB39095205D9EBC00A8D286 /* TaskFinishedViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				D9E5C4E81FDAE24500E28C06 /* ProjectsRouter.swift in Sources */,
 				D9E5C52B1FDAE70400E28C06 /* FeaturesInteractor.swift in Sources */,
 				D9D1E84B1FED4DEC000B296C /* Task.swift in Sources */,
+				1FB39096205D9EBC00A8D286 /* TaskFinishedViewController.swift in Sources */,
 				D9D1E84F1FED4DEC000B296C /* TaskCell.swift in Sources */,
 				D918E1571FE904220054087B /* CreateEditViewController.swift in Sources */,
 				D9D1E84C1FED4DEC000B296C /* TaskViewModel.swift in Sources */,
