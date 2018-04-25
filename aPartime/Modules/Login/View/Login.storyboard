@@ -72,12 +72,6 @@
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="80"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by K.O.Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdN-A3-qlT" userLabel="Author Label">
-                                <rect key="frame" x="135" y="269" width="105.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,14 +79,12 @@
                             <constraint firstItem="VCT-vg-DNM" firstAttribute="top" secondItem="K14-bN-HAp" secondAttribute="top" constant="8" id="4ZI-D8-xTv"/>
                             <constraint firstItem="K14-bN-HAp" firstAttribute="trailing" secondItem="hGY-7C-Cbv" secondAttribute="trailing" id="84S-Cf-r5q"/>
                             <constraint firstItem="kac-I2-Ow9" firstAttribute="leading" secondItem="hGY-7C-Cbv" secondAttribute="leading" constant="8" id="E9W-WP-YRk"/>
-                            <constraint firstItem="GdN-A3-qlT" firstAttribute="top" secondItem="MvN-Ks-pmb" secondAttribute="bottom" constant="40" id="EdG-r8-azG"/>
                             <constraint firstItem="hGY-7C-Cbv" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="FoK-eh-Zav"/>
                             <constraint firstItem="nbS-vL-hII" firstAttribute="leading" secondItem="WGD-uD-fcT" secondAttribute="leading" id="K9h-zI-FFo"/>
                             <constraint firstItem="K14-bN-HAp" firstAttribute="height" secondItem="hGY-7C-Cbv" secondAttribute="height" id="MT7-5C-pOG"/>
                             <constraint firstItem="kac-I2-Ow9" firstAttribute="bottom" secondItem="hGY-7C-Cbv" secondAttribute="bottom" constant="-8" id="QQX-zz-D2x"/>
                             <constraint firstItem="hGY-7C-Cbv" firstAttribute="top" secondItem="K14-bN-HAp" secondAttribute="bottom" constant="32" id="Qqj-tA-xyP"/>
                             <constraint firstItem="WGD-uD-fcT" firstAttribute="bottom" secondItem="hGY-7C-Cbv" secondAttribute="bottom" constant="50" id="Ra7-NQ-JTf"/>
-                            <constraint firstItem="GdN-A3-qlT" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="Vxz-SD-LJq"/>
                             <constraint firstItem="K14-bN-HAp" firstAttribute="leading" secondItem="hGY-7C-Cbv" secondAttribute="leading" id="bgW-rH-AAE"/>
                             <constraint firstItem="MvN-Ks-pmb" firstAttribute="centerX" secondItem="hp2-AV-gcJ" secondAttribute="centerX" id="bpA-K8-ylS"/>
                             <constraint firstItem="VCT-vg-DNM" firstAttribute="width" secondItem="VCT-vg-DNM" secondAttribute="height" multiplier="1:1" id="dr1-Un-dsX"/>
